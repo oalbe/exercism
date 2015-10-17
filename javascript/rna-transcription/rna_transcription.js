@@ -1,9 +1,6 @@
 var DnaTranscriber = function() {};
 
-DnaTranscriber.prototype.transcribe = function(nucleotide, mode) {
-    // workaround to make default parameters work
-    mode = typeof mode !== 'undefined' ? mode : 'DNA';
-
+DnaTranscriber.prototype.transcribeNucleotide = function(nucleotide, mode) {
     var RNANucleotides = ['C', 'G', 'A', 'U'];
     var DNANucleotides = ['G', 'C', 'T', 'A'];
 
@@ -14,26 +11,23 @@ DnaTranscriber.prototype.transcribe = function(nucleotide, mode) {
     return RNANucleotides[DNANucleotides.indexOf(nucleotide)];
 };
 
-DnaTranscriber.prototype.toRna = function(DNAStrand) {
-    var RNAStrand = '';
+DnaTranscriber.prototype.transcribeStrand = function(strand, mode) {
+    var transcribedStrand = '';
 
-    var DNALength = DNAStrand.length;
-    for (var i = 0; i < DNALength; ++i) {
-        RNAStrand += this.transcribe(DNAStrand[i], 'RNA');
+    var strandLength = strand.length;
+    for (var i = 0; i < strandLength; ++i) {
+        transcribedStrand += this.transcribeNucleotide(strand[i], mode);
     }
 
-    return RNAStrand;
+    return transcribedStrand;
+};
+
+DnaTranscriber.prototype.toRna = function(DNAStrand) {
+    return this.transcribeStrand(DNAStrand, 'RNA');
 };
 
 DnaTranscriber.prototype.toDna = function(RNAStrand) {
-    var DNAStrand = '';
-
-    var RNALength = RNAStrand.length;
-    for (var i = 0; i < RNALength; ++i) {
-        DNAStrand += this.transcribe(RNAStrand[i]);
-    }
-
-    return DNAStrand;
+    return this.transcribeStrand(RNAStrand, 'DNA');
 };
 
 module.exports = DnaTranscriber;
