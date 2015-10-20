@@ -41,4 +41,8 @@ PhoneNumber.prototype.toString = function() {
     );
 };
 
+PhoneNumber.prototype.areaCode = function () {
+   return this.number().substr(0, 3);
+};
+
 module.exports = PhoneNumber;
