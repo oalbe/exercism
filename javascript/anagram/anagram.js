@@ -1,26 +1,60 @@
-'use strict';
+function anagram(word) {
+    return {
+        matches : function(listMatches) {
+            if (listMatches instanceof Array) {
+                return matches(word, listMatches);
+            }
 
-var Anagram = function(word) {
-    this._word = word;
-};
+            // convert the Object type into an Array type
+            var convertedObject = [];
+            var argumentsLength = arguments.length;
+            for (var i = 0; i < argumentsLength; ++i) {
+                convertedObject.push(arguments[i]);
+            }
 
-Anagram.prototype.match = function(matchWord) {
-    var wordLength = this._word.length;
+            return matches(word, convertedObject); 
+        }
+    };
+}
 
-    if (wordLength !== matchWord.length) {
+function match(word, matchWord) {
+    var wordLength = word.length;
+    var matchWordLength = matchWord.length;
+
+    if (wordLength !== matchWordLength) {
         return false;
     }
 
-    var lowercasedWord = this._word.toLowerCase();
+    // l = lowercased
+    var lWord = word.toLowerCase();
+    var lMatchWord = matchWord.toLowerCase();
 
-    // FIXME: This doesn't handle in a proper way words with two (or more) 
-    // times the same letter in them.
-    // UPDATE: probably fixed.
+    if (lMatchWord === lWord) {
+        return false;
+    }
+
+    // will contain the indexes from `word` of the letters that have already been checked.
     var checkedIndexes = [];
     for (var i = 0; i < wordLength; ++i) {
-        var currentIndex = matchWord.indexOf(lowercasedWord[i]);
+        var currentIndex = lMatchWord.indexOf(lWord[i]);
+
+        // if the currently checked letter has already been checked before
         if (-1 !== checkedIndexes.indexOf(currentIndex)) {
-            return false;
+            // create a substring of the current matchWord from the subsequent point where
+            // the collision has been found, to the end of the word
+            var newMatchWord = lMatchWord.substr(
+                checkedIndexes.indexOf(currentIndex) + 1, matchWordLength
+            );
+
+            // if in this newly created string there isn't any other match with the
+            // letter at hand, it means there was a bad collision
+            if (-1 === newMatchWord.indexOf(lWord[i])) {
+                return false;
+            }
+
+            // otherwise it was a good collision, in which case we prepare it
+            // to be added to the array that keeps track of the letters already checked
+            currentIndex = lMatchWord.indexOf(lWord[i], currentIndex + 1);
         }
 
         if (-1 === currentIndex) {
@@ -31,19 +65,19 @@ Anagram.prototype.match = function(matchWord) {
     }
 
     return true;
-};
+}
 
-Anagram.prototype.matches = function(listMatches) {
+function matches(word, listMatches) {
     var matchedWords = [];
 
     var listMatchesLength = listMatches.length;
     for (var i = 0; i < listMatchesLength; ++i) {
-        if (this.match(listMatches[i].toLowerCase())) {
+        if (match(word, listMatches[i].toLowerCase())) {
             matchedWords.push(listMatches[i]);
         }
     }
 
     return matchedWords;
-};
+}
 
-module.exports = Anagram;
+module.exports = anagram;

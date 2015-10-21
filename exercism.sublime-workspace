@@ -227,7 +227,7 @@
 			"file": "/C/Users/Alberto/Desktop/_Projects/exercism/javascript/anagram/anagram_test.spec.js",
 			"settings":
 			{
-				"buffer_size": 2289,
+				"buffer_size": 2264,
 				"line_ending": "Windows"
 			}
 		},
@@ -235,7 +235,7 @@
 			"file": "/C/Users/Alberto/Desktop/_Projects/exercism/javascript/anagram/anagram.js",
 			"settings":
 			{
-				"buffer_size": 1159,
+				"buffer_size": 1723,
 				"line_ending": "Windows"
 			}
 		}
@@ -377,6 +377,15 @@
 	],
 	"file_history":
 	[
+		"/J/__Docs/Backups/Galaxy Music/WhatsApp Chat with _+39 335 671 8070_.txt",
+		"/J/__Docs/Backups/Galaxy Music/WhatsApp Chat with Chiara.txt",
+		"/J/__Docs/Foto/Private/Foto Kya/You Make Me Smile - 500 Days of Summer.txt",
+		"/J/__Docs/Foto/Private/Foto Kya/new.txt",
+		"/J/__Docs/Foto/Private/Foto Kya/ltt.txt",
+		"/J/__Docs/Foto/Private/Foto Kya/letter.txt",
+		"/J/__Docs/Foto/Private/Foto Kya/Alby&Chiara/Conversazioni/Whatsapp/9. Novembre - Gennaio 2014.txt",
+		"/J/__Docs/Foto/Private/Foto Kya/Backup Cellulare/WhatsApp chat con Alby 22-03-2013.txt",
+		"/J/__Docs/Foto/Private/Foto Kya/Backup Cellulare/WhatsApp chat con Alby.txt",
 		"/C/dev/msys64/home/Alberto/__projects/exercism/javascript/phone-number/phone_number.js",
 		"/C/dev/msys64/home/Alberto/__projects/exercism/javascript/phone-number/phone_number_test.spec.js",
 		"/C/dev/msys64/home/Alberto/__projects/exercism/javascript/phone-number/README.md",
@@ -495,20 +504,11 @@
 		"/C/Users/Alberto/Desktop/Calcolatori Elettronici 1/__ASIMTool/Programs/Subroutines - strcat/Asimto1.A68",
 		"/C/Users/Alberto/Desktop/Calcolatori Elettronici 1/_ASM Andrea/ContaLettere.A68",
 		"/C/Users/Alberto/Desktop/Calcolatori Elettronici 1/_ASM Andrea/SubRoutineCountSameLetter.A68",
-		"/C/Users/Alberto/Desktop/Ingegneria del software/domandeGettonate.txt",
-		"/C/Users/Alberto/Dropbox/Università Shared/1-UploadsPubblici/Leggimi parte 2.txt",
-		"/C/Users/Alberto/Desktop/Calcolatori Andrea/Calcolatori 1/test-CE1.html",
-		"/C/Users/Alberto/Desktop/Calcolatori Andrea/Calcolatori 1/Prove_d'esame/Questionari/Questionario 2.txt",
-		"/C/Users/Alberto/Desktop/Calcolatori Andrea/questionario CEI.txt",
-		"/C/Users/Alberto/Downloads/Title(1).html",
-		"/C/Users/Alberto/Downloads/Title.html",
-		"/C/Users/Alberto/Desktop/HackerNotes/Software Engineering/Semantic versioning.txt",
-		"/C/Users/Alberto/AppData/Roaming/SumatraPDF/SumatraPDF-settings.txt",
-		"/C/Users/Alberto/Desktop/Ingegneria del software/romeo-2.10.1-windows/Readme.txt"
+		"/C/Users/Alberto/Desktop/Ingegneria del software/domandeGettonate.txt"
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -522,6 +522,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"xit",
+			"new",
 			"cleanedNumber.length",
 			"cleansedNumber",
 			"end",
@@ -754,15 +756,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2289,
+						"buffer_size": 2264,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								624,
-								624
+								255,
+								255
 							]
 						],
 						"settings":
@@ -772,69 +774,69 @@
 							"auto_complete": false,
 							"bh_regions":
 							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
-								"bh_double_quote_content"
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
 							],
 							"color_scheme": "Packages/User/Color Highlighter/themes/Seti_monokai (SL).tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
-						"translation.y": 0.0,
+						"translation.x": 0.0,
+						"translation.y": 154.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -846,15 +848,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1159,
+						"buffer_size": 1723,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								735,
+								735
 							]
 						],
 						"settings":
@@ -864,67 +866,67 @@
 							"auto_complete": false,
 							"bh_regions":
 							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
-								"bh_double_quote_content"
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
 							],
 							"color_scheme": "Packages/User/Color Highlighter/themes/Seti_monokai (SL).tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 204.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
