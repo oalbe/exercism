@@ -1,5 +1,5 @@
 var compute = function(strand1, strand2) {
-    if (strand1.length != strand2.length) {
+    if (strand1.length !== strand2.length) {
         throw new Error('DNA strands must be of equal length.');
     }
 
@@ -7,7 +7,7 @@ var compute = function(strand1, strand2) {
     var strandsLength = strand1.length;
     
     for (var i = 0; i < strandsLength; ++i) {
-        if (strand1[i] != strand2[i]) {
+        if (strand1[i] !== strand2[i]) {
             ++hammingDistance;
         }
     }

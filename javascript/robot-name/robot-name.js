@@ -1,5 +1,9 @@
 var usedNames = [];
 
+var Robot = function() {
+    this.reset();
+};
+
 function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -24,10 +28,6 @@ function isNameUsed(name) {
 
     return false;
 }
-
-var Robot = function() {
-    this.reset();
-};
 
 Robot.prototype.reset = function() {
     var tempName = generateName();
