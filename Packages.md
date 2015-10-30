@@ -1,0 +1,41 @@
+#SublimeText 3 Packages
+
+##Installed packages
+
+- [x] [ApplySyntax](https://packagecontrol.io/packages/ApplySyntax)
+- [x] [Seti_UI](https://packagecontrol.io/packages/Seti_UI)
+- [x] [Can I Use](https://packagecontrol.io/packages/Can%20I%20Use)
+- [x] [SublimeLinter-csslint](https://packagecontrol.io/packages/SublimeLinter-csslint)
+- [x] [SublimeLinter-jshint](https://packagecontrol.io/packages/SublimeLinter-jshint)
+- [x] [Markdown Preview](https://packagecontrol.io/packages/Markdown%20Preview)
+- [x] [All Autocomplete](https://packagecontrol.io/packages/All%20Autocomplete)
+- [x] [Emmet Css Snippets](https://packagecontrol.io/packages/Emmet%20Css%20Snippets)
+- [x] [DocBlockr](https://packagecontrol.io/packages/DocBlockr)
+- [x] [jQuery](https://packagecontrol.io/packages/jQuery)
+- [x] [HTML5](https://packagecontrol.io/packages/HTML5)
+- [x] [Package Control - Packages](https://packagecontrol.io/packages/Package%20Control)
+- [x] [Emmet](https://packagecontrol.io/packages/Emmet)
+- [x] [SublimeLinter](https://packagecontrol.io/packages/SublimeLinter)
+- [x] [SideBarEnhancements](https://packagecontrol.io/packages/SideBarEnhancements)
+- [x] [BracketHighlighter](https://packagecontrol.io/packages/BracketHighlighter)
+- [x] [SublimeCodeIntel](https://packagecontrol.io/packages/SublimeCodeIntel)
+
+##Might-come-in-handy packages
+
+- [ ] [GitSavvy](https://packagecontrol.io/packages/GitSavvy)
+- [ ] [GitGutter](https://packagecontrol.io/packages/GitGutter)
+- [ ] [JsFormat](https://packagecontrol.io/packages/JsFormat)
+- [ ] [Markdown Extended](https://packagecontrol.io/packages/Markdown%20Extended)
+- [ ] [TrailingSpaces](https://packagecontrol.io/packages/TrailingSpaces)
+- [ ] [HTMLBeautify](https://packagecontrol.io/packages/HTMLBeautify)
+- [ ] [Minifier](https://packagecontrol.io/packages/Minifier)
+- [ ] [TodoReview](https://packagecontrol.io/packages/TodoReview)
+- [ ] [Arduino-like IDE](https://packagecontrol.io/packages/Arduino-like%20IDE)
+- [ ] [Rust](https://packagecontrol.io/packages/Rust)
+- [ ] [SublimeLinter-annotations](https://packagecontrol.io/packages/SublimeLinter-annotations)
+- [ ] [CMake](https://packagecontrol.io/packages/CMake)
+- [ ] [C Improved](https://packagecontrol.io/packages/C%20Improved)
+- [ ] [GitGutter-Edge](https://packagecontrol.io/packages/GitGutter-Edge)
+- [ ] [WakaTime](https://packagecontrol.io/packages/WakaTime)
+- [ ] [CSS Media Query Snippets](https://packagecontrol.io/packages/CSS%20Media%20Query%20Snippets)
+- [ ] [Project Manager](https://packagecontrol.io/packages/Project%20Manager)
