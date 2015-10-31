@@ -3,7 +3,7 @@ var SpaceAge = function(seconds) {
     
     this.orbitalPeriods = {
         'earth' : 31557600,
-        'mercury' : 7600543.81992, // 'earth' / 0.2408467
+        'mercury' : 7600543.81992, // 'earth' * 0.2408467
         'venus' : 19414149.052176, // 'earth' * 0.61519726
         'mars': 59354032.69008, // 'earth' * 1.8808158
         'jupiter': 374355659.124, // 'earth' * 11.862615

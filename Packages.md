@@ -19,6 +19,11 @@
 - [x] [SideBarEnhancements](https://packagecontrol.io/packages/SideBarEnhancements)
 - [x] [BracketHighlighter](https://packagecontrol.io/packages/BracketHighlighter)
 - [x] [SublimeCodeIntel](https://packagecontrol.io/packages/SublimeCodeIntel)
+- [x] [TrailingSpaces](https://packagecontrol.io/packages/TrailingSpaces)
+- [x] [CSS3](https://packagecontrol.io/packages/CSS3)
+- [x] [JavaScriptNext - ES6 Syntax](https://packagecontrol.io/packages/JavaScriptNext%20-%20ES6%20Syntax)
+- [x] [SublimeERB](https://packagecontrol.io/packages/SublimeERB)
+- [x] [TodoReview](https://packagecontrol.io/packages/TodoReview)
 
 ##Might-come-in-handy packages
 
@@ -26,16 +31,10 @@
 - [ ] [GitGutter](https://packagecontrol.io/packages/GitGutter)
 - [ ] [JsFormat](https://packagecontrol.io/packages/JsFormat)
 - [ ] [Markdown Extended](https://packagecontrol.io/packages/Markdown%20Extended)
-- [ ] [TrailingSpaces](https://packagecontrol.io/packages/TrailingSpaces)
-- [ ] [HTMLBeautify](https://packagecontrol.io/packages/HTMLBeautify)
-- [ ] [Minifier](https://packagecontrol.io/packages/Minifier)
-- [ ] [TodoReview](https://packagecontrol.io/packages/TodoReview)
 - [ ] [Arduino-like IDE](https://packagecontrol.io/packages/Arduino-like%20IDE)
 - [ ] [Rust](https://packagecontrol.io/packages/Rust)
-- [ ] [SublimeLinter-annotations](https://packagecontrol.io/packages/SublimeLinter-annotations)
 - [ ] [CMake](https://packagecontrol.io/packages/CMake)
 - [ ] [C Improved](https://packagecontrol.io/packages/C%20Improved)
 - [ ] [GitGutter-Edge](https://packagecontrol.io/packages/GitGutter-Edge)
-- [ ] [WakaTime](https://packagecontrol.io/packages/WakaTime)
 - [ ] [CSS Media Query Snippets](https://packagecontrol.io/packages/CSS%20Media%20Query%20Snippets)
 - [ ] [Project Manager](https://packagecontrol.io/packages/Project%20Manager)

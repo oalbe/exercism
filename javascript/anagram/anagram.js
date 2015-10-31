@@ -12,7 +12,7 @@ function anagram(word) {
                 convertedObject.push(arguments[i]);
             }
 
-            return matches(word, convertedObject); 
+            return matches(word, convertedObject);
         }
     };
 }
