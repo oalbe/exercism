@@ -15,20 +15,14 @@ PhoneNumber.prototype.number = function() {
     }
 
     var cleanNumLength = cleanedNumber.length;
-    if (10 > cleanNumLength) {
-        this._number = '0000000000';
-        return this._number;
-    } else if (10 === cleanNumLength) {
+    if (10 === cleanNumLength) {
         this._number = cleanedNumber;
-        return this._number;
-    } else if (11 === cleanNumLength) {
-        if ('1' === cleanedNumber.charAt(0)) {
-            this._number = cleanedNumber.substring(1, cleanNumLength);
-            return this._number;
-        }
+    } else if ((11 === cleanNumLength) && ('1' === cleanedNumber.charAt(0))) {
+        this._number = cleanedNumber.substring(1, cleanNumLength);
+    } else { // number < 10, number > 11, number === 11 but not starting with '1'
+        this._number = '0000000000';
     }
 
-    this._number = '0000000000';
     return this._number;
 };
 
