@@ -21,7 +21,7 @@ School.prototype.roster = function() {
 };
 
 School.prototype.grade = function(grade) {
-    if (typeof this._db[grade] !== 'undefined') {
+    if ('undefined' !== typeof this._db[grade]) {
         return this._db[grade].sort();
     }
 
