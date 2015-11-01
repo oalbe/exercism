@@ -22,11 +22,7 @@ function generateName() {
 }
 
 function isNameUsed(name) {
-    if (usedNames.indexOf(name) !== -1) {
-        return true;
-    }
-
-    return false;
+    return (-1 !== usedNames.indexOf(name));
 }
 
 Robot.prototype.reset = function() {
