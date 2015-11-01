@@ -1,7 +1,7 @@
 var Bob = function() {};
 
 Bob.prototype.hey = function(input) {
-    if (!input || !input.trim() || 0 === input.length) {
+    if (!input.trim() || 0 === input.length) {
         return 'Fine. Be that way!';
     }
 
@@ -10,7 +10,7 @@ Bob.prototype.hey = function(input) {
             return 'Whoa, chill out!';
     }
 
-    if (input[input.length - 1] == '?') {
+    if ('?' === input[input.length - 1]) {
         return 'Sure.';
     }
 
