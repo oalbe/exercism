@@ -4,7 +4,7 @@ DnaTranscriber.prototype.transcribeNucleotide = function(nucleotide, mode) {
     var RNANucleotides = ['C', 'G', 'A', 'U'];
     var DNANucleotides = ['G', 'C', 'T', 'A'];
 
-    if (mode === 'DNA') {
+    if ('DNA' === mode) {
         return DNANucleotides[RNANucleotides.indexOf(nucleotide)];
     }
 
