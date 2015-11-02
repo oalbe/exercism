@@ -61,5 +61,5 @@ Beer.prototype.sing = function(end, begin) {
     return compositeVerse;
 };
 
-module.exports = Beer;
+module.exports = new Beer;
 
