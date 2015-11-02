@@ -24,7 +24,7 @@ function generateName() {
 Robot.prototype.reset = function() {
     var tempName = generateName();
 
-    while ('undefined' !== typeof usedNames[name]) {
+    while ('undefined' !== typeof usedNames[tempName]) {
         usedNames[tempName] = true;
         tempName = generateName();
     }
