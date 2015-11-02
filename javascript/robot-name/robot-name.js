@@ -1,4 +1,4 @@
-var usedNames = [];
+var usedNames = {};
 
 var Robot = function() {
     this.reset();
@@ -22,18 +22,18 @@ function generateName() {
 }
 
 function isNameUsed(name) {
-    return (-1 !== usedNames.indexOf(name));
+    return ('undefined' !== typeof usedNames[name]);
 }
 
 Robot.prototype.reset = function() {
     var tempName = generateName();
 
     while (isNameUsed(tempName)) {
-        usedNames.push(tempName);
+        usedNames[tempName] = true;
         tempName = generateName();
     }
    
-    usedNames.push(tempName);
+    usedNames[tempName] = true;
     this.name = tempName;
 };
 
