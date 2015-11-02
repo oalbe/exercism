@@ -21,14 +21,10 @@ function generateName() {
     return firstLetter + secondLetter + digits;
 }
 
-function isNameUsed(name) {
-    return ('undefined' !== typeof usedNames[name]);
-}
-
 Robot.prototype.reset = function() {
     var tempName = generateName();
 
-    while (isNameUsed(tempName)) {
+    while ('undefined' !== typeof usedNames[name]) {
         usedNames[tempName] = true;
         tempName = generateName();
     }
