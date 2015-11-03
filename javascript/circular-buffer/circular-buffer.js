@@ -10,7 +10,6 @@ function circularBuffer(elementsNumber) {
 	
 	var values = [];
 	
-	
 	Buffer.read = function() {
 		var readValue = values.shift();
 
