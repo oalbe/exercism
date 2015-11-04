@@ -4,10 +4,10 @@ primeFactors.prototype.for = function(number) {
 	var factors = [];
 	
 	for (var i = 2; i <= number; ++i) {
-		if (number % i === 0) {
-			number = number / i;
+		if (0 === (number % i)) {
 			factors.push(i);
 			
+			number /= i;
 			i = 1;
 		}
 	}
