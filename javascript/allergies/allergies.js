@@ -10,7 +10,7 @@ var Allergies = function(score) {
 	    'eggs': 1
 	};
 	
-	this.allergyScore = (score < 256) ? score : score % 256;
+	this.allergyScore = score % 256;
 };
 
 Allergies.prototype.list = function() {
