@@ -3,6 +3,8 @@ var Crypto = function(plainString) {
 	this.normalizedText = this.normalizePlaintext();
 };
 
+// TODO: Once again, `replace()` probably hides a loop.
+// Figure out if there's a better way to write this method.
 Crypto.prototype.normalizePlaintext = function() {
 	return this.rawText.toLowerCase().replace(/[-!#$%^&*()_+|~=`{}\[\]:";'<>?,.\/\s]*/g, '');
 };
@@ -11,43 +13,45 @@ Crypto.prototype.size = function() {
 	return Math.ceil(Math.sqrt(this.normalizedText.length));
 };
 
-Crypto.prototype.plaintextSegments = function() {
-	var segments = [];
+Crypto.prototype._text_helper = function(textToSegment) {
+	var segmentedText = [];
 	
 	var segmentSize = this.size();
-	var loops = this.normalizedText.length / segmentSize;
+	var loops = textToSegment.length / segmentSize;
 	for (var i = 0; i < loops; ++i) {
-		segments.push(this.normalizedText.substr(i * segmentSize, segmentSize));
+		segmentedText.push(textToSegment.substr(i * segmentSize, segmentSize));
 	}
 	
-	return segments;
+	return segmentedText;
 };
 
+Crypto.prototype.plaintextSegments = function() {
+	return this._text_helper(this.normalizedText);
+};
+
+Crypto.prototype.normalizeCiphertext = function() {
+	var encryptedSegments = this._text_helper(this.ciphertext());
+	
+	// TODO: Is there a better way to do this? `join()` is very likely to hide a loop.
+	return encryptedSegments.join(' ');
+};
+
+// FIXME: This method looks ugly. Needs refactoring.
 Crypto.prototype.ciphertext = function() {
 	var encryptedText = '';
 	var plainSegments = this.plaintextSegments();
 	
 	var plainSegmentsLength = plainSegments.length;
-	for (var j = 0; j < plainSegments[0].length; ++j) {
+	var segmentLength = plainSegments[0].length;
+	for (var j = 0; j < segmentLength; ++j) {
 		for (var i = 0; i < plainSegmentsLength; ++i) {
-			if ('undefined' !== typeof plainSegments[i][j])
-			encryptedText += plainSegments[i][j];
+			if ('undefined' !== typeof plainSegments[i][j]) {
+				encryptedText += plainSegments[i][j];
+			}
 		}
 	}
 	
 	return encryptedText;
-};
-
-Crypto.prototype.normalizeCiphertext = function() {
-	var normalizedEncrypted = '';
-	
-	var segmentSize = this.size();
-	var loops = this.normalizedText.length / segmentSize;
-	for (var i = 0; i < loops; ++i) {
-		normalizedEncrypted += ' ' + this.ciphertext().substr(i * segmentSize, segmentSize);
-	}
-	
-	return normalizedEncrypted.trim();
 };
 
 module.exports = Crypto;
