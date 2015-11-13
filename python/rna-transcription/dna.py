@@ -7,7 +7,8 @@ def to_rna(strand):
 	}
 	
 	convertedStrand = ''
-	for i in range(0, len(strand)):
+	strandLength = len(strand)
+	for i in range(0, strandLength):
 		convertedStrand += nucleotides[strand[i]]
 	
 	return convertedStrand
