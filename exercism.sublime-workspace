@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"normali",
+				"normalizedText"
+			],
+			[
 				"normalized",
 				"normalizedEncrypted"
 			],
@@ -28,26 +32,26 @@
 	"buffers":
 	[
 		{
-			"file": "javascript/crypto-square/README.md",
+			"file": "javascript/sieve/README.md",
 			"settings":
 			{
-				"buffer_size": 2487,
+				"buffer_size": 1616,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "javascript/crypto-square/crypto-square.spec.js",
+			"file": "javascript/sieve/sieve.spec.js",
 			"settings":
 			{
-				"buffer_size": 2096,
+				"buffer_size": 1235,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "javascript/crypto-square/crypto-square.js",
+			"file": "javascript/sieve/sieve.js",
 			"settings":
 			{
-				"buffer_size": 1421,
+				"buffer_size": 466,
 				"line_ending": "Windows"
 			}
 		}
@@ -60,9 +64,17 @@
 	"command_palette":
 	{
 		"height": 400.0,
-		"last_filter": "ma",
+		"last_filter": "mar",
 		"selected_items":
 		[
+			[
+				"mar",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"pi",
+				"Package Control: Install Package"
+			],
 			[
 				"ma",
 				"Markdown Preview: Preview in Browser"
@@ -70,10 +82,6 @@
 			[
 				"packa",
 				"Package Control: Remove Package"
-			],
-			[
-				"pi",
-				"Package Control: Install Package"
 			],
 			[
 				"package inst",
@@ -103,10 +111,23 @@
 	[
 		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism",
 		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/crypto-square"
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/sieve"
 	],
 	"file_history":
 	[
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/hamming/README.md",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/hamming/hamming_test.py",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/hamming/hamming.py",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/rna-transcription/dna.py",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/rna-transcription/README.md",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/rna-transcription/rna_transcription_test.py",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/trinary/trinary.js",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/binary/binary.js",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/trinary/trinary.spec.js",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/trinary/README.md",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/crypto-square/README.md",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/crypto-square/crypto-square.spec.js",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/crypto-square/crypto-square.js",
 		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/word-count/README.md",
 		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/word-count/word_count_test.py",
 		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/word-count/wordcount.py",
@@ -142,7 +163,6 @@
 		"/C/dev/msys64/home/Admin/__projects/ProjectEuler/07-10001st_prime/10001st_prime.cpp",
 		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/binary/README.md",
 		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/binary/binary.spec.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/binary/binary.js",
 		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/hamming/hamming.js",
 		"/E/2015-10-28_HP-15/dev/msys64/home/Alberto/.vimrc",
 		"/E/2015-10-28_HP-15/Alberto/Tresorit/Alberto's Documents/txt/Chiara In emoticonese.txt",
@@ -222,19 +242,7 @@
 		"/C/dev/msys64/home/Admin/__tempProjects/exercism/javascript/roman-numerals/README.md",
 		"/C/dev/msys64/home/Admin/__tempProjects/exercism/javascript/roman-numerals/roman-numerals-test.spec.js",
 		"/C/dev/msys64/home/Admin/__tempProjects/exercism/javascript/roman-numerals/roman-numerals.js",
-		"/E/2015-10-28_HP-15/Alberto/Desktop/MSYS2_installed_packages.txt",
-		"/E/2015-10-28_HP-15/Alberto/AppData/Roaming/HexChat/logs/OFTC/#msys2.log",
-		"/E/2015-10-28_HP-15/Alberto/.exercism.json",
-		"/E/2015-10-28_HP-15/Alberto/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/E/2015-10-28_HP-15/Alberto/AppData/Roaming/Sublime Text 3/Packages/User/SublimeLinter/Seti_monokai (SL).tmTheme",
-		"/E/2015-10-28_HP-15/Alberto/AppData/Roaming/Sublime Text 3/Packages/Seti_UI/Scheme/Seti_monokai.tmTheme",
-		"/C/Users/Admin/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
-		"/C/Users/Admin/Desktop/x.txt",
-		"/E/2014-08-09_Backup_HP-15/Alberto/Desktop/Untitled1.cpp",
-		"/E/2014-08-09_Backup_HP-15/Alberto/Desktop/robotics.txt",
-		"/E/2015-10-28_HP-15/Alberto/AppData/Local/Tresorit/v0.8/Profiles/securelogin",
-		"/E/2015-10-28_HP-15/Alberto/AppData/Local/Tresorit/v0.8/Profiles/scV",
-		"/E/2015-10-28_HP-15/Alberto/AppData/Local/Tresorit/v0.8/Profiles/scC"
+		"/E/2015-10-28_HP-15/Alberto/Desktop/MSYS2_installed_packages.txt"
 	],
 	"find":
 	{
@@ -252,6 +260,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"`",
+			"this.ncInput.length",
+			"parseInt(this.ncInput[i - 1])",
+			"xit",
 			"ciphredText",
 			"def",
 			"lText",
@@ -302,11 +314,11 @@
 			[
 				{
 					"buffer": 0,
-					"file": "javascript/crypto-square/README.md",
+					"file": "javascript/sieve/README.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2487,
+						"buffer_size": 1616,
 						"regions":
 						{
 						},
@@ -323,6 +335,21 @@
 							"apply_syntax_touched": true,
 							"bh_regions":
 							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
@@ -333,31 +360,11 @@
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -368,16 +375,21 @@
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
 							],
 							"parser": "github",
 							"syntax": "Packages/Markdown/Markdown.tmLanguage",
@@ -392,43 +404,57 @@
 				},
 				{
 					"buffer": 1,
-					"file": "javascript/crypto-square/crypto-square.spec.js",
+					"file": "javascript/sieve/sieve.spec.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2096,
+						"buffer_size": 1235,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1905,
-								1905
+								31,
+								31
 							]
 						],
 						"settings":
 						{
 							"BracketHighlighterBusy": false,
 							"apply_syntax_touched": true,
-							"auto_complete": false,
 							"bh_regions":
 							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -439,43 +465,26 @@
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
-								"bh_single_quote_content"
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
 							],
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 495.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -483,19 +492,19 @@
 				},
 				{
 					"buffer": 2,
-					"file": "javascript/crypto-square/crypto-square.js",
+					"file": "javascript/sieve/sieve.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1421,
+						"buffer_size": 466,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								998,
-								998
+								431,
+								431
 							]
 						],
 						"settings":
@@ -505,21 +514,36 @@
 							"auto_complete": false,
 							"bh_regions":
 							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -530,36 +554,21 @@
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
-								"bh_single_quote_content"
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
 							],
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
