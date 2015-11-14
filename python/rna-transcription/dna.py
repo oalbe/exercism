@@ -6,9 +6,4 @@ def to_rna(strand):
 		"A": "U"
 	}
 	
-	convertedStrand = ''
-	strandLength = len(strand)
-	for i in range(0, strandLength):
-		convertedStrand += nucleotides[strand[i]]
-	
-	return convertedStrand
+	return ''.join(nucleotides[n] for n in strand)
