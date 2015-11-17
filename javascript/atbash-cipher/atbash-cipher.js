@@ -13,15 +13,15 @@ Cipher.prototype.encode = function(text) {
 	var cTextLength = cText.length;
 	for (var i = 0; i < cTextLength; ++i) {
 		// TODO: Is there a cast hidden here? Figure it out.
-		if (cText[i] >= 'a' && cText[i] <= 'z') {
+		if ('a' <= cText[i] && 'z' >= cText[i]) {
 			// cText.charCodeAt(i) - 97: position of the equivalent char, counting from z backwards
 			encodedText += String.fromCharCode(122 - (cText.charCodeAt(i) - 97));
-		} else if (cText[i] >= '0' && cText[i] <= '9') {
+		} else if ('0' <= cText[i] && '9' >= cText[i]) {
 			encodedText += cText[i];
 		}
 		
 		// Adds a space separator every 5 encoded characters
-		if ((i % 5) === 4) {
+		if (4 === (i % 5)) {
 			encodedText += ' ';
 		}
 	}
