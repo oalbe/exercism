@@ -17,50 +17,54 @@ Cipher.prototype.generateRandomKey = function() {
 	return randomKey;
 };
 
-Cipher.prototype.encode = function(plaintext) {
-	// Render the key of the same length of the text to encode
-	var key = '';
-	if (this.key.length >= plaintext.length) {
-		key = this.key.substr(0, plaintext.length);
+// Render the key of the same length of the text to encode
+Cipher.prototype.renderKey = function(textLength) {
+	var renderedKey = '';
+	if (this.key.length >= textLength) {
+		renderedKey = this.key.substr(0, textLength);
 	} else {
-		var repetitions = Math.ceil(plaintext.length / this.key.length);
+		var repetitions = Math.ceil(textLength / this.key.length);
 		
 		for (var i = 0; i < repetitions; ++i) {
-			key += this.key;
+			renderedKey += this.key;
 		}
 		
 		// Cut the excesses
-		key = key.substr(0, plaintext.length);
+		renderedKey = renderedKey.substr(0, textLength);
 	}
 	
-	var encodedtext = '';
+	return renderedKey;
+};
+
+Cipher.prototype.translation_helper = function(text) {
+	var renderedKey = this.renderKey(text.length);
+	
+	console.log('renderedKey = ' + renderedKey);
+	
+	var translatedText = '';
 	
 	// Create the actual encoded text
-	for (var j = 0; j < plaintext.length; ++j) {
-		// encodedtext += String.fromCharCode(((plaintext.charCodeAt(j) + key.charCodeAt(j)) % 26) + 96);
-		encodedtext += key[j];
+	for (var j = 0; j < text.length; ++j) {
+		translatedText += String.fromCharCode(
+			Math.abs(text.charCodeAt(j) - renderedKey.charCodeAt(j)) + 97
+		);
+		
+		console.log('Math.abs(' + text.charCodeAt(j) + ' - ' + renderedKey.charCodeAt(j) + ') = ' + Math.abs(text.charCodeAt(j) - renderedKey.charCodeAt(j)));
 	}
 	
-	return encodedtext;
+	return translatedText;
+};
+
+Cipher.prototype.encode = function(plaintext) {
+	console.log('##################################### encode');
+	console.log('  plaintext = ' + plaintext);
+	return this.translation_helper(plaintext);
 };
 
 Cipher.prototype.decode = function(encodedtext) {
-	// Render the key of the same length of the text to decode
-	var key = '';
-	if (this.key.length >= encodedtext.length) {
-		key = this.key.substr(0, encodedtext.length);
-	} else {
-		var repetitions = Math.ceil(encodedtext.length / this.key.length);
-		
-		for (var i = 0; i < repetitions; ++i) {
-			key += this.key;
-		}
-		
-		// Cut the excesses
-		key = key.substr(0, encodedtext.length);
-	}
-	
-	
+	console.log('##################################### decode');
+	console.log('encodedtext = ' + encodedtext);
+	return this.translation_helper(encodedtext);
 };
 
 module.exports = Cipher;

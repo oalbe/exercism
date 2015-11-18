@@ -3,14 +3,14 @@ var Cipher = require('./simple-cipher');
 describe('Random key cipher', function () {
   var cipher = new Cipher();
 
-  it('has a key made of letters', function () {
+  xit('has a key made of letters', function () {
     expect(cipher.key).toMatch(/[a-z]+/);
   });
 
   // Here we take advantage of the fact that plaintext of "aaa..."
   // outputs the key. This is a critical problem with shift ciphers, some
   // characters will always output the key verbatim.
-  it('can encode', function () {
+  xit('can encode', function () {
     expect(cipher.encode('aaaaaaaaaa')).toEqual(cipher.key.substr(0, 10));
   });
 
@@ -18,7 +18,7 @@ describe('Random key cipher', function () {
     expect(cipher.decode(cipher.key.substr(0, 10))).toEqual('aaaaaaaaaa');
   });
 
-  xit('is reversible', function () {
+  it('is reversible', function () {
     var plaintext = 'abcdefghij';
     expect(cipher.decode(cipher.encode(plaintext))).toEqual(plaintext);
   });
