@@ -20,10 +20,12 @@ Cipher.prototype.generateRandomKey = function() {
 // Render the key of the same length of the text to encode
 Cipher.prototype.renderKey = function(textLength) {
 	var renderedKey = '';
-	if (this.key.length >= textLength) {
+	var keyLength = this.key.length;
+	
+	if (keyLength >= textLength) {
 		renderedKey = this.key.substr(0, textLength);
 	} else {
-		var repetitions = Math.ceil(textLength / this.key.length);
+		var repetitions = Math.ceil(textLength / keyLength);
 		
 		for (var i = 0; i < repetitions; ++i) {
 			renderedKey += this.key;
@@ -36,35 +38,52 @@ Cipher.prototype.renderKey = function(textLength) {
 	return renderedKey;
 };
 
-Cipher.prototype.translation_helper = function(text) {
+Cipher.prototype.translation_helper = function(text, mode) {
+	// TODO: it isn't strictly required to call this function more than once. Move it.
 	var renderedKey = this.renderKey(text.length);
 	
-	console.log('renderedKey = ' + renderedKey);
+	var absPosition = function(character) {
+		return character.charCodeAt(0) - 97;
+	};
+	
+	
+	var operation = function(leftOperand, rightOperand) {
+		return (leftOperand + 25) - rightOperand;
+	};
+	
+	var modulo = 25;
+	
+	if (mode) {
+		operation = function(leftOperand, rightOperand) {
+			return leftOperand + rightOperand;
+		};
+		
+		modulo = 26;
+	}
 	
 	var translatedText = '';
 	
+	var textLength = text.length;
 	// Create the actual encoded text
-	for (var j = 0; j < text.length; ++j) {
+	for (var j = 0; j < textLength; ++j) {
 		translatedText += String.fromCharCode(
-			Math.abs(text.charCodeAt(j) - renderedKey.charCodeAt(j)) + 97
+			Math.abs(
+				operation(absPosition(text[j]), absPosition(renderedKey[j]))
+				) % modulo + 97
 		);
 		
-		console.log('Math.abs(' + text.charCodeAt(j) + ' - ' + renderedKey.charCodeAt(j) + ') = ' + Math.abs(text.charCodeAt(j) - renderedKey.charCodeAt(j)));
+		console.log('operation(' + absPosition(text[j]) + ', ' + absPosition(renderedKey[j]) + ') = ' + operation(absPosition(text[j]), absPosition(renderedKey[j])) % modulo);
 	}
 	
 	return translatedText;
 };
 
 Cipher.prototype.encode = function(plaintext) {
-	console.log('##################################### encode');
-	console.log('  plaintext = ' + plaintext);
-	return this.translation_helper(plaintext);
+	return this.translation_helper(plaintext, true);
 };
 
 Cipher.prototype.decode = function(encodedtext) {
-	console.log('##################################### decode');
-	console.log('encodedtext = ' + encodedtext);
-	return this.translation_helper(encodedtext);
+	return this.translation_helper(encodedtext, false);
 };
 
 module.exports = Cipher;
