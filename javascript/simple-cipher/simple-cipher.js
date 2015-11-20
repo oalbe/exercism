@@ -1,13 +1,22 @@
 var Cipher = function(providedKey) {
-	this.key = 'undefined' === typeof providedKey ? this.generateRandomKey() : providedKey;
-	console.log(this.key);
+	providedKey = 'undefined' === typeof providedKey ? this.generateRandomKey() : providedKey;
+	
+	if ((providedKey.toUpperCase() === providedKey) || 
+		/[0-9]/g.test(providedKey) || 
+		(0 === providedKey.length)) {
+		throw new Error('Bad key');
+	}
+	
+	this.key = providedKey;
 };
 
+function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Generates a random key one character at time.
+// TODO: figure out if there's a way to generate all the characters at once.
 Cipher.prototype.generateRandomKey = function() {
-	var randomInt = function(min, max) {
-	    return Math.floor(Math.random() * (max - min + 1)) + min;
-	};
-	
 	var randomKey = '';
 	
 	for (var i = 0; i < 100; ++i) {
@@ -38,16 +47,19 @@ Cipher.prototype.renderKey = function(textLength) {
 	return renderedKey;
 };
 
+String.prototype.absPosition = function() {
+	return this.charCodeAt(0) - 97;
+};
+
 Cipher.prototype.translation_helper = function(text, mode) {
 	// TODO: it isn't strictly required to call this function more than once. Move it.
 	var renderedKey = this.renderKey(text.length);
 	
-	var absPosition = function(character) {
-		return character.charCodeAt(0) - 97;
-	};
-	
-	
 	var operation = function(leftOperand, rightOperand) {
+		if (leftOperand < rightOperand) {
+			return (leftOperand + 26) - rightOperand;
+		}
+		
 		return (leftOperand + 25) - rightOperand;
 	};
 	
@@ -62,17 +74,13 @@ Cipher.prototype.translation_helper = function(text, mode) {
 	}
 	
 	var translatedText = '';
-	
 	var textLength = text.length;
+	
 	// Create the actual encoded text
 	for (var j = 0; j < textLength; ++j) {
 		translatedText += String.fromCharCode(
-			Math.abs(
-				operation(absPosition(text[j]), absPosition(renderedKey[j]))
-				) % modulo + 97
+			Math.abs(operation(text[j].absPosition(), renderedKey[j].absPosition())) % modulo + 97
 		);
-		
-		console.log('operation(' + absPosition(text[j]) + ', ' + absPosition(renderedKey[j]) + ') = ' + operation(absPosition(text[j]), absPosition(renderedKey[j])) % modulo);
 	}
 	
 	return translatedText;
