@@ -1,18 +1,22 @@
-var Cipher = function(providedKey) {
-	providedKey = 'undefined' === typeof providedKey ? this.generateRandomKey() : providedKey;
-	
-	if ((providedKey.toUpperCase() === providedKey) || 
-		/[0-9]/g.test(providedKey) || 
-		(0 === providedKey.length)) {
-		throw new Error('Bad key');
-	}
-	
-	this.key = providedKey;
+// Returns the absolute position of a character in the alphabet. In the range 0-25
+String.prototype.absPosition = function() {
+	return this.charCodeAt(0) - 97;
 };
 
 function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+var Cipher = function(providedKey) {
+	providedKey = 'undefined' === typeof providedKey ? this.generateRandomKey() : providedKey;
+	
+	if ((providedKey.toUpperCase() === providedKey) || 
+		/[0-9]/g.test(providedKey) || (0 === providedKey.length)) {
+		throw new Error('Bad key');
+	}
+	
+	this.key = providedKey;
+};
 
 // Generates a random key one character at time.
 // TODO: figure out if there's a way to generate all the characters at once.
@@ -26,13 +30,18 @@ Cipher.prototype.generateRandomKey = function() {
 	return randomKey;
 };
 
-// Render the key of the same length of the text to encode
+// Render the key the same length of the text to translate
 Cipher.prototype.renderKey = function(textLength) {
-	var renderedKey = '';
 	var keyLength = this.key.length;
 	
-	if (keyLength >= textLength) {
-		renderedKey = this.key.substr(0, textLength);
+	if (keyLength === textLength) {
+		return this.key;
+	}
+	
+	var renderedKey = '';
+	
+	if (keyLength > textLength) {
+		return this.key.substr(0, textLength);
 	} else {
 		var repetitions = Math.ceil(textLength / keyLength);
 		
@@ -45,10 +54,6 @@ Cipher.prototype.renderKey = function(textLength) {
 	}
 	
 	return renderedKey;
-};
-
-String.prototype.absPosition = function() {
-	return this.charCodeAt(0) - 97;
 };
 
 Cipher.prototype.translation_helper = function(text, mode) {
@@ -76,7 +81,7 @@ Cipher.prototype.translation_helper = function(text, mode) {
 	var translatedText = '';
 	var textLength = text.length;
 	
-	// Create the actual encoded text
+	// Actually translate the text
 	for (var j = 0; j < textLength; ++j) {
 		translatedText += String.fromCharCode(
 			Math.abs(operation(text[j].absPosition(), renderedKey[j].absPosition())) % modulo + 97
