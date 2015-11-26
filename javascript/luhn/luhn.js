@@ -1,5 +1,6 @@
 function Luhn(input) {
 	this.number = input.toString();
+	
 	this.checkDigit = parseInt(this.number[this.number.length - 1]);
 	this.addends = this.computeAddends();
 	this.checksum = this.computeChecksum();
@@ -37,16 +38,18 @@ Luhn.prototype.isValid = function() {
 	return (0 === (this.checksum % 10)) ? true : false;
 };
 
+// this is a static method
 Luhn.create = function(input) {
-	var paddedInput = parseInt(input.toString() + '0');
+	// For easily dealing with digits. Not the most optimized idea here, though.
+	input = input.toString();
+	var paddedInput = parseInt(input + '0');
 	var number = new Luhn(paddedInput);
 
 	if (!number.isValid()) {	
-		var numberChecksum = number.checksum.toString();
+		var numChecksum = number.checksum.toString();
+		var generatedCheckDigit = 10 - parseInt(numChecksum[numChecksum.length - 1]);
 		
-		var generatedCheckDigit = 10 - parseInt(numberChecksum[numberChecksum.length - 1]);
-		
-		return parseInt(input.toString() + generatedCheckDigit);
+		return parseInt(input + generatedCheckDigit);
 	}
 	
 	return paddedInput;
