@@ -6,15 +6,15 @@ describe('Triplet', function () {
     expect(new Triplet(3, 4, 5).sum()).toBe(12);
   });
 
-  xit('calculates the product', function () {
+  it('calculates the product', function () {
     expect(new Triplet(3, 4, 5).product()).toBe(60);
   });
 
-  xit('can recognize a pythagorean triplet', function () {
+  it('can recognize a pythagorean triplet', function () {
     expect(new Triplet(3, 4, 5).isPythagorean()).toBe(true);
   });
 
-  xit('can recognize a non pythagorean triplet', function () {
+  it('can recognize a non pythagorean triplet', function () {
     expect(new Triplet(5, 6, 7).isPythagorean()).toBe(false);
   });
 
