@@ -5,21 +5,21 @@ function Squares(limit) {
 }
 
 Squares.prototype._square_of_sums = function(limit) {
-	var sum = 0;
+	var sum = 1;
 	for (var i = 2; i <= limit; ++i) {
 		sum += i;
 	}
 	
-	return Math.pow(sum + 1, 2);
+	return sum * sum;
 };
 
 Squares.prototype._sum_of_squares = function(limit) {
-	var sum = 0;
+	var sum = 1;
 	for (var i = 2; i <= limit; ++i) {
-		sum += Math.pow(i, 2);
+		sum += i * i;
 	}
 	
-	return sum + 1;
+	return sum;
 };
 
 module.exports = Squares;
