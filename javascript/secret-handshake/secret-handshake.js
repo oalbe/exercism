@@ -6,43 +6,33 @@ function SecretHandshake(input) {
 	this.number = input;
 }
 
-function toBinary(decimal) {
-	return decimal.toString(2);
-}
+var comm = {
+	1: 'wink',
+	10: 'double blink',
+	100: 'close your eyes',
+	1000: 'jump'
+};
 
 SecretHandshake.prototype.commands = function() {
-	var commandsSequence = [];
-	var binInput = toBinary(this.number);
-	var binInputLength = binInput.length;
+	var binaryInput = this.number.toString(2); // Transforms the decimal number to binary
+	var limit = binaryInput.length - 1;
 	
-	var binArray = [];
-	for (var i = binInputLength - 1; i >= 0; --i) {
-		binArray.push(
-				binInput[i] * (Math.pow(10, (binInputLength - 1) - i))
-		);
+	var reverseFlag = false;
+	if (4 <= limit) {
+		binaryInput = binaryInput.substring(1);
+		limit -= 1;
+		reverseFlag = true;
 	}
 	
-	console.log(binArray);
-	
-	var binArrayLength = binArray.length;
-	for (var j = 0; j < binArrayLength; ++j) {
-		switch (binArray[j]) {
-			case 1:
-				commandsSequence.push('wink');
-				break;
-			case 10:
-				commandsSequence.push('double blink');
-				break;
-			case 100:
-				commandsSequence.push('close your eyes');
-				break;
-			case 1000:
-				commandsSequence.push('jump');
-				break;
-			case 10000:
-				commandsSequence = commandsSequence.reverse();
-				break;
+	var commandsSequence = [];
+	for (var i = limit; i >= 0; --i) {
+		if ('0' !== binaryInput[i]) {
+			commandsSequence.push(comm[binaryInput[i] * Math.pow(10, limit - i)]);
 		}
+	}
+	
+	if (reverseFlag) {
+		return commandsSequence.reverse();
 	}
 	
 	return commandsSequence;
