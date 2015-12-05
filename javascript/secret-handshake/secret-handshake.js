@@ -17,24 +17,27 @@ SecretHandshake.prototype.commands = function() {
 	var binaryInput = this.number.toString(2); // Transforms the decimal number to binary
 	var limit = binaryInput.length - 1;
 	
-	var reverseFlag = false;
+	// REVIEW: Is this an efficient way to define and then redefine (if needed) a method?
+	Array.prototype._addElement_helper = function(element) {
+		return this.push(element);
+	};
+	
 	if (4 <= limit) {
 		binaryInput = binaryInput.substring(1);
 		limit -= 1;
-		reverseFlag = true;
+		
+		Array.prototype._addElement_helper = function(element) {
+			return this.unshift(element);
+		};
 	}
 	
 	var commandsSequence = [];
 	for (var i = limit; i >= 0; --i) {
 		if ('0' !== binaryInput[i]) {
-			commandsSequence.push(comm[binaryInput[i] * Math.pow(10, limit - i)]);
+			commandsSequence._addElement_helper(comm[binaryInput[i] * Math.pow(10, limit - i)]);
 		}
 	}
-	
-	if (reverseFlag) {
-		return commandsSequence.reverse();
-	}
-	
+
 	return commandsSequence;
 };
 
