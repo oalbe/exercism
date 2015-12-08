@@ -1,3 +1,4 @@
+// REVIEW: Is this considered cheating?
 function LinkedList() {}
 
 LinkedList.prototype = Array.prototype;
