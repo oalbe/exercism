@@ -27,32 +27,31 @@ function WordProblem(problem) {
 
 // TODO: This method is theoretically slow, do something for it.
 WordProblem.prototype.isValidQuestion = function(explodedQuestion) {
-	var flag = false;
-	for (var key in operations) {
-		if (-1 !== explodedQuestion.indexOf(key)) {
-			flag = true;
+	for (var property in operations) {
+		if (-1 !== explodedQuestion.indexOf(property)) {
+			return true;
 		}
 	}
 	
-	return flag;
+	return false;
 };
 
 WordProblem.prototype.answer = function() {
 	// TODO: Following line gives me shudders...
-	var cQuestion = this.question.replace(/\?/, '').replace(/\ by/g, '').split(' ');
+	var cInput = this.question.replace(/\?/, '').replace(/\ by/g, '').split(' ');
 	
-	if (!this.isValidQuestion(cQuestion)) {
+	if (!this.isValidQuestion(cInput)) {
 		throw new ArgumentError();
 	}
 
 	var result = 0;
-	var limit = cQuestion.length;
+	var limit = cInput.length;
 	for (var i = 0; i < limit; ++i) {
-		if (operations[cQuestion[i]]) {
+		if (operations[cInput[i]]) {
 			if (result) {
-				result = operations[cQuestion[i]](parseInt(result), parseInt(cQuestion[i + 1]));
+				result = operations[cInput[i]](parseInt(result), parseInt(cInput[i + 1]));
 			} else {
-				result = operations[cQuestion[i]](parseInt(cQuestion[i - 1]), parseInt(cQuestion[i + 1]));
+				result = operations[cInput[i]](parseInt(cInput[i - 1]), parseInt(cInput[i + 1]));
 			}
 		}
 	}
