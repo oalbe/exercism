@@ -4,17 +4,28 @@ exports.ArgumentError = ArgumentError;
 function ArgumentError() {}
 
 var operations = {
-	'plus': true,
-	'minus': true,
-	'multiplied': true,
-	'divided': true
+	plus: function(lval, rval) {
+		return lval + rval;
+	},
+	
+	minus: function(lval, rval) {
+		return lval - rval;
+	},
+	
+	multiplied: function(lval, rval) {
+		return lval * rval;
+	},
+	
+	divided: function(lval, rval) {
+		return lval / rval;
+	}
 };
 
 function WordProblem(problem) {
 	this.question = problem;
 }
 
-// TODO: This method is very inelegant (and theoretically slow), do something for it.
+// TODO: This method is theoretically slow, do something for it.
 WordProblem.prototype.isValidQuestion = function(explodedQuestion) {
 	var flag = false;
 	for (var key in operations) {
@@ -26,26 +37,9 @@ WordProblem.prototype.isValidQuestion = function(explodedQuestion) {
 	return flag;
 };
 
-WordProblem.prototype.operation = function(op, lopr, ropr) {
-	lopr = parseInt(lopr);
-	ropr = parseInt(ropr);
-	
-	switch (op) {
-		case 'plus':
-			return lopr + ropr;
-		case 'minus':
-			return lopr - ropr;
-		case 'multiplied':
-			return lopr * ropr;
-		case 'divided':
-			return lopr / ropr;
-	}
-};
-
 WordProblem.prototype.answer = function() {
-	// TODO: Next two line give me shudders...
-	var cleaned = this.question.replace(/\?/, '').replace(/\ by/g, '');
-	var cQuestion = cleaned.split(' ');
+	// TODO: Following line gives me shudders...
+	var cQuestion = this.question.replace(/\?/, '').replace(/\ by/g, '').split(' ');
 	
 	if (!this.isValidQuestion(cQuestion)) {
 		throw new ArgumentError();
@@ -56,9 +50,9 @@ WordProblem.prototype.answer = function() {
 	for (var i = 0; i < limit; ++i) {
 		if (operations[cQuestion[i]]) {
 			if (result) {
-				result = this.operation(cQuestion[i], result, cQuestion[i + 1]);
+				result = operations[cQuestion[i]](parseInt(result), parseInt(cQuestion[i + 1]));
 			} else {
-				result = this.operation(cQuestion[i], cQuestion[i - 1], cQuestion[i + 1]);
+				result = operations[cQuestion[i]](parseInt(cQuestion[i - 1]), parseInt(cQuestion[i + 1]));
 			}
 		}
 	}
