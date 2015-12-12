@@ -25,7 +25,7 @@ function WordProblem(problem) {
 	this.question = problem;
 }
 
-// TODO: This method is theoretically slow, do something for it.
+// TODO: Optimize the method so it does not need to use `indexOf()`, which probably hides a loop.
 WordProblem.prototype.isValidQuestion = function(explodedQuestion) {
 	for (var property in operations) {
 		if (-1 !== explodedQuestion.indexOf(property)) {
@@ -37,7 +37,7 @@ WordProblem.prototype.isValidQuestion = function(explodedQuestion) {
 };
 
 WordProblem.prototype.answer = function() {
-	// TODO: Following line gives me shudders...
+	// TODO: There must be a better way than using replace.
 	var cInput = this.question.replace(/\?/, '').replace(/\ by/g, '').split(' ');
 	
 	if (!this.isValidQuestion(cInput)) {
