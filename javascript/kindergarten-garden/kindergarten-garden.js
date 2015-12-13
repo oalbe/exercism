@@ -31,6 +31,7 @@ Garden.prototype.plantsList = {
 	'V': 'violets'
 };
 
+// TODO: This method could use some refactoring and performances improvements.
 Garden.prototype._parse_plants = function(child) {
 	var plantsArray = this.plants.split('\n');
 	
