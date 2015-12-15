@@ -14,7 +14,7 @@ describe('BinarySearchTree', function() {
     expect(4).toEqual(new Bst(4).data);
   });
 
-  xit('inserting less', function() {
+  it('inserting less', function() {
     var four;
 
     four = new Bst(4);
@@ -34,7 +34,7 @@ describe('BinarySearchTree', function() {
     expect(4).toEqual(four.left.data);
   });
 
-  xit('inserting right', function() {
+  it('inserting right', function() {
     var four;
 
     four = new Bst(4);
@@ -44,7 +44,7 @@ describe('BinarySearchTree', function() {
     expect(5).toEqual(four.right.data);
   });
 
-  xit('complex tree', function() {
+  it('complex tree', function() {
     var four;
 
     four = new Bst(4);
@@ -64,11 +64,11 @@ describe('BinarySearchTree', function() {
     expect(7).toEqual(four.right.right.data);
   });
 
-  xit('iterating one element', function() {
+  it('iterating one element', function() {
     expect([4]).toEqual(recordAllData(new Bst(4)));
   });
 
-  xit('iterating over smaller element', function() {
+  it('iterating over smaller element', function() {
     var four;
 
     four = new Bst(4);
