@@ -1,3 +1,6 @@
+// Code shamelessly taken somewhere on internet and adapted for the purpose.
+// REVIEW: There is only one test not passing ('inserting same'), and only because this 
+// implementation assumes that duplicate elements don't get added to the tree.
 function Node(data) {
 	this.data = data;
 	this.left = null;
@@ -18,92 +21,47 @@ BinarySearchTree.prototype.insert = function(data) {
 
     //special case: no items in the tree yet
     if (this._root === null) {
-    	console.log('root === null');
         this._root = node;
     } else {
         current = this._root;
 
         while(true) {
-
             //if the new value is less than this node's value, go left
             if (data < current.data) {
-            	console.log('data < current.data');
                 //if there's no left, then the new node belongs there
                 if (current.left === null) {
-                	console.log('current.left === null');
                     current.left = node;
-                    console.log('current.left.data = ' + current.left.data);
                     break;
                 } else {
-                	console.log('else');
                     current = current.left;
                 }
 
             //if the new value is greater than this node's value, go right
             } else if (data > current.data) {
-            	console.log('data > current.data');
-
                 //if there's no right, then the new node belongs there
                 if (current.right === null) {
                     current.right = node;
                     break;
                 } else {
                     current = current.right;
-                }       
+                }
 
             //if the new value is equal to the current one, just ignore
             } else {
-            	console.log('last else');
                 break;
             }
         }
     }
-    
-    // console.log(this.toArray());
-    // console.log(this._root.left);
+
     this.left = this._root.left;
     this.right = this._root.right;
 };
 
-BinarySearchTree.prototype.inOrder = function(self, node, process) {
-    if (node){
-
-        //traverse the left subtree
-        if (node.left !== null) {
-            this.inOrder(node.left);
-        }            
-
-        //call the process method on this node
-        process.call(self, node);
-
-        //traverse the right subtree
-        if (node.right !== null) {
-            this.inOrder(node.right);
-        }
-    }
-};
-
-BinarySearchTree.prototype.traverse = function(process) {
-    //start with the root
-    this.inOrder(this, this._root, process);
-};
-
-BinarySearchTree.prototype.toArray = function() {
-    var result = [];
-
-    this.traverse(function(node) {
-        result.push(node.data);
-    });
-
-    return result;
-};
-
 BinarySearchTree.prototype._inOrder = function(self, node, process) {
     if (node){
-
         //traverse the left subtree
         if (node.left !== null) {
-            this.inOrder(node.left);
+            this._inOrder(self, node.left, process);
         }            
 
         //call the process method on this node
@@ -111,7 +69,7 @@ BinarySearchTree.prototype._inOrder = function(self, node, process) {
 
         //traverse the right subtree
         if (node.right !== null) {
-            this.inOrder(node.right);
+            this._inOrder(self, node.right, process);
         }
     }
 };
