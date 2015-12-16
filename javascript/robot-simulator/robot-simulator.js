@@ -1,5 +1,3 @@
-function Robot() {}
-
 var directions = {
 	'north': 0,
 	'east': 1,
@@ -15,6 +13,18 @@ function isValidDirection(direction) {
 	return false;
 }
 
+function orderedKeys(object) {
+	var keys = [];
+	
+	for (var key in object) {
+		keys[object[key]] = key;
+	}
+	
+	return keys;
+}
+
+function Robot() {}
+
 Robot.prototype.orient = function(givenDirection) {
 	if (!isValidDirection(givenDirection)) {
 		throw 'Invalid Robot Bearing';
@@ -23,12 +33,13 @@ Robot.prototype.orient = function(givenDirection) {
 	this.bearing = givenDirection;
 };
 
+// The code duplication in `turnRight()` and `turnLeft()` methods does not 
+// seem to be worth the effort of eliminating it.
 Robot.prototype.turnRight = function() {
 	if ('west' === this.bearing) {
 		this.bearing = 'north';
 	} else {
-		// REVIEW: The `keys()` method is not guaranteed to keep the order of the keys.
-		var dirs = Object.keys(directions);
+		var dirs = orderedKeys(directions);
 		this.bearing = dirs[directions[this.bearing] + 1];
 	}
 };
@@ -37,8 +48,7 @@ Robot.prototype.turnLeft = function() {
 	if ('north' === this.bearing) {
 		this.bearing = 'west';
 	} else {
-		// REVIEW: The `keys()` method is not guaranteed to keep the order of the keys.
-		var dirs = Object.keys(directions);
+		var dirs = orderedKeys(directions);
 		this.bearing = dirs[directions[this.bearing] - 1];
 	}
 };
