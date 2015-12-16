@@ -6,13 +6,15 @@ var directions = {
 };
 
 function isValidDirection(direction) {
-	if (directions[direction] > -1 && directions[direction] < 5) {
+	if (direction in directions) {
 		return true;
 	}
 	
 	return false;
 }
 
+// Returns the keys of the object provided, keeping the order of the keys imposed by the object.
+// Note: the values of the keys must be unique integers.
 function orderedKeys(object) {
 	var keys = [];
 	
@@ -69,6 +71,7 @@ Robot.prototype.advance = function() {
 	}
 };
 
+// TODO: This method can be optimized.
 Robot.prototype.instructions = function(instructions) {
 	var instructionsList = [];
 	
@@ -100,6 +103,7 @@ Robot.prototype.evaluate = function(movements) {
 	
 	var limit = translatedMovements.length;
 	for (var i = 0; i < limit; ++i) {
+		// Check that the array element is actually an existing method before calling it.
 		if ('function' === typeof this[translatedMovements[i]]) {
 			this[translatedMovements[i]]();
 		}
