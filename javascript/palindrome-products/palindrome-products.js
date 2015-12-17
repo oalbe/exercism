@@ -6,11 +6,6 @@ Array.prototype.min = function() {
   	return Math.min.apply(null, this);
 };
 
-function Palindromes(initObject) {
-	this.maxFactor = initObject.maxFactor;
-	this.minFactor = 'undefined' === typeof initObject.minFactor ? 1 : initObject.minFactor;
-}
-
 function isPalindrome(number) {
 	var stringizedNumber = number.toString();
 	
@@ -22,6 +17,11 @@ function isPalindrome(number) {
 	}
 	
 	return true;
+}
+
+function Palindromes(initObject) {
+	this.maxFactor = initObject.maxFactor;
+	this.minFactor = 'undefined' === typeof initObject.minFactor ? 1 : initObject.minFactor;
 }
 
 Palindromes.prototype.generate = function() {
@@ -40,18 +40,21 @@ Palindromes.prototype.generate = function() {
 	}
 };
 
-Palindromes.prototype.largest = function() {
+Palindromes.prototype._largest_smallest_helper = function(callback) {
+	var product = callback.call(this.pProducts);
+	
 	return {
-		value: this.pProducts.max(),
-		factors: [this.pFactors[this.pProducts.max()]]
+		value: product,
+		factors: [this.pFactors[product]]
 	};
 };
 
+Palindromes.prototype.largest = function() {
+	return this._largest_smallest_helper(Array.prototype.max);
+};
+
 Palindromes.prototype.smallest = function() {
-	return {
-		value: this.pProducts.min(),
-		factors: [this.pFactors[this.pProducts.min()]]
-	};
+	return this._largest_smallest_helper(Array.prototype.min);
 };
 
 module.exports = Palindromes;
