@@ -41,7 +41,8 @@ Palindromes.prototype.generate = function() {
 };
 
 Palindromes.prototype._largest_smallest_helper = function(callback) {
-	var product = callback.call(this.pProducts);
+	var product = this.pProducts::callback();
+	// var product = callback.call(this.pProducts);
 	
 	return {
 		value: product,
