@@ -18,7 +18,7 @@ describe('say', function () {
     expect(say.inEnglish(20)).toBe('twenty');
   });
 
-  xit('twenty-two', function () {
+  it('twenty-two', function () {
     expect(say.inEnglish(22)).toBe('twenty-two');
   });
 
