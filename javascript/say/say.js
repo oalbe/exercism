@@ -94,6 +94,7 @@ Say.inEnglish = function(number) {
 				++position;
 				break;
 			case 3:
+			case 6:
 				if ('0' === digits[i]) {
 					++position;
 					break;
@@ -124,6 +125,67 @@ Say.inEnglish = function(number) {
 				}
 				
 				englishNumber.unshift(lastFourDigits);
+				
+				++position;
+				break;
+			case 5:
+				if ('0' === digits[i]) {
+					++position;
+					break;
+				}
+				
+				var lastFiveDigits = '';
+				if ('1' === digits[i]) {
+					var temp = englishNumber.pop().split(' ');
+					
+					// Remove the first (from left) element from the number so far.
+					temp.shift();
+					
+					lastFiveDigits = unclassifiables[digits[i] + digits[i + i]];
+					
+					englishNumber.unshift(lastFiveDigits + ' ' + temp.join(' '));
+					
+					++position;
+					break;
+				}
+				
+				lastFiveDigits = tens[digits[i]] + '-' + englishNumber.pop();
+				
+				englishNumber.unshift(lastFiveDigits);
+			
+				++position;
+				break;
+			/*case 6:
+				if ('0' === digits[i]) {
+					++position;
+					break;
+				}
+				
+				var lastSixDigits = '';
+				if (englishNumber.length > 0) {
+					lastSixDigits = unities[digits[i]] + ' hundred ' + englishNumber.pop();
+				} else {
+					lastSixDigits = unities[digits[i]] + ' hundred';
+				}
+				
+				englishNumber.unshift(lastSixDigits);
+				
+				++position;
+				break;*/
+			case 7:
+				if ('0' === digits[i]) {
+					++position;
+					break;
+				}
+				
+				var lastSevenDigits = '';
+				if (englishNumber.length > 0) {
+					lastSevenDigits = unities[digits[i]] + ' million ' + englishNumber.pop();
+				} else {
+					lastSevenDigits = unities[digits[i]] + ' million';
+				}
+				
+				englishNumber.unshift(lastSevenDigits);
 				
 				++position;
 				break;

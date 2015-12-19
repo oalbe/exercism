@@ -37,8 +37,24 @@ describe('say', function () {
   it('one thousand two hundred thirty-four', function () {
     expect(say.inEnglish(1234)).toBe('one thousand two hundred thirty-four');
   });
+  
+  it('eleven thousand two hundred thirty-four', function () {
+    expect(say.inEnglish(11234)).toBe('eleven thousand two hundred thirty-four');
+  });
+  
+  it('thirty-three thousand two hundred thirty-four', function () {
+    expect(say.inEnglish(33234)).toBe('thirty-three thousand two hundred thirty-four');
+  });
+  
+  it('one hundred thirty-three thousand two hundred thirty-four', function () {
+    expect(say.inEnglish(133234)).toBe('one hundred thirty-three thousand two hundred thirty-four');
+  });
+  
+  it('five hundred forty-three thousand eight hundred ninety-two', function () {
+    expect(say.inEnglish(543892)).toBe('five hundred forty-three thousand eight hundred ninety-two');
+  });
 
-  xit('one million', function () {
+  it('one million', function () {
     expect(say.inEnglish(1000000)).toBe('one million');
   });
 
