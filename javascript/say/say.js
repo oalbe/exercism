@@ -93,6 +93,40 @@ Say.inEnglish = function(number) {
 				
 				++position;
 				break;
+			case 3:
+				if ('0' === digits[i]) {
+					++position;
+					break;
+				}
+				
+				var lastThreeDigits = '';
+				if (englishNumber.length > 0) {
+					lastThreeDigits = unities[digits[i]] + ' hundred ' + englishNumber.pop();
+				} else {
+					lastThreeDigits = unities[digits[i]] + ' hundred';
+				}
+				
+				englishNumber.unshift(lastThreeDigits);
+				
+				++position;
+				break;
+			case 4:
+				if ('0' === digits[i]) {
+					++position;
+					break;
+				}
+				
+				var lastFourDigits = '';
+				if (englishNumber.length > 0) {
+					lastFourDigits = unities[digits[i]] + ' thousand ' + englishNumber.pop();
+				} else {
+					lastFourDigits = unities[digits[i]] + ' thousand';
+				}
+				
+				englishNumber.unshift(lastFourDigits);
+				
+				++position;
+				break;
 		}
 	}
 	

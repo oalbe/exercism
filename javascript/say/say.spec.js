@@ -22,19 +22,19 @@ describe('say', function () {
     expect(say.inEnglish(22)).toBe('twenty-two');
   });
 
-  xit('one hundred', function () {
+  it('one hundred', function () {
     expect(say.inEnglish(100)).toBe('one hundred');
   });
 
-  xit('one hundred twenty-three', function () {
+  it('one hundred twenty-three', function () {
     expect(say.inEnglish(123)).toBe('one hundred twenty-three');
   });
 
-  xit('one thousand', function () {
+  it('one thousand', function () {
     expect(say.inEnglish(1000)).toBe('one thousand');
   });
 
-  xit('one thousand two hundred thirty-four', function () {
+  it('one thousand two hundred thirty-four', function () {
     expect(say.inEnglish(1234)).toBe('one thousand two hundred thirty-four');
   });
 
