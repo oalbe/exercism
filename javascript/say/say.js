@@ -42,10 +42,6 @@ Say.inEnglish = function(number) {
 		return unities[number];
 	}
 	
-	if (tens[number]) {
-		return tens[number];
-	}
-	
 	var englishNumber = [];
 	
 	var digits = number.toString();
@@ -93,8 +89,8 @@ Say.inEnglish = function(number) {
 				
 				++position;
 				break;
-			case 3:
 			case 6:
+			case 3:
 				if ('0' === digits[i]) {
 					++position;
 					break;
@@ -141,7 +137,7 @@ Say.inEnglish = function(number) {
 					// Remove the first (from left) element from the number so far.
 					temp.shift();
 					
-					lastFiveDigits = unclassifiables[digits[i] + digits[i + i]];
+					lastFiveDigits = unclassifiables[digits[i] + digits[i + 1]];
 					
 					englishNumber.unshift(lastFiveDigits + ' ' + temp.join(' '));
 					
@@ -186,6 +182,61 @@ Say.inEnglish = function(number) {
 				}
 				
 				englishNumber.unshift(lastSevenDigits);
+				
+				++position;
+				break;
+			case 8:
+				if ('0' === digits[i]) {
+					++position;
+					break;
+				}
+				
+				var lastEightDigits = '';
+				
+				var tempEight = englishNumber.pop().split(' ');
+				if ('1' === digits[i]) {
+					// Remove the first (from left) element from the number so far.
+					tempEight.shift();
+					
+					lastEightDigits = unclassifiables[digits[i] + digits[i + 1]];
+					
+					englishNumber.unshift(lastEightDigits + ' ' + tempEight.join(' '));
+					
+					++position;
+					break;
+				}
+				
+				if ('0' === digits[i + 1]) {
+					lastEightDigits = tens[digits[i]];
+				} else {
+					lastEightDigits = tens[digits[i]] + '-';
+				}
+				
+				if (-1 === tempEight.indexOf('million')) {
+					englishNumber.unshift(lastEightDigits + ' million ' + tempEight.join(' '));
+					
+					++position;
+					break;
+				}
+
+				englishNumber.unshift(lastEightDigits + tempEight.join(' '));
+				
+				++position;
+				break;
+			case 9:
+				if ('0' === digits[i]) {
+					++position;
+					break;
+				}
+				
+				var lastNineDigits = '';
+				if (englishNumber.length > 0) {
+					lastNineDigits = unities[digits[i]] + ' hundred ' + englishNumber.pop();
+				} else {
+					lastNineDigits = unities[digits[i]] + ' hundred';
+				}
+				
+				englishNumber.unshift(lastNineDigits);
 				
 				++position;
 				break;
