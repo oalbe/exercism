@@ -48,23 +48,18 @@ Say.inEnglish = function(number) {
 	var digitsLength = digits.length;
 	var position = 1;
 	for (var i = digitsLength - 1; i >= 0; --i) {
+		if ('0' === digits[i]) {
+			++position;
+			continue;
+		}
+
 		switch (position) {
 			case 1:
-				if ('0' === digits[i]) {
-					++position;
-					break;
-				}
-				
 				englishNumber.unshift(unities[digits[i]]);
 				
 				++position;
 				break;
 			case 2:
-				if ('0' === digits[i]) {
-					++position;
-					break;
-				}
-				
 				var lastTwoDigits = '';
 				if ('1' === digits[i]) {
 					lastTwoDigits = unclassifiables[digits[i] + digits[i + 1]];
@@ -91,11 +86,6 @@ Say.inEnglish = function(number) {
 				break;
 			case 6:
 			case 3:
-				if ('0' === digits[i]) {
-					++position;
-					break;
-				}
-				
 				var lastThreeDigits = '';
 				if (englishNumber.length > 0) {
 					lastThreeDigits = unities[digits[i]] + ' hundred ' + englishNumber.pop();
@@ -108,11 +98,6 @@ Say.inEnglish = function(number) {
 				++position;
 				break;
 			case 4:
-				if ('0' === digits[i]) {
-					++position;
-					break;
-				}
-				
 				var lastFourDigits = '';
 				if (englishNumber.length > 0) {
 					lastFourDigits = unities[digits[i]] + ' thousand ' + englishNumber.pop();
@@ -125,11 +110,6 @@ Say.inEnglish = function(number) {
 				++position;
 				break;
 			case 5:
-				if ('0' === digits[i]) {
-					++position;
-					break;
-				}
-				
 				var lastFiveDigits = '';
 				if ('1' === digits[i]) {
 					var temp = englishNumber.pop().split(' ');
@@ -152,11 +132,6 @@ Say.inEnglish = function(number) {
 				++position;
 				break;
 			/*case 6:
-				if ('0' === digits[i]) {
-					++position;
-					break;
-				}
-				
 				var lastSixDigits = '';
 				if (englishNumber.length > 0) {
 					lastSixDigits = unities[digits[i]] + ' hundred ' + englishNumber.pop();
@@ -169,11 +144,6 @@ Say.inEnglish = function(number) {
 				++position;
 				break;*/
 			case 7:
-				if ('0' === digits[i]) {
-					++position;
-					break;
-				}
-				
 				var lastSevenDigits = '';
 				if (englishNumber.length > 0) {
 					lastSevenDigits = unities[digits[i]] + ' million ' + englishNumber.pop();
@@ -186,11 +156,6 @@ Say.inEnglish = function(number) {
 				++position;
 				break;
 			case 8:
-				if ('0' === digits[i]) {
-					++position;
-					break;
-				}
-				
 				var lastEightDigits = '';
 				
 				var tempEight = englishNumber.pop().split(' ');
@@ -224,11 +189,6 @@ Say.inEnglish = function(number) {
 				++position;
 				break;
 			case 9:
-				if ('0' === digits[i]) {
-					++position;
-					break;
-				}
-				
 				var lastNineDigits = '';
 				if (englishNumber.length > 0) {
 					lastNineDigits = unities[digits[i]] + ' hundred ' + englishNumber.pop();
