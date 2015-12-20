@@ -2,7 +2,7 @@ var say = require('./say');
 
 describe('say', function () {
 
-  xit('zero', function () {
+  it('zero', function () {
     expect(say.inEnglish(0)).toBe('zero');
   });
 

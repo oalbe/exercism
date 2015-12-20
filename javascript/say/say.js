@@ -43,11 +43,10 @@ Say.inEnglish = function(number) {
 	}
 	
 	var englishNumber = [];
-	
 	var digits = number.toString();
-	var digitsLength = digits.length;
-	var position = 1;
-	for (var i = digitsLength - 1; i >= 0; --i) {
+	
+	var digitsLength = digits.length - 1;
+	for (var i = digitsLength, position = 1; i >= 0; --i) {
 		if ('0' === digits[i]) {
 			++position;
 			continue;
