@@ -199,6 +199,19 @@ Say.inEnglish = function(number) {
 				
 				++position;
 				break;
+			case 10:
+				var lastTenDigits = '';
+				
+				if (englishNumber.length > 0) {
+					lastTenDigits = unities[digits[i]] + ' billion ' + englishNumber.pop();
+				} else {
+					lastTenDigits = unities[digits[i]] + ' billion';
+				}
+				
+				englishNumber.unshift(lastTenDigits);
+				
+				++position;
+				break;
 		}
 	}
 	
