@@ -1,6 +1,6 @@
 function Say() {}
 
-var unclassifiables = {
+var xteen = {
 	'10': 'ten',
 	'11': 'eleven',
 	'12': 'twelve',
@@ -38,6 +38,10 @@ var tens = {
 };
 
 Say.inEnglish = function(number) {
+	if ((0 > number) || (999999999999 < number)) {
+		throw new Error('Number must be between 0 and 999,999,999,999.');
+	}
+	
 	if (unities[number]) {
 		return unities[number];
 	}
@@ -61,7 +65,7 @@ Say.inEnglish = function(number) {
 			case 2:
 				var lastTwoDigits = '';
 				if ('1' === digits[i]) {
-					lastTwoDigits = unclassifiables[digits[i] + digits[i + 1]];
+					lastTwoDigits = xteen[digits[i] + digits[i + 1]];
 					
 					// Remove the, now unnecessary, previous unities English 
 					// version from the array.
@@ -83,8 +87,10 @@ Say.inEnglish = function(number) {
 				
 				++position;
 				break;
-			case 6:
 			case 3:
+			case 6:
+			case 9:
+			case 12:
 				var lastThreeDigits = '';
 				if (englishNumber.length > 0) {
 					lastThreeDigits = unities[digits[i]] + ' hundred ' + englishNumber.pop();
@@ -97,11 +103,20 @@ Say.inEnglish = function(number) {
 				++position;
 				break;
 			case 4:
+			case 7:
+			case 10:
+				var magnitude = ' thousand';
+				if (7 === position) {
+					magnitude = ' million';
+				} else if (10 === position) {
+					magnitude = ' billion';
+				}
+					
 				var lastFourDigits = '';
 				if (englishNumber.length > 0) {
-					lastFourDigits = unities[digits[i]] + ' thousand ' + englishNumber.pop();
+					lastFourDigits = unities[digits[i]] + magnitude + ' ' + englishNumber.pop();
 				} else {
-					lastFourDigits = unities[digits[i]] + ' thousand';
+					lastFourDigits = unities[digits[i]] + magnitude;
 				}
 				
 				englishNumber.unshift(lastFourDigits);
@@ -116,7 +131,7 @@ Say.inEnglish = function(number) {
 					// Remove the first (from left) element from the number so far.
 					temp.shift();
 					
-					lastFiveDigits = unclassifiables[digits[i] + digits[i + 1]];
+					lastFiveDigits = xteen[digits[i] + digits[i + 1]];
 					
 					englishNumber.unshift(lastFiveDigits + ' ' + temp.join(' '));
 					
@@ -124,34 +139,14 @@ Say.inEnglish = function(number) {
 					break;
 				}
 				
-				lastFiveDigits = tens[digits[i]] + '-' + englishNumber.pop();
+				if ('0' === digits[i + 1]) {
+					lastFiveDigits = tens[digits[i]];
+				} else {
+					lastFiveDigits = tens[digits[i]] + '-' + englishNumber.pop();
+				}
 				
 				englishNumber.unshift(lastFiveDigits);
 			
-				++position;
-				break;
-			/*case 6:
-				var lastSixDigits = '';
-				if (englishNumber.length > 0) {
-					lastSixDigits = unities[digits[i]] + ' hundred ' + englishNumber.pop();
-				} else {
-					lastSixDigits = unities[digits[i]] + ' hundred';
-				}
-				
-				englishNumber.unshift(lastSixDigits);
-				
-				++position;
-				break;*/
-			case 7:
-				var lastSevenDigits = '';
-				if (englishNumber.length > 0) {
-					lastSevenDigits = unities[digits[i]] + ' million ' + englishNumber.pop();
-				} else {
-					lastSevenDigits = unities[digits[i]] + ' million';
-				}
-				
-				englishNumber.unshift(lastSevenDigits);
-				
 				++position;
 				break;
 			case 8:
@@ -162,7 +157,7 @@ Say.inEnglish = function(number) {
 					// Remove the first (from left) element from the number so far.
 					tempEight.shift();
 					
-					lastEightDigits = unclassifiables[digits[i] + digits[i + 1]];
+					lastEightDigits = xteen[digits[i] + digits[i + 1]];
 					
 					englishNumber.unshift(lastEightDigits + ' ' + tempEight.join(' '));
 					
@@ -187,31 +182,6 @@ Say.inEnglish = function(number) {
 				
 				++position;
 				break;
-			case 9:
-				var lastNineDigits = '';
-				if (englishNumber.length > 0) {
-					lastNineDigits = unities[digits[i]] + ' hundred ' + englishNumber.pop();
-				} else {
-					lastNineDigits = unities[digits[i]] + ' hundred';
-				}
-				
-				englishNumber.unshift(lastNineDigits);
-				
-				++position;
-				break;
-			case 10:
-				var lastTenDigits = '';
-				
-				if (englishNumber.length > 0) {
-					lastTenDigits = unities[digits[i]] + ' billion ' + englishNumber.pop();
-				} else {
-					lastTenDigits = unities[digits[i]] + ' billion';
-				}
-				
-				englishNumber.unshift(lastTenDigits);
-				
-				++position;
-				break;
 			case 11:
 				var lastElevenDigits = '';
 				
@@ -219,7 +189,7 @@ Say.inEnglish = function(number) {
 				if ('1' === digits[i]) {
 					tempEleven.shift();
 					
-					lastElevenDigits = unclassifiables[digits[i] + digits[i + 1]];
+					lastElevenDigits = xteen[digits[i] + digits[i + 1]];
 					
 					englishNumber.unshift(lastElevenDigits + ' ' + tempEleven.join(' '));
 					
@@ -242,19 +212,6 @@ Say.inEnglish = function(number) {
 				
 				englishNumber.unshift(lastElevenDigits + tempEleven.join(' '));
 				
-				++position;
-				break;
-			case 12:
-				var lastTwelveDigits = '';
-				
-				if (englishNumber.length > 0) {
-					lastTwelveDigits = unities[digits[i]] + ' hundred ' + englishNumber.pop();
-				} else {
-					lastTwelveDigits = unities[digits[i]] + ' hundred';
-				}
-				
-				englishNumber.unshift(lastTwelveDigits);
-
 				++position;
 				break;
 		}
