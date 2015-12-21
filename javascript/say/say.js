@@ -212,6 +212,51 @@ Say.inEnglish = function(number) {
 				
 				++position;
 				break;
+			case 11:
+				var lastElevenDigits = '';
+				
+				var tempEleven = englishNumber.pop().split(' ');
+				if ('1' === digits[i]) {
+					tempEleven.shift();
+					
+					lastElevenDigits = unclassifiables[digits[i] + digits[i + 1]];
+					
+					englishNumber.unshift(lastElevenDigits + ' ' + tempEleven.join(' '));
+					
+					++position;
+					break;
+				}
+				
+				if ('0' === digits[i + 1]) {
+					lastElevenDigits = tens[digits[i]];
+				} else {
+					lastElevenDigits = tens[digits[i]] + '-';
+				}
+				
+				if (-1 === tempEleven.indexOf('billion')) {
+					englishNumber.unshift(lastElevenDigits + ' billion ' + tempEleven.join(' '));
+					
+					++position;
+					break;
+				}
+				
+				englishNumber.unshift(lastElevenDigits + tempEleven.join(' '));
+				
+				++position;
+				break;
+			case 12:
+				var lastTwelveDigits = '';
+				
+				if (englishNumber.length > 0) {
+					lastTwelveDigits = unities[digits[i]] + ' hundred ' + englishNumber.pop();
+				} else {
+					lastTwelveDigits = unities[digits[i]] + ' hundred';
+				}
+				
+				englishNumber.unshift(lastTwelveDigits);
+
+				++position;
+				break;
 		}
 	}
 	

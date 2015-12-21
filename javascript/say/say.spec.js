@@ -95,7 +95,7 @@ describe('say', function () {
     expect(say.inEnglish(1000000000)).toBe('one billion');
   });
 
-  xit('a really big number', function () {
+  it('a really big number', function () {
     var expected = 'nine hundred eighty-seven billion ';
     expected += 'six hundred fifty-four million ';
     expected += 'three hundred twenty-one thousand ';
