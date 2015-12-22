@@ -153,14 +153,14 @@ Say.inEnglish = function(number) {
 				}
 				
 				var mb_illion = 'million';
-				if (8 === position) {
-					mb_illion = 'million';
-				} else if (11 === position) {
+				if (11 === position) {
 					mb_illion = 'billion';
 				}
 				
 				if (-1 === tempEight.indexOf(mb_illion)) {
-					englishNumber.unshift(lastEightDigits + ' ' + mb_illion + ' ' + tempEight.join(' '));
+					englishNumber.unshift(
+						lastEightDigits + ' ' + mb_illion + ' ' + tempEight.join(' ')
+					);
 					
 					++position;
 					break;
