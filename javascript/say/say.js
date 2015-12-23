@@ -62,19 +62,11 @@ Say.inEnglish = function(number) {
 				
 				++position;
 				break;
-			case 2:
-			case 5: case 8: case 11:
-				var lastFiveDigits = '';
-				
+			case 2: case 5: case 8: case 11:
 				var tempFive = [];
-				var space = ' ';
-				if (2 === position) {
-					if (englishNumber.length > 0) {
-						tempFive = englishNumber.pop().split(' ');
-					}
-					
-					space = '';
-				} else {
+				var space = (2 === position) ? '' : ' ';
+				
+				if (englishNumber.length > 0) {
 					tempFive = englishNumber.pop().split(' ');
 				}
 				
@@ -82,20 +74,16 @@ Say.inEnglish = function(number) {
 					// Remove the first (from left) element from the number so far.
 					tempFive.shift();
 					
-					lastFiveDigits = xteen[digits[i] + digits[i + 1]];
-					englishNumber.unshift(lastFiveDigits + space + tempFive.join(' '));
+					var xteenNumber = xteen[digits[i] + digits[i + 1]];
+					englishNumber.unshift(xteenNumber + space + tempFive.join(' '));
 					
 					++position;
 					break;
 				}
 				
-				if ('0' === digits[i + 1]) {
-					lastFiveDigits = tens[digits[i]];
-				} else {
-					lastFiveDigits = tens[digits[i]] + '-';
-				}
+				var currentTwoDigits = tens[digits[i]] + (('0' !== digits[i + 1]) ? '-' : '');
 				
-				if (2 != position) {
+				if (2 !== position) {
 					var mb_illion = 'thousand';
 					if (8 === position) {
 						mb_illion = 'million'
@@ -105,7 +93,7 @@ Say.inEnglish = function(number) {
 					
 					if (-1 === tempFive.indexOf(mb_illion)) {
 						englishNumber.unshift(
-							lastFiveDigits + ' ' + mb_illion + ' ' + tempFive.join(' ')
+							currentTwoDigits + ' ' + mb_illion + ' ' + tempFive.join(' ')
 						);
 						
 						++position;
@@ -113,7 +101,7 @@ Say.inEnglish = function(number) {
 					}
 				}
 				
-				englishNumber.unshift(lastFiveDigits + tempFive.join(' '));
+				englishNumber.unshift(currentTwoDigits + tempFive.join(' '));
 			
 				++position;
 				break;
@@ -128,14 +116,14 @@ Say.inEnglish = function(number) {
 					magnitude = ' billion';
 				}
 					
-				var lastFourDigits = '';
+				var currentOneDigit = '';
 				if (englishNumber.length > 0) {
-					lastFourDigits = unities[digits[i]] + magnitude + ' ' + englishNumber.pop();
+					currentOneDigit = unities[digits[i]] + magnitude + ' ' + englishNumber.pop();
 				} else {
-					lastFourDigits = unities[digits[i]] + magnitude;
+					currentOneDigit = unities[digits[i]] + magnitude;
 				}
 				
-				englishNumber.unshift(lastFourDigits);
+				englishNumber.unshift(currentOneDigit);
 				
 				++position;
 				break;
