@@ -63,42 +63,27 @@ Say.inEnglish = function(number) {
 				++position;
 				break;
 			case 2:
-				var lastTwoDigits = '';
-				
-				var tempTwo = [];
-				if (englishNumber.length > 0) {
-					tempTwo = englishNumber.pop().split(' ');
-				}
-				
-				if ('1' === digits[i]) {
-					lastTwoDigits = xteen[digits[i] + digits[i + 1]];
-					
-					englishNumber.unshift(lastTwoDigits);
-					
-					++position;
-					break;
-				}
-				
-				if ('0' === digits[i + 1]) {
-					lastTwoDigits = tens[digits[i]];
-				} else {
-					lastTwoDigits = tens[digits[i]] + '-';
-				}
-				
-				englishNumber.unshift(lastTwoDigits + tempTwo.join(' '));
-			
-				++position;
-				break;
 			case 5: case 8: case 11:
 				var lastFiveDigits = '';
 				
-				var tempFive = englishNumber.pop().split(' ');
+				var tempFive = [];
+				var space = ' ';
+				if (2 === position) {
+					if (englishNumber.length > 0) {
+						tempFive = englishNumber.pop().split(' ');
+					}
+					
+					space = '';
+				} else {
+					tempFive = englishNumber.pop().split(' ');
+				}
+				
 				if ('1' === digits[i]) {
 					// Remove the first (from left) element from the number so far.
 					tempFive.shift();
 					
 					lastFiveDigits = xteen[digits[i] + digits[i + 1]];
-					englishNumber.unshift(lastFiveDigits + ' ' + tempFive.join(' '));
+					englishNumber.unshift(lastFiveDigits + space + tempFive.join(' '));
 					
 					++position;
 					break;
