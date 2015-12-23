@@ -84,9 +84,7 @@ Say.inEnglish = function(number) {
 			
 				++position;
 				break;
-			case 5:
-			case 8:
-			case 11:
+			case 5: case 8: case 11:
 				var lastFiveDigits = '';
 				
 				var tempFive = englishNumber.pop().split(' ');
@@ -127,26 +125,12 @@ Say.inEnglish = function(number) {
 			
 				++position;
 				break;
-			case 3:
-			case 6:
-			case 9:
-			case 12:
-				var lastThreeDigits = '';
-				if (englishNumber.length > 0) {
-					lastThreeDigits = unities[digits[i]] + ' hundred ' + englishNumber.pop();
-				} else {
-					lastThreeDigits = unities[digits[i]] + ' hundred';
-				}
-				
-				englishNumber.unshift(lastThreeDigits);
-				
-				++position;
-				break;
-			case 4:
-			case 7:
-			case 10:
-				var magnitude = ' thousand';
-				if (7 === position) {
+			case 3: case 6: case 9: case 12: // Deals with hundreds
+			case 4: case 7: case 10:
+				var magnitude = ' hundred';
+				if (4 === position) {
+					magnitude = ' thousand';
+				} else if (7 === position) {
 					magnitude = ' million';
 				} else if (10 === position) {
 					magnitude = ' billion';
