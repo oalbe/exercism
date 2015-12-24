@@ -1,5 +1,3 @@
-function Say() {}
-
 var xteen = {
 	'10': 'ten',
 	'11': 'eleven',
@@ -36,6 +34,8 @@ var tens = {
 	'8': 'eighty',
 	'9': 'ninety'
 };
+
+function Say() {}
 
 Say.inEnglish = function(number) {
 	if ((0 > number) || (999999999999 < number)) {
@@ -107,16 +107,18 @@ Say.inEnglish = function(number) {
 			++position;
 			continue;
 		} else if ((0 === (position % 3)) || (1 === (position % 3))) {
-			// Deals with hundreds, thousands, millions and billions (like 1000, 1.234.567)
-			var magnitude = ' hundred';
-			if (4 === position) {
+			// Deals with hundreds, thousands, millions and billions (like 1000, 9.234.567)
+			var magnitude = '';
+			if (0 === (position % 3)) {
+				magnitude = ' hundred';
+			} else if (4 === position) {
 				magnitude = ' thousand';
 			} else if (7 === position) {
 				magnitude = ' million';
 			} else if (10 === position) {
 				magnitude = ' billion';
 			}
-				
+			
 			var currentOneDigit = '';
 			if (englishNumber.length > 0) {
 				currentOneDigit = unities[digits[i]] + magnitude + ' ' + englishNumber.pop();
