@@ -55,78 +55,79 @@ Say.inEnglish = function(number) {
 			++position;
 			continue;
 		}
-
-		switch (position) {
-			case 1:
-				englishNumber.unshift(unities[digits[i]]);
+		
+		if (1 === position) {
+			// Deals with rightmost digit
+			englishNumber.unshift(unities[digits[i]]);
+				
+			++position;
+			continue;
+		} else if (2 === (position % 3)) {
+			// Deals with tens (tens of hundred, tens of thousand etc.)
+			var temp = [];
+			var space = (2 === position) ? '' : ' ';
+			
+			if (englishNumber.length > 0) {
+				temp = englishNumber.pop().split(' ');
+			}
+			
+			if ('1' === digits[i]) {
+				// Remove the first (from left) element from the number so far.
+				temp.shift();
+				
+				var xteenNumber = xteen[digits[i] + digits[i + 1]];
+				englishNumber.unshift(xteenNumber + space + temp.join(' '));
 				
 				++position;
-				break;
-			case 2: case 5: case 8: case 11:
-				var tempFive = [];
-				var space = (2 === position) ? '' : ' ';
-				
-				if (englishNumber.length > 0) {
-					tempFive = englishNumber.pop().split(' ');
+				continue;
+			}
+			
+			var currentTwoDigits = tens[digits[i]] + (('0' !== digits[i + 1]) ? '-' : '');
+			
+			if (2 !== position) {
+				var magnitude = 'thousand';
+				if (8 === position) {
+					magnitude = 'million'
+				} else if (11 === position) {
+					magnitude = 'billion';
 				}
 				
-				if ('1' === digits[i]) {
-					// Remove the first (from left) element from the number so far.
-					tempFive.shift();
-					
-					var xteenNumber = xteen[digits[i] + digits[i + 1]];
-					englishNumber.unshift(xteenNumber + space + tempFive.join(' '));
+				if (-1 === temp.indexOf(magnitude)) {
+					englishNumber.unshift(
+						currentTwoDigits + ' ' + magnitude + ' ' + temp.join(' ')
+					);
 					
 					++position;
-					break;
+					continue;
 				}
-				
-				var currentTwoDigits = tens[digits[i]] + (('0' !== digits[i + 1]) ? '-' : '');
-				
-				if (2 !== position) {
-					var mb_illion = 'thousand';
-					if (8 === position) {
-						mb_illion = 'million'
-					} else if (11 === position) {
-						mb_illion = 'billion';
-					}
-					
-					if (-1 === tempFive.indexOf(mb_illion)) {
-						englishNumber.unshift(
-							currentTwoDigits + ' ' + mb_illion + ' ' + tempFive.join(' ')
-						);
-						
-						++position;
-						break;
-					}
-				}
-				
-				englishNumber.unshift(currentTwoDigits + tempFive.join(' '));
+			}
 			
-				++position;
-				break;
-			case 3: case 6: case 9: case 12: // Deals with hundreds
-			case 4: case 7: case 10:
-				var magnitude = ' hundred';
-				if (4 === position) {
-					magnitude = ' thousand';
-				} else if (7 === position) {
-					magnitude = ' million';
-				} else if (10 === position) {
-					magnitude = ' billion';
-				}
-					
-				var currentOneDigit = '';
-				if (englishNumber.length > 0) {
-					currentOneDigit = unities[digits[i]] + magnitude + ' ' + englishNumber.pop();
-				} else {
-					currentOneDigit = unities[digits[i]] + magnitude;
-				}
+			englishNumber.unshift(currentTwoDigits + temp.join(' '));
+
+			++position;
+			continue;
+		} else if ((0 === (position % 3)) || (1 === (position % 3))) {
+			// Deals with hundreds, thousands, millions and billions (like 1000, 1.234.567)
+			var magnitude = ' hundred';
+			if (4 === position) {
+				magnitude = ' thousand';
+			} else if (7 === position) {
+				magnitude = ' million';
+			} else if (10 === position) {
+				magnitude = ' billion';
+			}
 				
-				englishNumber.unshift(currentOneDigit);
-				
-				++position;
-				break;
+			var currentOneDigit = '';
+			if (englishNumber.length > 0) {
+				currentOneDigit = unities[digits[i]] + magnitude + ' ' + englishNumber.pop();
+			} else {
+				currentOneDigit = unities[digits[i]] + magnitude;
+			}
+			
+			englishNumber.unshift(currentOneDigit);
+			
+			++position;
+			continue;
 		}
 	}
 	
