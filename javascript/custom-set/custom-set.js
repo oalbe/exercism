@@ -88,4 +88,19 @@ CustomSet.prototype.empty = function() {
 	return this;
 };
 
+// TODO: This could be optimized by looping on the smaller set of the two.
+CustomSet.prototype.intersection = function(set) {
+	var intersect = [];
+	
+	var elements = this.elements;
+	var setLength = set.length;
+	for (var i = 0; i < setLength; ++i) {
+		if (-1 !== elements.indexOf(set.elements[i])) {
+			intersect.push(set.elements[i]);
+		}
+	}
+	
+	return new CustomSet(intersect);
+};
+
 module.exports = CustomSet;

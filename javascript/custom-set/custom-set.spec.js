@@ -43,7 +43,7 @@ describe('CustomSet', function() {
     expect(actual2.eql(expected2)).toBe(true);
   });
 
-  xit('can check for intersection', function() {
+  it('can check for intersection', function() {
     var actual = new CustomSet(['a', 'b', 'c']).intersection(new CustomSet(['a', 'c', 'd']));
     var expected = new CustomSet(['a', 'c']);
     expect(actual.eql(expected)).toBe(true);
