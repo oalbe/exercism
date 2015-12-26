@@ -1,3 +1,4 @@
+// TODO: Try rewriting this exercise as structured directly inherited from Array.
 function CustomSet(arrElements) {
 	this.elements = ('undefined' === typeof arrElements) ? [] : arrElements;
 	
@@ -11,6 +12,10 @@ CustomSet.prototype.sort = function() {
 CustomSet.prototype.eql = function(set) {
 	if (this.elements.length !== set.length) {
 		return false;
+	}
+	
+	if (0 === set.length) {
+		return true;
 	}
 
 	var thisSet = this.elements.sort();
@@ -74,6 +79,13 @@ CustomSet.prototype.disjoint = function(set) {
 	}
 	
 	return true;
+};
+
+CustomSet.prototype.empty = function() {
+	this.elements = [];
+	
+	// For chaining purposes.
+	return this;
 };
 
 module.exports = CustomSet;
