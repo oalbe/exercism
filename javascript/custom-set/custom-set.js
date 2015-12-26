@@ -1,5 +1,5 @@
 function CustomSet(arrElements) {
-	this.elements = arrElements;
+	this.elements = ('undefined' === typeof arrElements) ? [] : arrElements;
 	
 	this.length = this.elements.length;
 }
@@ -51,6 +51,29 @@ CustomSet.prototype.difference = function(set) {
 	}
 	
 	return new CustomSet(diff);
+};
+
+CustomSet.prototype.disjoint = function(set) {
+	if ((0 === set.length) || (0 === this.elements.length)) {
+		return true;
+	}
+	
+	var elements = this.elements
+	var setLength = set.length;
+	for (var i = 0; i < setLength; ++i) {
+		if (-1 !== elements.indexOf(set.elements[i])) {
+			return false;
+		}
+	}
+	
+	var elementsLength = this.elements.length;
+	for (var j = 0; j < elementsLength; ++j) {
+		if (-1 !== set.elements.indexOf(elements[j])) {
+			return false;
+		}
+	}
+	
+	return true;
 };
 
 module.exports = CustomSet;
