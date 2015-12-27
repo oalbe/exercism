@@ -159,4 +159,13 @@ CustomSet.prototype.toList = function() {
 	return this.elements;
 };
 
+CustomSet.prototype.union = function(set) {
+	var setLength = set.length;
+	for (var i = 0; i < setLength; ++i) {
+		this.put(set.elements[i]);
+	}
+	
+	return this;
+};
+
 module.exports = CustomSet;

@@ -113,16 +113,19 @@ describe('CustomSet', function() {
     expect(actual3.sort()).toEqual(expected3);
   });
 
-  xit('can test for union', function() {
+  it('can test for union', function() {
     var actual = new CustomSet([1, 3]).union(new CustomSet([2]));
     var expected = new CustomSet([3, 2, 1]);
     expect(actual.eql(expected)).toBe(true);
+  
     var actual2 = new CustomSet([1, 3]).union(new CustomSet([2, 3]));
     var expected2 = new CustomSet([3, 2, 1]);
     expect(actual2.eql(expected2)).toBe(true);
+  
     var actual3 = new CustomSet([1, 3]).union(new CustomSet());
     var expected3 = new CustomSet([3, 1]);
     expect(actual3.eql(expected3)).toBe(true);
+  
     var actual4 = new CustomSet().union(new CustomSet());
     var expected4 = new CustomSet();
     expect(actual4.eql(expected4)).toBe(true);
