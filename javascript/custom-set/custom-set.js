@@ -25,6 +25,17 @@ CustomSet.prototype.sort = function() {
 	return this.elements.sort();
 };
 
+CustomSet.prototype.toList = function() {
+	return this.elements;
+};
+
+CustomSet.prototype.empty = function() {
+	this.elements = [];
+	
+	// For chaining purposes.
+	return this;
+};
+
 CustomSet.prototype.eql = function(set) {
 	if (this.elements.length !== set.length) {
 		return false;
@@ -97,13 +108,6 @@ CustomSet.prototype.disjoint = function(set) {
 	return true;
 };
 
-CustomSet.prototype.empty = function() {
-	this.elements = [];
-	
-	// For chaining purposes.
-	return this;
-};
-
 // TODO: This could be optimized by looping on the smaller set of the two.
 CustomSet.prototype.intersection = function(set) {
 	var intersect = [];
@@ -155,16 +159,13 @@ CustomSet.prototype.subset = function(set) {
 	return true;
 };
 
-CustomSet.prototype.toList = function() {
-	return this.elements;
-};
-
 CustomSet.prototype.union = function(set) {
 	var setLength = set.length;
 	for (var i = 0; i < setLength; ++i) {
 		this.put(set.elements[i]);
 	}
 	
+	// For chaining purposes;
 	return this;
 };
 
