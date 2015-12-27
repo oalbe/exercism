@@ -155,4 +155,8 @@ CustomSet.prototype.subset = function(set) {
 	return true;
 };
 
+CustomSet.prototype.toList = function() {
+	return this.elements;
+};
+
 module.exports = CustomSet;

@@ -99,13 +99,15 @@ describe('CustomSet', function() {
     expect(actual5).toBe(true);
   });
 
-  xit('can give back a list', function() {
+  it('can give back a list', function() {
     var actual = new CustomSet().toList();
     var expected = [];
     expect(actual.sort()).toEqual(expected);
+    
     var actual2 = new CustomSet([3, 1, 2]).toList();
     var expected2 = [1, 2, 3];
     expect(actual2.sort()).toEqual(expected2);
+    
     var actual3 = new CustomSet([3, 1, 2, 1]).toList();
     var expected3 = [1, 2, 3];
     expect(actual3.sort()).toEqual(expected3);
