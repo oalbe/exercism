@@ -71,24 +71,30 @@ describe('CustomSet', function() {
     expect(actual2.eql(expected2)).toBe(true);
   });
 
-  xit('knows its size', function() {
+  it('knows its size', function() {
     var actual = new CustomSet().size();
     expect(actual).toBe(0);
+    
     var actual2 = new CustomSet([1, 2, 3]).size();
     expect(actual2).toBe(3);
+    
     var actual3 = new CustomSet([1, 2, 3, 2]).size();
     expect(actual3).toBe(3);
   });
 
-  xit('can test for subsets', function() {
+  it('can test for subsets', function() {
     var actual = new CustomSet([1, 2, 3]).subset(new CustomSet([1, 2, 3]));
     expect(actual).toBe(true);
+  
     var actual2 = new CustomSet([4, 1, 2, 3]).subset(new CustomSet([1, 2, 3]));
     expect(actual2).toBe(true);
+  
     var actual3 = new CustomSet([4, 1, 3]).subset(new CustomSet([1, 2, 3]));
     expect(actual3).toBe(false);
+  
     var actual4 = new CustomSet([4, 1, 3]).subset(new CustomSet());
     expect(actual4).toBe(true);
+  
     var actual5 = new CustomSet().subset(new CustomSet());
     expect(actual5).toBe(true);
   });

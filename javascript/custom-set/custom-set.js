@@ -1,6 +1,22 @@
-// TODO: Try rewriting this exercise as structured directly inherited from Array.
+// TODO: Try rewriting this exercise as structured directly inherited from Arrayz
+// Or, since ES6 provides the `Set` data structure, maybe try with that.
+function remove_duplicates(input) {
+	var output = [];
+    var seen = {};
+    
+    var limit = input.length;
+    for (var i = 0, j = 0; i < limit; ++i) {
+         var element = input[i];
+         if(seen[element] !== 1) {
+               seen[element] = 1;
+               output[j++] = element;
+         }
+    }
+    return output;
+}
+
 function CustomSet(arrElements) {
-	this.elements = ('undefined' === typeof arrElements) ? [] : arrElements;
+	this.elements = ('undefined' === typeof arrElements) ? [] : remove_duplicates(arrElements);
 	
 	this.length = this.elements.length;
 }
@@ -116,7 +132,27 @@ CustomSet.prototype.put = function(element) {
 		this.elements.push(element);
 	}
 	
+	// For chaining purposes.
 	return this;
+};
+
+CustomSet.prototype.size = function() {
+	return this.length;
+};
+
+CustomSet.prototype.subset = function(set) {
+	if (set.length > this.elements.length) {
+		return false; // A subset can't have a dimension bigger than the set.
+	}
+	
+	var setLength = set.length;
+	for (var i = 0; i < setLength; ++i) {
+		if (-1 === this.elements.indexOf(set.elements[i])) {
+			return false;
+		}
+	}
+	
+	return true;
 };
 
 module.exports = CustomSet;
