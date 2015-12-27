@@ -61,7 +61,7 @@ describe('CustomSet', function() {
     expect(actual2).toBe(false);
   });
 
-  xit('can add a member with put', function() {
+  it('can add a member with put', function() {
     var actual = new CustomSet([1, 2, 4]).put(3);
     var expected = new CustomSet([1, 2, 3, 4]);
     expect(actual.eql(expected)).toBe(true);

@@ -111,4 +111,12 @@ CustomSet.prototype.member = function(element) {
 	return false;
 };
 
+CustomSet.prototype.put = function(element) {
+	if (-1 === this.elements.indexOf(element)) {
+		this.elements.push(element);
+	}
+	
+	return this;
+};
+
 module.exports = CustomSet;
