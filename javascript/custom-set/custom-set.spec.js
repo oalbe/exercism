@@ -53,9 +53,10 @@ describe('CustomSet', function() {
     expect(actual2.eql(expected2)).toBe(true);
   });
 
-  xit('can test for a member', function() {
+  it('can test for a member', function() {
     var actual = new CustomSet([1, 2, 3]).member(2);
     expect(actual).toBe(true);
+    
     var actual2 = new CustomSet([1, 2, 3]).member(4);
     expect(actual2).toBe(false);
   });
@@ -64,6 +65,7 @@ describe('CustomSet', function() {
     var actual = new CustomSet([1, 2, 4]).put(3);
     var expected = new CustomSet([1, 2, 3, 4]);
     expect(actual.eql(expected)).toBe(true);
+    
     var actual2 = new CustomSet([1, 2, 3]).put(3);
     var expected2 = new CustomSet([1, 2, 3]);
     expect(actual2.eql(expected2)).toBe(true);

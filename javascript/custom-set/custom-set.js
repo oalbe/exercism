@@ -103,4 +103,12 @@ CustomSet.prototype.intersection = function(set) {
 	return new CustomSet(intersect);
 };
 
+CustomSet.prototype.member = function(element) {
+	if (-1 !== this.elements.indexOf(element)) {
+		return true;
+	}
+	
+	return false;
+};
+
 module.exports = CustomSet;
