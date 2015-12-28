@@ -1,4 +1,4 @@
-// REVIEW: I don't think writing a constructor this way is a good idea.
+// REVIEW: I don't think writing a constructor this way is a good idea. Figure out.
 function SumOfMultiples(input) {
 	if (!(this instanceof SumOfMultiples)) {
 	    if ('undefined' === typeof input) {
@@ -11,9 +11,12 @@ function SumOfMultiples(input) {
 	this.factors = input;
 }
 
-function multiple(number, factor) {
-	if (0 === (number % factor)) {
-		return true;
+function multiple(number, factors) {
+	var factorsLength = factors.length;
+	for (var i = 0; i < factorsLength; ++i) {
+		if (0 === (number % factors[i])) {
+			return true;
+		}
 	}
 	
 	return false;
@@ -21,20 +24,11 @@ function multiple(number, factor) {
 
 SumOfMultiples.prototype.to = function(limit) {
 	var sum = 0;
-	var flag = false;
-	var factorsLength = this.factors.length;
+	
 	for (var i = 0; i < limit; ++i)	{
-		for (var j = 0; j < factorsLength; ++j) {
-			if (multiple(i, this.factors[j])) {
-				flag = true;
-			}
-		}
-		
-		if (flag) {
+		if (multiple(i, this.factors)) {
 			sum += i;
 		}
-		
-		flag = false;
 	}
 	
 	return sum;
