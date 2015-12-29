@@ -39,7 +39,7 @@ _ _ _ _ _ _ _ _\n\
     expect(queens.toString()).toEqual(board);
   });
 
-  xit('queens cannot attack', function() {
+  it('queens cannot attack', function() {
     var queens = new Queens({ white: [2,3], black: [4,7] });
     expect(queens.canAttack()).toEqual(false);
   });

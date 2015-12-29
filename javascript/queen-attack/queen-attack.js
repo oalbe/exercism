@@ -39,4 +39,29 @@ Queens.prototype.toString = function() {
 	return strBoard;
 };
 
+Queens.prototype.canAttack = function() {
+	// Check if they are in the same line
+	if (this.white[0] === this.black[0]) {
+		return true;
+	}
+	
+	// Check if they are in the same column
+	if (this.white[1] === this.black[1]) {
+		return true;
+	}
+	
+	var deltax = this.white[0] - this.black[0];
+	var deltay = this.white[1] - this.black[1];
+
+	if (deltay === -deltax) {
+		return true;
+	}
+
+	if (deltay === deltax) {
+		return true;
+	}
+	
+	return false;
+};
+
 module.exports = Queens;
