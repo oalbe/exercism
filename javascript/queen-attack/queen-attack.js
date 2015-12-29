@@ -1,3 +1,16 @@
+function initMatrix() {
+	var matrix = [];
+	
+	for (var i = 0; i < 8; ++i) {
+		matrix.push([]);
+		for (var j = 0; j < 8; ++j) {
+			matrix[i].push('_');
+		}
+	}
+	
+	return matrix;
+}
+
 function Queens(posObj) {
 	if ('undefined' === typeof posObj) {
 		this.white = [0, 3];
@@ -10,19 +23,6 @@ function Queens(posObj) {
 			this.black = posObj.black;
 		}
 	}
-}
-
-function initMatrix() {
-	var matrix = [];
-	
-	for (var i = 0; i < 8; ++i) {
-		matrix.push([]);
-		for (var j = 0; j < 8; ++j) {
-			matrix[i].push('_');
-		}
-	}
-	
-	return matrix;
 }
 
 Queens.prototype.toString = function() {
@@ -50,6 +50,7 @@ Queens.prototype.canAttack = function() {
 		return true;
 	}
 	
+	// Check if they are in the same diagonal
 	var deltax = this.white[0] - this.black[0];
 	var deltay = this.white[1] - this.black[1];
 
