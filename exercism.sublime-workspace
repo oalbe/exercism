@@ -4,6 +4,54 @@
 		"selected_items":
 		[
 			[
+				"find",
+				"findSaddlePoints"
+			],
+			[
+				"maxEl",
+				"maxRowsElement"
+			],
+			[
+				"Custo",
+				"CustomSet"
+			],
+			[
+				"las",
+				"lastEightDigits"
+			],
+			[
+				"last",
+				"lastEightDigits"
+			],
+			[
+				"un",
+				"unclassifiables"
+			],
+			[
+				"pascal",
+				"pascalTriangleRows"
+			],
+			[
+				"init",
+				"initObject"
+			],
+			[
+				"instruc",
+				"instructionsList"
+			],
+			[
+				"instru",
+				"instructionsLength"
+			],
+			[
+				"Binary",
+				"BinarySearchTree"
+			],
+			[
+				"Bina",
+				"BinarySearchTree"
+			],
+			[
 				"texta",
 				"textareas〔variable〕"
 			],
@@ -76,74 +124,59 @@
 	"buffers":
 	[
 		{
-			"file": "javascript/binary-search-tree/README.md",
+			"file": "javascript/saddle-points/README.md",
 			"settings":
 			{
-				"buffer_size": 2044,
+				"buffer_size": 1245,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/dev/msys64/home/Admin/__projects/exercism/cpp/word-count/build/cmake_install.cmake",
+			"file": "javascript/saddle-points/saddle-points.spec.js",
 			"settings":
 			{
-				"buffer_size": 1326,
+				"buffer_size": 1285,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "cpp/word-count/build/CMakeCache.txt",
+			"file": "javascript/saddle-points/saddle-points.js",
 			"settings":
 			{
-				"buffer_size": 14117,
+				"buffer_size": 2229,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "javascript/binary-search-tree/binary-search-tree.spec.js",
+			"file": "/C/Users/Admin/Desktop/Workspace/_HackerNotes/Software Engineering/expressjs notes.md",
 			"settings":
 			{
-				"buffer_size": 2032,
+				"buffer_size": 991,
+				"line_ending": "Windows",
+				"name": "# `app.set`"
+			}
+		},
+		{
+			"file": "/C/dev/msys64/home/Admin/__projects/palette-fs/app.js",
+			"settings":
+			{
+				"buffer_size": 1644,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/dev/msys64/home/Admin/__projects/express_book/models/user.js",
+			"settings":
+			{
+				"buffer_size": 718,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "javascript/binary-search-tree/binary-search-tree.js",
+			"file": "/C/dev/msys64/home/Admin/__projects/express_book/server.js",
 			"settings":
 			{
-				"buffer_size": 0,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Admin/Desktop/Workspace/_Projects/Palette/palette.html",
-			"settings":
-			{
-				"buffer_size": 9436,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "cpp/word-count/word_count_test.cpp",
-			"settings":
-			{
-				"buffer_size": 3837,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "cpp/word-count/word_count.h",
-			"settings":
-			{
-				"buffer_size": 989,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "cpp/word-count/word_count.cpp",
-			"settings":
-			{
-				"buffer_size": 1592,
+				"buffer_size": 270,
 				"line_ending": "Windows"
 			}
 		}
@@ -155,17 +188,21 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 400.0,
-		"last_filter": "mar",
+		"height": 342.0,
+		"last_filter": "pi",
 		"selected_items":
 		[
 			[
-				"mar",
-				"Markdown Preview: Preview in Browser"
-			],
-			[
 				"pi",
 				"Package Control: Install Package"
+			],
+			[
+				"pr",
+				"Package Control: Remove Package"
+			],
+			[
+				"mar",
+				"Markdown Preview: Preview in Browser"
 			],
 			[
 				"ma",
@@ -180,7 +217,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 536.0
+		"width": 446.0
 	},
 	"console":
 	{
@@ -202,15 +239,96 @@
 	"expanded_folders":
 	[
 		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/cpp",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/cpp/word-count",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/cpp/word-count/build",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/binary",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/binary-search-tree"
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/saddle-points",
+		"/C/dev/msys64/home/Admin/__projects/express_book",
+		"/C/dev/msys64/home/Admin/__projects/express_book/models",
+		"/C/dev/msys64/home/Admin/__projects/express_book/views"
 	],
 	"file_history":
 	[
+		"/C/dev/msys64/home/Admin/.profile",
+		"/C/dev/msys64/home/Admin/__projects/express_book/npm-debug.log",
+		"/C/dev/msys64/home/Admin/__projects/express_book/package.json",
+		"/C/dev/msys64/home/Admin/__projects/palette-fs/public/javascripts/front-end.js",
+		"/C/dev/msys64/home/Admin/__projects/palette-fs/routes/palettes.js",
+		"/C/dev/msys64/home/Admin/__projects/palette-fs/routes/index.js",
+		"/C/dev/msys64/home/Admin/__projects/express_book/index.jade",
+		"/C/dev/msys64/home/Admin/__projects/palette-fs/views/index.jade",
+		"/C/dev/msys64/home/Admin/__projects/palette-fs/views/layout.jade",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/queen-attack/README.md",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/queen-attack/queen-attack.spec.js",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/queen-attack/queen-attack.js",
+		"/C/dev/msys64/home/Admin/__projects/palette_fullstack/main.js",
+		"/C/dev/msys64/home/Admin/__projects/Palette/palette.html",
+		"/C/dev/msys64/home/Admin/__projects/palette-fs/public/stylesheets/style.css",
+		"/C/dev/msys64/home/Admin/__projects/palette_fullstack/package.json",
+		"/C/dev/nodejs/node_modules/npm/configure",
+		"/C/dev/msys64/home/Admin/.git-prompt.sh",
+		"/C/dev/msys64/home/Admin/.bash_prompt",
+		"/C/dev/msys64/home/Admin/.bash_profile",
+		"/C/dev/msys64/home/Admin/.gitconfig",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/sum-of-multiples/sum-of-multiples.js",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/sum-of-multiples/sum-of-multiples.spec.js",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/sum-of-multiples/README.md",
+		"/C/dev/msys64/home/Admin/git-prompt.sh",
+		"/C/dev/msys64/home/Admin/.bashrc",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/custom-set/README.md",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/custom-set/custom-set.spec.js",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/custom-set/custom-set.js",
 		"/C/Users/Admin/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Admin/AppData/Roaming/Sublime Text 3/Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+		"/C/dev/msys64/home/Admin/__projects/palette_fullstack/index.html",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/say/README.md",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/say/say.spec.js",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/say/say.js",
+		"/C/dev/msys64/home/Admin/__projects/exercism/.git/COMMIT_EDITMSG",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/cpp/word-count/word_count_test.cpp",
+		"/C/dev/msys64/home/Admin/__projects/exercism/cpp/word-count/build/output.txt",
+		"/C/Users/Admin/AppData/Roaming/HexChat/scrollback/freenode/chardan.txt",
+		"/C/dev/msys64/home/Admin/__projects/exercism/cpp/word-count/build/CMakeFiles/CMakeOutput.log",
+		"/C/dev/msys64/home/Admin/__projects/exercism/cpp/word-count/CMakeLists.txt",
+		"/C/dev/msys64/home/Admin/.inputrc",
+		"/C/dev/msys64/home/Admin/boost_1_55_0/bootstrap.log",
+		"/C/dev/msys64/home/Admin/boost_1_55_0/tools/build/v2/engine/jam.h",
+		"/C/dev/msys64/home/Admin/boost_1_55_0/tools/build/v2/engine/builtins.c",
+		"/C/dev/msys64/home/Admin/boost_1_55_0/tools/build/v2/bootstrap.bat",
+		"/C/dev/msys64/home/Admin/boost_1_55_0/INSTALL",
+		"/C/dev/msys64/home/Admin/node-fuck-test/webserve.js",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/cpp/word-count/CMakeLists.txt",
+		"/C/dev/msys64/home/Admin/__projects/exercism/javascript/.jshintrc",
+		"/C/dev/nodejs/node_modules/jasmine-node/lib/jasmine-node/cli.js",
+		"/C/dev/nodejs/node_modules/jasmine-node/bin/jasmine-node",
+		"/C/dev/nodejs/node_modules/jasmine-node/bin/jasmine-node.cmd",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/palindrome-products/palindrome-products.js",
+		"/C/dev/msys64/home/Admin/__projects/exercism/cpp/word-count/build/Makefile",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/pascals-triangle/README.md",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/pascals-triangle/pascals-triangle.spec.js",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/pascals-triangle/pascals-triangle.js",
+		"/C/Users/Admin/AppData/Roaming/Sublime Text 3/Packages/Seti_UI/Scheme/Seti_monokai.tmTheme",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/cpp/word-count/word_count.cpp",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/cpp/word-count/word_count.h",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/Palette/palette.html",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/palindrome-products/README.md",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/palindrome-products/palindrome-products.spec.js",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/nth-prime/README.md",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/nth-prime/nth-prime.spec.js",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/nth-prime/nth-prime.js",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/.jshintrc",
+		"/C/dev/msys64/home/Admin/.jshintrc",
+		"/C/dev/msys64/home/Admin/.jshint",
+		"/C/dev/msys64/mingw32/bin/jshint",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/robot-simulator/README.md",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/robot-simulator/robot-simulator.spec.js",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/robot-simulator/robot-simulator.js",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/matrix/README.md",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/matrix/matrix.spec.js",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/matrix/matrix.js",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/binary-search-tree/README.md",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/binary-search-tree/binary-search-tree.spec.js",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/binary-search-tree/binary-search-tree.js",
+		"/C/dev/msys64/home/Admin/__projects/exercism/cpp/word-count/build/cmake_install.cmake",
+		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/cpp/word-count/build155/CMakeCache.txt",
 		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/binary-search/README.md",
 		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/binary-search/binary-search.spec.js",
 		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/binary-search/binary-search.js",
@@ -256,92 +374,11 @@
 		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/difference-of-squares/difference-of-squares.js",
 		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/series/README.md",
 		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/series/series.spec.js",
-		"/C/Users/Admin/AppData/Roaming/HexChat/logs/freenode/##math.log",
-		"/C/Users/Admin/AppData/Roaming/HexChat/scrollback/freenode/##math.txt",
-		"/E/Geometria e Algebra (dropbox)/Domande di teoria dello scritto (link).txt",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/pythagorean-triplet/README.md",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/pythagorean-triplet/pythagorean-triplet.spec.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/pythagorean-triplet/pythagorean-triplet.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/luhn/luhn.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/ProjectEuler/09-special_pythagorean_triplet/special_pythagorean_triplet.cpp",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/accumulate/accumulate.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/pig-latin/pig-latin.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/pig-latin/README.md",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/pig-latin/pig-latin.spec.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/luhn/luhn.spec.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/luhn/README.md",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/octal/octal.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/octal/octal.spec.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/octal/README.md",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/scrabble-score/scrabble-score.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/simple-cipher/README.md",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/simple-cipher/simple-cipher.spec.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/simple-cipher/simple-cipher.js",
-		"/C/Users/Admin/AppData/Roaming/HexChat/scrollback/OFTC/#msys2.txt",
-		"/C/Users/Admin/AppData/Roaming/HexChat/scrollback/freenode/##programming.txt",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/meetup/README.md",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/meetup/meetup_test.py",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/meetup/meetup.py",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/bob/README.md",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/bob/bob_test.py",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/bob/bob.py",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/gigasecond/gigasecond.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/gigasecond/README.md",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/gigasecond/gigasecond_test.py",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/gigasecond/gigasecond.py",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/rna-transcription/dna.py",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/sieve/README.md",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/sieve/sieve.spec.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/sieve/sieve.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/hamming/README.md",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/hamming/hamming_test.py",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/hamming/hamming.py",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/rna-transcription/README.md",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/rna-transcription/rna_transcription_test.py",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/trinary/trinary.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/trinary/trinary.spec.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/trinary/README.md",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/crypto-square/README.md",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/crypto-square/crypto-square.spec.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/crypto-square/crypto-square.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/word-count/README.md",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/word-count/word_count_test.py",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/word-count/wordcount.py",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/accumulate/README.md",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/accumulate/accumulate.spec.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/leap/year.py",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/leap/leap_test.py",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/leap/README.md",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/hello-world/README.md",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/hello-world/hello_world_test.py",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/python/hello-world/hello_world.py",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/atbash-cipher/README.md",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/atbash-cipher/atbash-cipher.spec.js",
-		"/C/Users/Admin/AppData/Roaming/Sublime Text 3/Packages/Seti_UI/Scheme/Seti_monokai.tmTheme",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/strain/README.md",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/strain/strain.spec.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/strain/strain.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/allergies/README.md",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/allergies/allergies.spec.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/allergies/allergies.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/raindrops/README.md",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/raindrops/raindrops.spec.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/raindrops/raindrops.js",
-		"/C/dev/msys64/home/Admin/__projects/ProjectEuler/01-multiples_of_3_and_5/multiples_of_3_and_5.cpp",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/prime-factors/README.md",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/prime-factors/prime-factors.spec.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/prime-factors/prime-factors.js",
-		"/C/Users/Admin/Desktop/Programma G&A.md",
-		"/C/dev/msys64/home/Admin/__projects/ProjectEuler/07-10001st_prime/10001st_prime.cpp",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/binary/README.md",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/binary/binary.spec.js",
-		"/C/Users/Admin/Desktop/Workspace/_Projects/exercism/javascript/hamming/hamming.js",
-		"/E/2015-10-28_HP-15/dev/msys64/home/Alberto/.vimrc",
-		"/E/2015-10-28_HP-15/Alberto/Tresorit/Alberto's Documents/txt/Chiara In emoticonese.txt"
+		"/C/Users/Admin/AppData/Roaming/HexChat/logs/freenode/##math.log"
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 41.0
 	},
 	"find_in_files":
 	{
@@ -355,6 +392,81 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"columnMaxElement",
+			"sorted_arr",
+			"maxRowsElement",
+			"xDistance",
+			"yDistance",
+			"queens",
+			"queen",
+			"positioningObject",
+			"#",
+			"'",
+			"\"",
+			"som",
+			"this.multiples",
+			"multiples",
+			"PS1=$'\\[\\e[0;32m\\]\\u@\\h\\[\\e[m\\] \\[\\e[0;33m\\]\\w\\[\\e[m\\]\\[\\e[0;36m\\]$(__git_ps1 \" (%s)\")\\[\\e[m\\]\\n\\$ '\n  ",
+			"# PS1=$'\\[\\e[0;32m\\]\\u@\\h\\[\\e[m\\] \\[\\e[0;33m\\]\\w\\[\\e[m\\]\\[\\e[0;36m\\]$(__git_ps1 \" (%s)\")\\[\\e[m\\]\\n\\$ '\n  ",
+			" '",
+			"'\n",
+			"\\[\\e[0;33m\\]\\w\\[\\e[m\\]\\[\\e[0;36m\\]",
+			"GIT_PS1_SHOWDIRTYSTATE",
+			"31m",
+			"__git_ps1_branch_name",
+			")",
+			"item",
+			"len",
+			"out",
+			"a",
+			"conso",
+			"this.elements.sort();",
+			"Set",
+			"tempFive",
+			"mb_illion",
+			"app",
+			"lastFourDigits",
+			"lastFiveDigits",
+			"temp",
+			"wrap_stringstream",
+			"paste",
+			"$sexy_bash_prompt_bold",
+			"sexy_bash_prompt_preposition_color",
+			"at",
+			" at ",
+			"c",
+			"cl",
+			":",
+			"end",
+			"begin",
+			"magnitude",
+			"teens",
+			"xit",
+			"unclassifiables",
+			"lastNineDigits",
+			"if ('0' === digits[i]) {\n					++position;\n					break;\n				}\n				\n				",
+			"lastThreeDigits",
+			"temp",
+			"lastFiveDigits",
+			"temp",
+			"lastTwoDigits",
+			"lastThreeDigits",
+			"lastSixDigits",
+			"lastFourDigits",
+			"shift",
+			"0",
+			"parseInt",
+			":",
+			"push",
+			"call",
+			"}\n",
+			"palindromicProducts",
+			"palindromicFactors",
+			"number",
+			"GCD",
+			"count",
+			"candidate",
+			"n",
 			"l",
 			"xit",
 			"x",
@@ -407,45 +519,7 @@
 			"Binary",
 			"binary",
 			"Binary",
-			"this.key.length",
-			"absolute",
-			"encodedtext",
-			"key",
-			"plaintext.length",
-			"plaintext",
-			"def",
-			"`",
-			"this.ncInput.length",
-			"parseInt(this.ncInput[i - 1])",
-			"xit",
-			"ciphredText",
-			"def",
-			"lText",
-			".js",
-			".js ",
-			"java",
-			"<?",
-			"keptElements",
-			")",
-			"(",
-			"xit",
-			"##",
-			"value",
-			"xit",
-			"AdvertPlaceholder",
-			"AdvertPlaceholder ",
-			"xit",
-			"over",
-			"overh",
-			"[ ]",
-			"-[",
-			"- Packages ",
-			"packages",
-			"Packages",
-			"|",
-			"bold",
-			"Bol",
-			"alias"
+			"this.key.length"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -468,11 +542,11 @@
 			[
 				{
 					"buffer": 0,
-					"file": "javascript/binary-search-tree/README.md",
+					"file": "javascript/saddle-points/README.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2044,
+						"buffer_size": 1245,
 						"regions":
 						{
 						},
@@ -499,323 +573,53 @@
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"syntax": "Packages/Markdown/Markdown.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/dev/msys64/home/Admin/__projects/exercism/cpp/word-count/build/cmake_install.cmake",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1326,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"apply_syntax_touched": true,
-							"bh_regions":
-							[
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "cpp/word-count/build/CMakeCache.txt",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 14117,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"apply_syntax_touched": true,
-							"bh_regions":
-							[
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": -0.0,
-						"translation.y": 495.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "javascript/binary-search-tree/binary-search-tree.spec.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2032,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"apply_syntax_touched": true,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content"
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
 							],
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -825,108 +629,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "javascript/binary-search-tree/binary-search-tree.js",
+					"buffer": 1,
+					"file": "javascript/saddle-points/saddle-points.spec.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 1285,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"apply_syntax_touched": true,
-							"bh_regions":
-							[
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/C/Users/Admin/Desktop/Workspace/_Projects/Palette/palette.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9436,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5306,
-								5306
+								941,
+								941
 							]
 						],
 						"settings":
@@ -936,298 +652,16 @@
 							"auto_complete": false,
 							"bh_regions":
 							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content"
-							],
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2603.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "cpp/word-count/word_count_test.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3837,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								139,
-								139
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"apply_syntax_touched": true,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content"
-							],
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "cpp/word-count/word_count.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 989,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								918,
-								918
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"apply_syntax_touched": true,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content"
-							],
-							"syntax": "Packages/C++/C++.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 338.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "cpp/word-count/word_count.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1592,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1592,
-								1592
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"apply_syntax_touched": true,
-							"bh_regions":
-							[
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
@@ -1238,11 +672,31 @@
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
@@ -1252,21 +706,465 @@
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "javascript/saddle-points/saddle-points.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2229,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1139,
+								1139
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"apply_syntax_touched": true,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 675.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/Admin/Desktop/Workspace/_HackerNotes/Software Engineering/expressjs notes.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 991,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								990,
+								990
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"apply_syntax_touched": true,
+							"auto_complete": false,
+							"auto_name": "# `app.set`",
+							"bh_regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/dev/msys64/home/Admin/__projects/palette-fs/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1644,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								33,
+								33
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"apply_syntax_touched": true,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
 								"bh_angle_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
-								"bh_unmatched_content"
+								"bh_unmatched_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
 							],
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 383.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/dev/msys64/home/Admin/__projects/express_book/models/user.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 718,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								167,
+								167
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"apply_syntax_touched": true,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/C/dev/msys64/home/Admin/__projects/express_book/server.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 270,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								202,
+								202
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"apply_syntax_touched": true,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
 					"type": "text"
 				}
 			]

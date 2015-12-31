@@ -3,6 +3,15 @@
 	[
 		{
 			"path": "."
+		},
+		{
+			"path": "C:\\dev\\msys64\\home\\Admin\\__projects\\palette_fullstack"
+		},
+		{
+			"path": "C:\\dev\\msys64\\home\\Admin\\__projects\\palette-fs"
+		},
+		{
+			"path": "C:\\dev\\msys64\\home\\Admin\\__projects\\express_book"
 		}
 	]
 }
