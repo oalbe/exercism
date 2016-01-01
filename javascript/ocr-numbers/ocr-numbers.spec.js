@@ -101,7 +101,7 @@ describe('ocr', function () {
     )).toBe('10');
   });
 
-  xit('identifies garble', function () {
+  it('identifies garble', function () {
     expect(ocr.convert(
       '   \n' +
       '| |\n' +

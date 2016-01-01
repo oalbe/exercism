@@ -79,18 +79,21 @@ OCR.convert = function(binaryNumber) {
 	
 	var composedBCD = [];
 	
-	var matrixRep = [];
+	var matrixRep = toArr(binaryNumber);
 	var serializedNum = [];
 	for (var i = 0; i < digitsLimit; ++i) {
-		matrixRep.push(toMatrix(binaryNumber));
-		
-		// console.log(matrixRep);
 		
 		serializedNum[i] = serialize(matrixRep[i]);
 		
 		console.log(serializedNum[i]);
 		
-		composedBCD += BCD[serializedNum[i].join('').toString()];
+		var nextDigit = BCD[serializedNum[i].join('').toString()];
+		console.log(nextDigit);
+		if ('undefined' === typeof nextDigit) {
+			composedBCD += '?';
+		} else {
+			composedBCD += nextDigit;
+		}
 	}
 	
 	// console.log(matrixRep);
