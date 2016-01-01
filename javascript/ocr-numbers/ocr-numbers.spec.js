@@ -92,7 +92,7 @@ describe('ocr', function () {
     )).toBe('9');
   });
 
-  xit('recognizes ten', function () {
+  it('recognizes ten', function () {
     expect(ocr.convert(
       '    _ \n' +
       '  || |\n' +

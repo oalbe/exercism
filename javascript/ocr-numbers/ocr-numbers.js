@@ -1,3 +1,30 @@
+function toArr(binaryString) {
+	var arrOfBinaries = [];
+	
+	// First, create an array of rows split by '\n'.
+	var arrRows = binaryString.split('\n');
+	console.log(arrRows);
+	
+	// Second, loop through the array, three characters per row at time.
+	var limit = arrRows[0].length;
+	var numOfMatrixes = parseInt(limit / 3);
+	var numRows = arrRows.length - 1;
+	
+	for (var i = 0; i < numRows; ++i) { // For each row.
+		for (var k = 0; k < numOfMatrixes; ++k) {
+			if (0 === i) {
+				arrOfBinaries.push([]);
+			}
+			
+			arrOfBinaries[k].push(arrRows[i].substr(k * 3, 3));
+		}
+	}
+	
+	// console.log(arrOfBinaries);
+	
+	return arrOfBinaries;
+}
+
 function toMatrix(binaryString) {
 	return binaryString.split('\n').map(function(row) {
 		return row.split('');
@@ -29,7 +56,7 @@ function serialize(binaryMatrix) {
 		}
 	}
 	
-	console.log(arr);
+	// console.log(arr);
 	
 	var value;
 	for (var i = 1; i < 9; ++i) {
@@ -47,14 +74,29 @@ function serialize(binaryMatrix) {
 }
 
 OCR.convert = function(binaryNumber) {
-	var matrixRep = toMatrix(binaryNumber);
+	var arrOfBinaries = toArr(binaryNumber);
+	var digitsLimit = arrOfBinaries.length;
 	
-	console.log(matrixRep);
+	var composedBCD = [];
 	
-	var serializedNum = serialize(matrixRep);
+	var matrixRep = [];
+	var serializedNum = [];
+	for (var i = 0; i < digitsLimit; ++i) {
+		matrixRep.push(toMatrix(binaryNumber));
+		
+		// console.log(matrixRep);
+		
+		serializedNum[i] = serialize(matrixRep[i]);
+		
+		console.log(serializedNum[i]);
+		
+		composedBCD += BCD[serializedNum[i].join('').toString()];
+	}
 	
-	console.log('SN = ' + serializedNum.join('').toString());
-	return BCD[serializedNum.join('').toString()];
+	// console.log(matrixRep);
+	
+	// console.log('SN = ' + serializedNum.join('').toString());
+	return composedBCD;
 };
 
 module.exports = OCR;
