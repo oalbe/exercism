@@ -3,13 +3,12 @@ function parseMultilines(binaryString) {
 	var multiline = [];
 	
 	var rows = binaryString.split('\n');
-	var numRows = rows.length;
-	var numberOfDigitLines = parseInt(numRows / 4);
 	
+	var offset = (rows[0].length + 1) * 4;
+	var numberOfDigitLines = parseInt(rows.length / 4);
 	for (var i = 0; i < numberOfDigitLines; ++i) {
 		multiline.push([]);
 	
-		var offset = (rows[0].length + 1) * 4;	
 		multiline[i] = binaryString.substr(i * offset, offset);
 	}
 	
@@ -49,16 +48,10 @@ function serialize(binaryMatrix) {
 		}
 	}
 	
-	var value;
 	for (var i = 1; i < 9; ++i) {
 		if (2 === i) continue;
 		
-		value = 1;
-		if (' ' === arr[i]) {
-			value = 0;
-		}
-		
-		serialized.push(value);
+		serialized.push((' ' === arr[i]) ? 0 : 1);
 	}
 	
 	return serialized;
@@ -80,39 +73,32 @@ var BCD = {
 function OCR() {}
 
 OCR.convert = function(binaryNumber) {
-	var lines = binaryNumber.split('\n');
+	var parsedMulti = parseMultilines(binaryNumber);
 	
-	var parsedMulti = [];
-	var arrOfBinaries = [];
-
-	parsedMulti = parseMultilines(binaryNumber);
-	
-	arrOfBinaries = [];
+	var digits = [];
 	var parsedMultiLength = parsedMulti.length;
 	for (var l = 0; l < parsedMultiLength; ++l) {
-		arrOfBinaries.push(toArr(parsedMulti[l]));
+		digits.push(toArr(parsedMulti[l]));
 	}
 	
 	var composedBCD = [];
-	var serializedNum = [];
 	
-	var digitsRows = arrOfBinaries.length;
+	var digitsRows = digits.length;
 	for (var j = 0; j < digitsRows; ++j) {
-		var digitsLimit = arrOfBinaries[j].length;
+		var digitsLimit = digits[j].length;
+		
 		for (var i = 0; i < digitsLimit; ++i) {
-			serializedNum[i] = serialize(arrOfBinaries[j][i]);
+			var nextDigit = BCD[serialize(digits[j][i]).join('').toString()];
 			
-			var nextDigit = BCD[serializedNum[i].join('').toString()];
-			if ('undefined' === typeof nextDigit) {
-				composedBCD += '?';
-			} else {
-				composedBCD += nextDigit;
-			}
+			// Recognize garbled digits and deal with them.
+			// Then appends the result to the string of translated digits.
+			composedBCD += ('undefined' === typeof nextDigit) ? '?' : nextDigit;
 		}
 
 		composedBCD += ',';
 	}
 
+	// substr removes the last comma appended to the BCD.
 	return composedBCD.substr(0, composedBCD.length - 1);
 };
 
