@@ -137,7 +137,7 @@ describe('ocr', function () {
     )).toBe('1234567890');
   });
 
-  xit('converts 123 456 789', function () {
+  it('converts 123 456 789', function () {
     expect(ocr.convert(
       '    _  _ \n' +
       '  | _| _|\n' +

@@ -1,9 +1,27 @@
+function parseMultilines(binaryString) {
+	var matIndex = 0;
+	
+	// First, create an array of rows split by '\n'.
+	var arrRows = binaryString.split('\n');
+	var numRows = binaryString.length;
+	
+	var numberOfDigitLines = parseInt(arrRows.length / 4);
+	
+	var multiline = [];
+	
+	for (var i = 0; i < numberOfDigitLines; ++i) {
+		multiline.push([]);
+		multiline[i] = binaryString.substr(i * 40, 40);
+	}
+	
+	return multiline;
+}
+
 function toArr(binaryString) {
 	var arrOfBinaries = [];
 	
 	// First, create an array of rows split by '\n'.
 	var arrRows = binaryString.split('\n');
-	console.log(arrRows);
 	
 	// Second, loop through the array, three characters per row at time.
 	var limit = arrRows[0].length;
@@ -19,8 +37,6 @@ function toArr(binaryString) {
 			arrOfBinaries[k].push(arrRows[i].substr(k * 3, 3));
 		}
 	}
-	
-	// console.log(arrOfBinaries);
 	
 	return arrOfBinaries;
 }
@@ -56,8 +72,6 @@ function serialize(binaryMatrix) {
 		}
 	}
 	
-	// console.log(arr);
-	
 	var value;
 	for (var i = 1; i < 9; ++i) {
 		if (2 === i) continue;
@@ -74,32 +88,58 @@ function serialize(binaryMatrix) {
 }
 
 OCR.convert = function(binaryNumber) {
-	var arrOfBinaries = toArr(binaryNumber);
-	var digitsLimit = arrOfBinaries.length;
+	var lines = binaryNumber.split('\n');
 	
-	var composedBCD = [];
-	
-	var matrixRep = toArr(binaryNumber);
-	var serializedNum = [];
-	for (var i = 0; i < digitsLimit; ++i) {
+	var parsedMulti = [];
+	var arrOfBinaries = [];
+	if (lines.length > 4) {
+		parsedMulti = parseMultilines(binaryNumber);
 		
-		serializedNum[i] = serialize(matrixRep[i]);
-		
-		console.log(serializedNum[i]);
-		
-		var nextDigit = BCD[serializedNum[i].join('').toString()];
-		console.log(nextDigit);
-		if ('undefined' === typeof nextDigit) {
-			composedBCD += '?';
-		} else {
-			composedBCD += nextDigit;
+		arrOfBinaries = [];
+		for (var l = 0; l < parsedMulti.length; ++l) {
+			arrOfBinaries.push(toArr(parsedMulti[l]));
 		}
+		
+		var composedBCD = [];
+		var digitsRows = arrOfBinaries.length;
+		
+		var serializedNum = [];
+		for (var j = 0; j < digitsRows; ++j) {
+			var digitsLimit = arrOfBinaries[j].length;
+			for (var i = 0; i < digitsLimit; ++i) {
+				serializedNum[i] = serialize(arrOfBinaries[j][i]);
+				
+				var nextDigit = BCD[serializedNum[i].join('').toString()];
+				if ('undefined' === typeof nextDigit) {
+					composedBCD += '?';
+				} else {
+					composedBCD += nextDigit;
+				}
+			}
+
+			composedBCD += ',';
+		}
+
+		return composedBCD.substr(0, composedBCD.length - 1);
+	} else {
+		arrOfBinaries = toArr(binaryNumber);
+		var limit = arrOfBinaries.length;
+		
+		var cpdBCD = [];
+		var serNum = [];
+		for (var k = 0; k < limit; ++k) {
+			serNum[k] = serialize(arrOfBinaries[k]);
+			
+			var nxtDigit = BCD[serNum[k].join('').toString()];
+			if ('undefined' === typeof nxtDigit) {
+				cpdBCD += '?';
+			} else {
+				cpdBCD += nxtDigit;
+			}
+		}
+		
+		return cpdBCD;
 	}
-	
-	// console.log(matrixRep);
-	
-	// console.log('SN = ' + serializedNum.join('').toString());
-	return composedBCD;
 };
 
 module.exports = OCR;
