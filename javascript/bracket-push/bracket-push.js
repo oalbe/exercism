@@ -33,11 +33,10 @@ Array.prototype.empty = function() {
 function bracket(input) {
 	var stack = [];
 	
-	for (var i = 0; i < input.length; ++i) {
+	var inputLength = input.length;
+	for (var i = 0; i < inputLength; ++i) {
 		if (closingBracket(input[i])) {
-			var poppedMatch = stack.pop();
-
-			if (!bracketMatch(poppedMatch, input[i])) {
+			if (!bracketMatch(stack.pop(), input[i])) {
 				return false;
 			}
 		} else {
