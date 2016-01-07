@@ -48,9 +48,8 @@ def decode(input_string):
 			
 			capturing_group += input_string[i]
 			
-			limit = len(capturing_group)
-			count = int(capturing_group[:limit - 1])
-			character = capturing_group[limit - 1]
+			count = int(capturing_group[:-1])
+			character = capturing_group[-1]
 		
 		for j in range(0, count):
 			decoded_string += character
