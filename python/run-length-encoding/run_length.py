@@ -35,14 +35,12 @@ def decode(input_string):
 	decoded_string = ''
 	
 	input_length = len(input_string)
-	
 	i = 0
 	while (i < input_length):
 		capturing_group = ''
 		count = 1
 		if (not is_digit(input_string[i])):
-			capturing_group += input_string[i]
-			character = capturing_group
+			character = input_string[i]
 		else:
 			while (is_digit(input_string[i])):
 				capturing_group += input_string[i]
