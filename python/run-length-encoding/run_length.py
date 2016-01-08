@@ -51,7 +51,7 @@ def decode(input_string):
 			count = int(capturing_group[:-1])
 			character = capturing_group[-1]
 		
-		for j in range(0, count):
+		for j in range(count):
 			decoded_string += character
 		
 		i += 1
