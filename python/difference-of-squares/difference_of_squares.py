@@ -16,7 +16,4 @@ def sum_of_squares(limit):
 
 
 def difference(limit):
-	sq_sum = square_of_sum(limit)
-	sum_sq = sum_of_squares(limit)
-	
-	return sq_sum - sum_sq
+	return square_of_sum(limit) - sum_of_squares(limit)
