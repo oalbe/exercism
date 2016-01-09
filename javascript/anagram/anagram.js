@@ -37,14 +37,13 @@ function match(word, matchWord) {
     var checkedIndexes = [];
     for (var i = 0; i < wordLength; ++i) {
         var currentIndex = lMatchWord.indexOf(lWord[i]);
+        var newIndex = checkedIndexes.indexOf(currentIndex);
 
         // if the currently checked letter has already been checked before
-        if (-1 !== checkedIndexes.indexOf(currentIndex)) {
+        if (-1 !== newIndex) {
             // create a substring of the current matchWord from the subsequent point where
             // the collision has been found, to the end of the word
-            var newMatchWord = lMatchWord.substr(
-                checkedIndexes.indexOf(currentIndex) + 1, matchWordLength
-            );
+            var newMatchWord = lMatchWord.substr(newIndex + 1, matchWordLength);
 
             // if in this newly created string there isn't any other match with the
             // letter at hand, it means there was a bad collision
