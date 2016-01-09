@@ -20,9 +20,10 @@ def match(word, match_word):
 	checked_word_indexes = []
 	for i in range(word_len):
 		current_index = low_match_word.find(low_word[i])
-		
-		if (-1 != index_noexcept(checked_word_indexes, current_index)):
-			new_match = low_match_word[index_noexcept(checked_word_indexes, current_index) + 1: match_word_len]
+		new_index = index_noexcept(checked_word_indexes, current_index)
+
+		if (-1 != new_index):
+			new_match = low_match_word[new_index + 1: match_word_len]
 			
 			if (-1 == new_match.find(low_word[i])):
 				return False;
