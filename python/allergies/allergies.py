@@ -16,14 +16,19 @@ class Allergies:
 	    "eggs": 1
 	}
 	
+	# Necessary to keep the ordering of the dictionary's keys
 	allergens_keys = ["cats", "pollen", "chocolate", "tomatoes",
 					  "strawberries", "shellfish", "peanuts", "eggs"]
 	
 	def __init__(self, score):
 		self.score = score
 	
+	@property
 	def lst(self):
 		allergens_list = []
+		
+		if (0 == self.score):
+			return []
 	
 		score = self.score
 		
@@ -33,10 +38,10 @@ class Allergies:
 			if (self.allergens[current_key] <= score):
 				allergens_list.append(current_key)
 				score -= self.allergens[current_key]
-			
+		
 		return list(reversed(allergens_list))
 	
 	def is_allergic_to(self, allergen):
-		allergic_to = self.lst()
+		allergic_to = self.lst
 	
 		return (-1 != index_noexcept(allergic_to, allergen))
