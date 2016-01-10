@@ -5,9 +5,16 @@ def index_noexcept(array, item):
 	return -1
 
 class Allergies:
-	# Necessary to keep the ordering of the dictionary's keys
-	allergens_keys = ["cats", "pollen", "chocolate", "tomatoes",
-					  "strawberries", "shellfish", "peanuts", "eggs"]
+	allergens_keys = [
+		"cats",
+		"pollen",
+		"chocolate",
+		"tomatoes",
+		"strawberries",
+		"shellfish",
+		"peanuts", 
+		"eggs"
+	]
 
 	def __init__(self, score):
 		self.score = score % 256
