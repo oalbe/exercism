@@ -5,21 +5,10 @@ def index_noexcept(array, item):
 	return -1
 
 class Allergies:
-	allergens = {
-		"cats": 128,
-		"pollen": 64,
-		"chocolate": 32,
-		"tomatoes": 16,
-		"strawberries": 8,
-		"shellfish": 4,
-		"peanuts": 2,
-	    "eggs": 1
-	}
-	
 	# Necessary to keep the ordering of the dictionary's keys
 	allergens_keys = ["cats", "pollen", "chocolate", "tomatoes",
 					  "strawberries", "shellfish", "peanuts", "eggs"]
-	
+
 	def __init__(self, score):
 		self.score = score % 256
 	
@@ -35,9 +24,11 @@ class Allergies:
 		keys_len = len(self.allergens_keys)
 		for i in range(keys_len):
 			current_key = self.allergens_keys[i]
-			if (self.allergens[current_key] <= score):
+			
+			current_allergen_value = 2 ** (keys_len - i - 1)
+			if (current_allergen_value <= score):
 				allergens_list.append(current_key)
-				score -= self.allergens[current_key]
+				score -= current_allergen_value
 		
 		return list(reversed(allergens_list))
 	
