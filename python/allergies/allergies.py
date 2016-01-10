@@ -21,7 +21,7 @@ class Allergies:
 					  "strawberries", "shellfish", "peanuts", "eggs"]
 	
 	def __init__(self, score):
-		self.score = score
+		self.score = score % 256
 	
 	@property
 	def lst(self):
