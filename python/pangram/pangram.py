@@ -7,7 +7,7 @@ def is_pangram(input_string):
 	clean_string = re.sub(r"[-!#$%^&*()_+|~=`{}\[\]:\";'<>?,.\/\s]*", "", input_string.lower())
 	
 	for i in range(97, 123):
-		if (-1 == clean_string.find(chr(i))):
+		if (chr(i) not in clean_string):
 			return False
 	
 	return True
