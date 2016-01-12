@@ -1,5 +1,4 @@
 import re
-import string
 
 def is_pangram(input_string):
 	if ('' == input_string):
