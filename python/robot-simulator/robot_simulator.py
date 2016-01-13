@@ -18,3 +18,13 @@ class Robot:
 			self.bearing = WEST
 		else:
 			self.bearing = directions[self.bearing - 1]
+	
+	def advance(self):
+		if (NORTH == self.bearing):
+			self.coordinates = (self.coordinates[0], self.coordinates[1] + 1)
+		elif (EAST == self.bearing):
+			self.coordinates = (self.coordinates[0] + 1, self.coordinates[1])
+		elif (SOUTH == self.bearing):
+			self.coordinates = (self.coordinates[0], self.coordinates[1] - 1)
+		elif (WEST == self.bearing):
+			self.coordinates = (self.coordinates[0] - 1, self.coordinates[1])
