@@ -4,21 +4,18 @@ class Robot:
 	def __init__(self, direction=NORTH, x=0, y=0):
 		self.coordinates = (x, y)
 		self.bearing = direction
-	
-	# TODO: Use the % arithmetic to make this more concise and faster.
+		
 	def turn_right(self):
 		directions = [NORTH, EAST, SOUTH, WEST]
-		if (WEST == self.bearing):
-			self.bearing = NORTH
-		else:
-			self.bearing = directions[self.bearing + 1]
+		
+		new_direction = (self.bearing + 1) % 4
+		self.bearing = directions[new_direction]
 	
 	def turn_left(self):
 		directions = [NORTH, EAST, SOUTH, WEST]
-		if (NORTH == self.bearing):
-			self.bearing = WEST
-		else:
-			self.bearing = directions[self.bearing - 1]
+		
+		new_direction = (self.bearing - 1) % 4
+		self.bearing = directions[new_direction]
 	
 	def advance(self):
 		if (NORTH == self.bearing):
