@@ -1,17 +1,17 @@
 NORTH, EAST, SOUTH, WEST = range(4)
 
 class Robot:
+	directions = [NORTH, EAST, SOUTH, WEST]
+	
 	def __init__(self, direction=NORTH, x=0, y=0):
 		self.coordinates = (x, y)
 		self.bearing = direction
 	
 	def turn_helper(self, side):
-		directions = [NORTH, EAST, SOUTH, WEST]
-		
 		discriminant = 1 if side else -1
 		
 		new_direction = (self.bearing + discriminant) % 4
-		self.bearing = directions[new_direction]	
+		self.bearing = self.directions[new_direction]	
 		
 	def turn_right(self):
 		self.turn_helper(True)
