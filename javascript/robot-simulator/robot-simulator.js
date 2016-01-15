@@ -1,9 +1,15 @@
+Number.prototype.mod = function(n) {
+    return ((this % n) + n) % n;
+};
+
 var directions = {
 	'north': 0,
 	'east': 1,
 	'south': 2,
 	'west': 3
 };
+
+var dirs = orderedKeys(directions);
 
 function isValidDirection(direction) {
 	if (direction in directions) {
@@ -35,24 +41,19 @@ Robot.prototype.orient = function(givenDirection) {
 	this.bearing = givenDirection;
 };
 
-// The code duplication in `turnRight()` and `turnLeft()` methods does not 
-// seem to be worth the effort of eliminating it.
+Robot.prototype.__turn_helper = function(side) {
+	var discriminant = side ? 1 : -1;
+	
+	var newDirection = (directions[this.bearing] + discriminant).mod(4);
+	this.bearing = dirs[newDirection];
+};
+
 Robot.prototype.turnRight = function() {
-	if ('west' === this.bearing) {
-		this.bearing = 'north';
-	} else {
-		var dirs = orderedKeys(directions);
-		this.bearing = dirs[directions[this.bearing] + 1];
-	}
+	this.__turn_helper(true);
 };
 
 Robot.prototype.turnLeft = function() {
-	if ('north' === this.bearing) {
-		this.bearing = 'west';
-	} else {
-		var dirs = orderedKeys(directions);
-		this.bearing = dirs[directions[this.bearing] - 1];
-	}
+	this.__turn_helper(false);
 };
 
 Robot.prototype.at = function(x, y) {
