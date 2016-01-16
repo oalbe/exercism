@@ -28,10 +28,10 @@ class AtbashCipherTest(unittest.TestCase):
         self.assertMultiLineEqual("gifgs rhurx grlm",
                                   encode("Truth is fiction."))
 
-    # def test_encode_all_things(self):
-    #     plaintext = "The quick brown fox jumps over the lazy dog."
-    #     ciphertext = "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"
-    #     self.assertMultiLineEqual(ciphertext, encode(plaintext))
+    def test_encode_all_things(self):
+        plaintext = "The quick brown fox jumps over the lazy dog."
+        ciphertext = "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"
+        self.assertMultiLineEqual(ciphertext, encode(plaintext))
 
     # def test_decode_word(self):
     #     self.assertMultiLineEqual("exercism", decode("vcvix rhn"))
