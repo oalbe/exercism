@@ -33,14 +33,14 @@ class AtbashCipherTest(unittest.TestCase):
         ciphertext = "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"
         self.assertMultiLineEqual(ciphertext, encode(plaintext))
 
-    # def test_decode_word(self):
-    #     self.assertMultiLineEqual("exercism", decode("vcvix rhn"))
+    def test_decode_word(self):
+        self.assertMultiLineEqual("exercism", decode("vcvix rhn"))
 
-    # def test_decode_sentence(self):
-    #     self.assertMultiLineEqual(
-    #         "anobstacleisoftenasteppingstone",
-    #         decode("zmlyh gzxov rhlug vmzhg vkkrm thglm v")
-    #     )
+    def test_decode_sentence(self):
+        self.assertMultiLineEqual(
+            "anobstacleisoftenasteppingstone",
+            decode("zmlyh gzxov rhlug vmzhg vkkrm thglm v")
+        )
 
 
 if __name__ == '__main__':
