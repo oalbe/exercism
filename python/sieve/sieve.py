@@ -1,20 +1,17 @@
-def generate_sequence(limit):
-	sequence = {}
-	for i in range(2, limit + 1):
-		sequence[i] = False
+def indexestoarr(arr):
+	output = []
+	for i in range(len(arr)):
+		if (False == arr[i]):
+			output.append(i)
 	
-	return sequence;
-
-def objtoarr(dic):
-	arr = []
-	for key, value in dic.items():
-		if (False == value):
-			arr.append(int(key))
-	
-	return arr
+	return output
 
 def sieve(limit):
-	sequence = generate_sequence(limit)
+	sequence = [False] * (limit + 1)
+	
+	sequence[0] = True
+	sequence[1] = True
+	
 	for i in range(2, limit + 1):
 		if (True == sequence[i]):
 			continue
@@ -23,4 +20,4 @@ def sieve(limit):
 			if (0 == (j % i)):
 				sequence[j] = True
 	
-	return objtoarr(sequence);
+	return indexestoarr(sequence)
