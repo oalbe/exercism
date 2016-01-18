@@ -1,3 +1,11 @@
+import re
+
+def index_noexcept(array, item):
+	if item in array:
+		return array.index(item)
+	
+	return -1
+
 xteen = {
 	'10': 'ten',
 	'11': 'eleven',
@@ -36,26 +44,30 @@ tens = {
 }
 
 def say(number):
+	number = int(number)
 	if ((0 > number) or (999999999999 < number)):
 		raise AttributeError('Number must be between 0 and 999,999,999,999.')
 	
 	digits = str(number)
-	if (unities[digits]):
+	if (digits in unities):
 		return unities[digits]
 	
 	english_number = []
 	
+	position = 1
 	digits_length = len(digits) - 1
 	for i in range(digits_length, -1, -1):
-		position = 1
-	
 		if ('0' == digits[i]):
 			position += 1
 			continue
-		
+
 		if (1 == position):
 			temp = []
-			temp.append(unities[digits[i]])
+			if (i + 1 != digits_length):
+				temp.append('and ' + unities[digits[i]])
+			else:
+				temp.append(unities[digits[i]])
+			
 			english_number.extend(temp)
 				
 			position += 1
@@ -66,20 +78,24 @@ def say(number):
 			
 			eng_num_len = len(english_number)
 			if (eng_num_len > 0):
-				temp = split(' ', english_number.pop())
+				temp = re.split(' ', english_number.pop())
 			
 			if ('1' == digits[i]):
 				del temp[0]
-				
 				xteen_number = xteen[digits[i] + digits[i + 1]]
 				
 				temp_eng = []
-				temp_eng.append(xteenNumber + space + ' '.join(temp))
-				english_number.extend(temp)
+				if (i + 1 != digits_length):
+					temp_eng.append(' and ' + xteen_number + space + ' '.join(temp))
+				else:
+					del temp[0]
+					temp_eng.append(xteen_number)
+				
+				english_number.extend(temp_eng)
 				
 				position += 1
 				continue
-			
+
 			currentTwoDigits = tens[digits[i]] + ('-' if ('0' != digits[i + 1]) else '')
 			
 			if (2 != position):
@@ -89,16 +105,25 @@ def say(number):
 				elif (11 == position):
 					magnitude = 'billion'
 				
-				if (-1 == temp.indexOf(magnitude)):
+				if (-1 == index_noexcept(temp, magnitude)):
 					temp = []
-					temp.append(currentTwoDigits + ' ' + magnitude + ' ' + ' '.join(temp))
+					if (i + 1 != digits_length):
+						temp.append(currentTwoDigits + ' ' + magnitude + ' and ' + ' '.join(temp))
+					else:
+						temp.append(currentTwoDigits + ' ' + magnitude + ' ' + ' '.join(temp))
 					english_number.extend(temp)
 					
 					position += 1
 					continue
-
+			
 			t = []
-			t.append(currentTwoDigits + ' '.join(temp))
+			if (i + 1 != digits_length):
+				t.append('and ' + currentTwoDigits + ' '.join(temp))
+			else:
+				if len(temp) > 0:
+					del temp[0]
+				
+				t.append(currentTwoDigits + ' '.join(temp))
 			english_number.extend(t)
 
 			position += 1
@@ -107,6 +132,12 @@ def say(number):
 			magnitude = ''
 			if (0 == (position % 3)):
 				magnitude = ' hundred'
+				if (len(english_number) > 0):
+					t = english_number.pop()
+					temp_string = re.sub(r'and\ ', '', t)
+					english_number.append(temp_string)
+					
+					magnitude = ' hundred and'
 			elif (4 == position):
 				magnitude = ' thousand'
 			elif (7 == position):
@@ -127,4 +158,4 @@ def say(number):
 			position += 1
 			continue
 
-	return english_number.join()
+	return ' '.join(english_number)
