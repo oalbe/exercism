@@ -67,7 +67,8 @@ Say.inEnglish = function(number) {
 			var temp = [];
 			var space = (2 === position) ? '' : ' ';
 			
-			if (englishNumber.length > 0) {
+			englishNumberLength = englishNumber.length;
+			if (englishNumberLength > 0) {
 				temp = englishNumber.pop().split(' ');
 			}
 			
@@ -87,7 +88,7 @@ Say.inEnglish = function(number) {
 			if (2 !== position) {
 				var magnitude = 'thousand';
 				if (8 === position) {
-					magnitude = 'million'
+					magnitude = 'million';
 				} else if (11 === position) {
 					magnitude = 'billion';
 				}
@@ -108,22 +109,22 @@ Say.inEnglish = function(number) {
 			continue;
 		} else if ((0 === (position % 3)) || (1 === (position % 3))) {
 			// Deals with hundreds, thousands, millions and billions (like 1000, 9.234.567)
-			var magnitude = '';
+			var _magnitude = '';
 			if (0 === (position % 3)) {
-				magnitude = ' hundred';
+				_magnitude = ' hundred';
 			} else if (4 === position) {
-				magnitude = ' thousand';
+				_magnitude = ' thousand';
 			} else if (7 === position) {
-				magnitude = ' million';
+				_magnitude = ' million';
 			} else if (10 === position) {
-				magnitude = ' billion';
+				_magnitude = ' billion';
 			}
 			
 			var currentOneDigit = '';
 			if (englishNumber.length > 0) {
-				currentOneDigit = unities[digits[i]] + magnitude + ' ' + englishNumber.pop();
+				currentOneDigit = unities[digits[i]] + _magnitude + ' ' + englishNumber.pop();
 			} else {
-				currentOneDigit = unities[digits[i]] + magnitude;
+				currentOneDigit = unities[digits[i]] + _magnitude;
 			}
 			
 			englishNumber.unshift(currentOneDigit);
