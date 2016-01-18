@@ -1,3 +1,4 @@
+// TODO: See the python solution for a possible refactoring.
 var Allergies = function(score) {
 	this.allergens = {
 		'cats': 128,
@@ -15,6 +16,10 @@ var Allergies = function(score) {
 
 Allergies.prototype.list = function() {
 	var allergensList = [];
+	
+	if (0 === this.allergyScore) {
+		return [];
+	}
 	
 	var mScore = this.allergyScore;
 	for (var aKey in this.allergens) {

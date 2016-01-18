@@ -27,7 +27,7 @@ Cipher.prototype.encode = function(text) {
 	}
 	
 	// TODO: Try making this trimming unnecessary.
-	return encodedText.trim();	
+	return encodedText.trim();
 };
 
 module.exports = new Cipher();

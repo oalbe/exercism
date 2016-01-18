@@ -1,3 +1,5 @@
+// REVIEW: Check the comments on exercism.io and see if implementing the capturing groups
+// regex thing makes things cleaner and faster.
 exports.WordProblem = WordProblem;
 exports.ArgumentError = ArgumentError;
 

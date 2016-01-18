@@ -27,7 +27,6 @@ Sieve.prototype.findPrimes = function() {
 				sequence[j] = true;
 			}
 		}
-		
 	}
 	
 	return this.objToArr(sequence);

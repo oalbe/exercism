@@ -1,3 +1,4 @@
+# Learn bitwise operations to make this code shorter
 def index_noexcept(array, item):
 	if item in array:
 		return array.index(item)

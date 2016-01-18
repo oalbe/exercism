@@ -1,4 +1,13 @@
 {
+	"build_systems":
+	[
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "python -u \"$file\""
+		}
+	],
 	"folders":
 	[
 		{
@@ -12,6 +21,9 @@
 		},
 		{
 			"path": "C:\\dev\\msys64\\home\\Admin\\__projects\\express_book"
+		},
+		{
+			"path": "C:\\Users\\Admin\\Desktop\\Workspace\\_Projects\\ProjectEuler"
 		}
 	]
 }
