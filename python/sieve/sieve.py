@@ -20,4 +20,6 @@ def sieve(limit):
 			if (0 == (j % i)):
 				sequence[j] = True
 	
+	# TODO: Inspect this kind of syntax
+	# return [i for i, j in enumerate(sequence) if not j]
 	return indexestoarr(sequence)
