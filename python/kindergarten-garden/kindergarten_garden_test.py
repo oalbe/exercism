@@ -25,13 +25,13 @@ class KindergartenGardenTests(unittest.TestCase):
         self.assertEqual("Grass Violets Clover Violets".split(),
                          garden.plants("Larry"))
 
-    # def test_disordered_test(self):
-    #     garden = Garden("VCRRGVRG\nRVGCCGCV",
-    #                     students="Samantha Patricia Xander Roger".split())
-    #     self.assertEqual("Violets Clover Radishes Violets".split(),
-    #                      garden.plants("Patricia"))
-    #     self.assertEqual("Radishes Grass Clover Violets".split(),
-    #                      garden.plants("Xander"))
+    def test_disordered_test(self):
+        garden = Garden("VCRRGVRG\nRVGCCGCV",
+                        students="Samantha Patricia Xander Roger".split())
+        self.assertEqual("Violets Clover Radishes Violets".split(),
+                         garden.plants("Patricia"))
+        self.assertEqual("Radishes Grass Clover Violets".split(),
+                         garden.plants("Xander"))
 
 
 if __name__ == '__main__':
