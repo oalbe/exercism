@@ -16,7 +16,6 @@ class School:
 		
 		return set()
 	
+	# REVIEW: Still trying to figure out how this code exactly works
 	def sort(self):
-		# Why the hell is it expecting to sort a dictionary into a tuple...
-		print('### ', sorted(self.db.items()))
-		return sorted(self.db.items())
+		return sorted((grade, tuple(sorted(students))) for grade, students in self.db.items())
