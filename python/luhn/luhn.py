@@ -5,7 +5,7 @@ class Luhn:
 	
 	def addends(self):
 		digits = self._number
-		addends_arr = [];
+		addends_arr = []
 	
 		num_len = len(digits)
 		for i in range(num_len - 1, -1, -1):
@@ -15,7 +15,7 @@ class Luhn:
 			else:
 				addends_arr.append(int(digits[i]))
 		
-		return addends_arr;
+		return addends_arr
 	
 	def checksum(self):
 		computed_checksum = 0
@@ -24,4 +24,7 @@ class Luhn:
 		for i in range(addends_len):
 			computed_checksum += self._addends[i]
 		
-		return computed_checksum;
+		return computed_checksum
+	
+	def is_valid(self):
+		return True if (0 == (self.checksum() % 10)) else False

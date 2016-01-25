@@ -22,11 +22,11 @@ class LuhnTests(unittest.TestCase):
     def test_ckecksum2(self):
         self.assertEqual(21, Luhn(201773).checksum())
 
-    # def test_invalid_number(self):
-    #     self.assertFalse(Luhn(738).is_valid())
+    def test_invalid_number(self):
+        self.assertFalse(Luhn(738).is_valid())
 
-    # def test_valid_number(self):
-    #     self.assertTrue(Luhn(8739567).is_valid())
+    def test_valid_number(self):
+        self.assertTrue(Luhn(8739567).is_valid())
 
     # def test_create_valid_number1(self):
     #     self.assertEqual(1230, Luhn.create(123))
