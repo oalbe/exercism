@@ -12,7 +12,6 @@ class Robot:
 	def coordinates(self):
 	    return (self.x, self.y)
 	
-	
 	def turn_helper(self, side):
 		discriminant = 1 if side else -1
 		
