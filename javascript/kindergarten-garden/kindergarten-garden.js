@@ -1,5 +1,5 @@
 function Garden(plants, students) {
-	this.students = 'undefined' !== typeof students ? students.sort() : [
+	this.students = ('undefined' !== typeof students) ? students.sort() : [
 		'alice', 'bob', 'charlie', 'david', 
 		'eve', 'fred', 'ginny', 'harriet', 
 		'ileana', 'joseph', 'kincaid', 'larry'
