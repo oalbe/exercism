@@ -1,5 +1,63 @@
-function MeetupDay(year, month, weekday, cardinal) {
-	
+var days = {
+    'sunday': 0,
+    'monday': 1,
+    'tuesday': 2,
+    'wednesday': 3,
+    'thursday': 4,
+    'friday': 5,
+    'saturday': 6
+};
+
+function generateCandidates(year, month, weekDay) {
+    var candidates = [];
+
+    var monthDaysCount = new Date(year, month + 1, 0).getDate();
+    for (var i = 0; i < monthDaysCount; ++i) {
+        var newDate = new Date(year, month, i + 1);
+
+        if (newDate.getDay() === days[weekDay.toLowerCase()]) {
+            candidates.push(newDate);
+        }
+    }
+
+  return candidates;
 }
 
-module.exports = MeetupDay;
+function parseCandidates(candidatesArr, callback) {
+    var limit = candidatesArr.length;
+    for (var i = 0; i < limit; ++i) {
+        if (callback(candidatesArr[i], i, candidatesArr)) {
+            return candidatesArr[i];
+        }
+    }
+    
+    return false;
+}
+
+function MeetupDayException() {}
+
+function meetupDay(year, month, weekDay, cardinalNum) {
+    cardinalNum = cardinalNum.toLowerCase();
+    
+    var candidates = generateCandidates(year, month, weekDay);
+
+    var computedDay = null;
+    if ('last' === cardinalNum) {
+        computedDay = candidates.pop();
+    } else if ('teenth' === cardinalNum) {
+        computedDay = parseCandidates(candidates, function(d) {
+            return ((13 <= d.getDate()) && (19 >= d.getDate()));
+        });
+    } else {
+        // TODO: This can be optimized. Figure out how.
+        computedDay = candidates.slice(parseInt(cardinalNum) - 1, parseInt(cardinalNum)).pop();
+    }
+
+    if (!computedDay) {
+        throw new MeetupDayException();
+    }
+
+    return computedDay;
+}
+
+module.exports = meetupDay;
