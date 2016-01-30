@@ -5,8 +5,6 @@ PigLatin.compose_helper = function(word, index) {
 };
 
 PigLatin.translate_helper = function(word) {
-	var messedWord = '';
-	
 	var hPos = word.indexOf('h');
 	var qPos = word.indexOf('q');
 	if (-1 !== hPos) {
