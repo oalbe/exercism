@@ -19,8 +19,8 @@ class CipherTest(unittest.TestCase):
     def test_caesar_encode_with_numbers(self):
         self.assertEqual('jr', Caesar().encode('1, 2, 3, Go!'))
 
-    # def test_caesar_decode(self):
-    #     self.assertEqual('venividivici', Caesar().decode('yhqlylglylfl'))
+    def test_caesar_decode(self):
+        self.assertEqual('venividivici', Caesar().decode('yhqlylglylfl'))
 
     # def test_cipher_encode1(self):
     #     c = Cipher('a')

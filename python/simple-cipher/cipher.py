@@ -17,6 +17,16 @@ class Caesar():
 			# print(clean_input[i], ' = ', ((ord(clean_input[i]) - 97) + 3) %26)
 		
 		return encoded_text
+	
+	def decode(self, encoded_text):
+		decoded_text = ''
+		
+		encoded_text_len = len(encoded_text)
+		for i in range(encoded_text_len):
+			character = ((ord(encoded_text[i]) - 97) - 3) % 26
+			decoded_text += chr(character + 97)
+		
+		return decoded_text
 
 class Cipher():
 	def encode(plain_text):
