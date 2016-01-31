@@ -3,6 +3,10 @@ import re
 
 class Caesar():
 	def translate_helper(self, text, mode):
+		clean_input = text.lower()
+		regex = re.compile(r'[0-9!,\.\'\s+]')
+		text = regex.sub('', clean_input)
+		
 		translated_text = ''
 		
 		offset = 3 if mode else -3
@@ -15,11 +19,7 @@ class Caesar():
 		return translated_text
 
 	def encode(self, plain_text):
-		clean_input = plain_text.lower()
-		regex = re.compile(r'[0-9!,\.\'\s+]')
-		clean_input = regex.sub('', clean_input)
-
-		return self.translate_helper(clean_input, True)
+		return self.translate_helper(plain_text, True)
 	
 	def decode(self, encoded_text):
 		return self.translate_helper(encoded_text, False)
