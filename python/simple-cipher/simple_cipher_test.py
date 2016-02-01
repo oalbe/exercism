@@ -27,24 +27,24 @@ class CipherTest(unittest.TestCase):
         self.assertEqual('itisawesomeprogramminginpython',
                          c.encode('itisawesomeprogramminginpython'))
 
-    # def test_cipher_encode2(self):
-    #     c = Cipher('aaaaaaaaaaaaaaaaaaaaaa')
-    #     self.assertEqual('itisawesomeprogramminginpython',
-    #                      c.encode('itisawesomeprogramminginpython'))
+    def test_cipher_encode2(self):
+        c = Cipher('aaaaaaaaaaaaaaaaaaaaaa')
+        self.assertEqual('itisawesomeprogramminginpython',
+                         c.encode('itisawesomeprogramminginpython'))
 
-    # def test_cipher_encode3(self):
-    #     c = Cipher('dddddddddddddddddddddd')
-    #     self.assertEqual('yhqlylglylfl', c.encode('venividivici'))
+    def test_cipher_encode3(self):
+        c = Cipher('dddddddddddddddddddddd')
+        self.assertEqual('yhqlylglylfl', c.encode('venividivici'))
 
-    # def test_cipher_encode4(self):
-    #     key = ('duxrceqyaimciuucnelkeoxjhdyduucpmrxmaivacmybmsdrzwqxvbxsy'
-    #            'gzsabdjmdjabeorttiwinfrpmpogvabiofqexnohrqu')
-    #     c = Cipher(key)
-    #     self.assertEqual('gccwkixcltycv', c.encode('diffiehellman'))
+    def test_cipher_encode4(self):
+        key = ('duxrceqyaimciuucnelkeoxjhdyduucpmrxmaivacmybmsdrzwqxvbxsy'
+               'gzsabdjmdjabeorttiwinfrpmpogvabiofqexnohrqu')
+        c = Cipher(key)
+        self.assertEqual('gccwkixcltycv', c.encode('diffiehellman'))
 
-    # def test_cipher_encode_short_key(self):
-    #     c = Cipher('abcd')
-    #     self.assertEqual('abcdabcd', c.encode('aaaaaaaa'))
+    def test_cipher_encode_short_key(self):
+        c = Cipher('abcd')
+        self.assertEqual('abcdabcd', c.encode('aaaaaaaa'))
 
     # def test_cipher_compositiion1(self):
     #     key = ('duxrceqyaimciuucnelkeoxjhdyduucpmrxmaivacmybmsdrzwqxvbxsy'
