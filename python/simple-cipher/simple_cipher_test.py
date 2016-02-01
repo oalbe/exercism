@@ -22,10 +22,10 @@ class CipherTest(unittest.TestCase):
     def test_caesar_decode(self):
         self.assertEqual('venividivici', Caesar().decode('yhqlylglylfl'))
 
-    # def test_cipher_encode1(self):
-    #     c = Cipher('a')
-    #     self.assertEqual('itisawesomeprogramminginpython',
-    #                      c.encode('itisawesomeprogramminginpython'))
+    def test_cipher_encode1(self):
+        c = Cipher('a')
+        self.assertEqual('itisawesomeprogramminginpython',
+                         c.encode('itisawesomeprogramminginpython'))
 
     # def test_cipher_encode2(self):
     #     c = Cipher('aaaaaaaaaaaaaaaaaaaaaa')
