@@ -51,36 +51,27 @@ class Cipher():
             rendered_key = rendered_key[0:text_len]
         
         return rendered_key
+    
+    def translate_helper(self, text, mode):
+        if (0 == len(self.key)):
+            return text
+        
+        sign = 1 if mode else -1
+        
+        translated_text = ''
+        
+        text_len = len(text)
+        rendered_key = self.render_key(text_len)
+        
+        for i in range(text_len):
+            text_chr = ord(text[i]) - 97
+            key_chr = ord(rendered_key[i]) - 97
+            translated_text += chr(((text_chr + (sign * key_chr)) % 26) + 97)
+        
+        return translated_text
 
     def encode(self, plain_text):
-        if (0 == len(self.key)):
-            return plain_text
-        
-        encoded_text = ''
-        
-        plain_text_len = len(plain_text)
-        rendered_key = self.render_key(plain_text_len)
+        return self.translate_helper(plain_text, True)
 
-        for i in range(plain_text_len):
-            # print(ord(plain_text[i]), ' = ', ord(rendered_key[i]))
-            text_chr = ord(plain_text[i]) - 97
-            key_chr = ord(rendered_key[i]) - 97
-            encoded_text += chr(((text_chr + key_chr) % 26) + 97)
-        
-        return encoded_text
-    
     def decode(self, encoded_text):
-        if (0 == len(self.key)):
-            return encoded_text
-
-        decoded_text = ''
-        
-        encoded_text_len = len(encoded_text)
-        rendered_key = self.render_key(encoded_text_len)
-    
-        for i in range(encoded_text_len):
-            text_chr = ord(encoded_text[i]) - 97
-            key_chr = ord(rendered_key[i]) - 97
-            decoded_text += chr(((text_chr - key_chr) % 26) + 97)
-        
-        return decoded_text
+        return self.translate_helper(encoded_text, False)
