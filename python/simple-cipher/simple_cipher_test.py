@@ -46,17 +46,17 @@ class CipherTest(unittest.TestCase):
         c = Cipher('abcd')
         self.assertEqual('abcdabcd', c.encode('aaaaaaaa'))
 
-    # def test_cipher_compositiion1(self):
-    #     key = ('duxrceqyaimciuucnelkeoxjhdyduucpmrxmaivacmybmsdrzwqxvbxsy'
-    #            'gzsabdjmdjabeorttiwinfrpmpogvabiofqexnohrqu')
-    #     plaintext = 'adaywithoutlaughterisadaywasted'
-    #     c = Cipher(key)
-    #     self.assertEqual(plaintext, c.decode(c.encode(plaintext)))
+    def test_cipher_compositiion1(self):
+        key = ('duxrceqyaimciuucnelkeoxjhdyduucpmrxmaivacmybmsdrzwqxvbxsy'
+               'gzsabdjmdjabeorttiwinfrpmpogvabiofqexnohrqu')
+        plaintext = 'adaywithoutlaughterisadaywasted'
+        c = Cipher(key)
+        self.assertEqual(plaintext, c.decode(c.encode(plaintext)))
 
-    # def test_cipher_compositiion2(self):
-    #     plaintext = 'adaywithoutlaughterisadaywasted'
-    #     c = Cipher()
-    #     self.assertEqual(plaintext, c.decode(c.encode(plaintext)))
+    def test_cipher_compositiion2(self):
+        plaintext = 'adaywithoutlaughterisadaywasted'
+        c = Cipher()
+        self.assertEqual(plaintext, c.decode(c.encode(plaintext)))
 
     # def test_cipher_random_key(self):
     #     c = Cipher()
