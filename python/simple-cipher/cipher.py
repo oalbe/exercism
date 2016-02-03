@@ -27,7 +27,19 @@ class Caesar():
 
 class Cipher():
     def __init__(self, key=''):
-        self.key = key
+        if self.validate_key(key):
+            self.key = key
+        else:
+            self.key = ''
+            raise ValueError;
+    
+    def validate_key(self, key):
+        key_len = len(key)
+        for i in range(key_len):
+            if (97 > ord(key[i])) or (122 < ord(key[i])):
+                return False
+        
+        return True
 
     def render_key(self, text_len):
         key_len = len(self.key)
