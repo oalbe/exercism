@@ -6,7 +6,7 @@ def prime_factors(num):
         if 0 == (num % i):
             factors.append(i)
             
-            num = int(num / i)
+            num = num // i
             i = 1
         
         i += 1
