@@ -1,5 +1,6 @@
 import re
 import math
+from random import randint
 
 
 class Caesar():
@@ -27,11 +28,14 @@ class Caesar():
 
 class Cipher():
     def __init__(self, key=''):
-        if self.validate_key(key):
-            self.key = key
+        if (0 == len(key)):
+            self.key = self.generate_key()
         else:
-            self.key = ''
-            raise ValueError;
+            if self.validate_key(key):
+                self.key = key
+            else:
+                self.key = ''
+                raise ValueError;
     
     def validate_key(self, key):
         key_len = len(key)
@@ -40,12 +44,18 @@ class Cipher():
                 return False
         
         return True
+    
+    # TODO: This can probably be rendered in a more pythonic way
+    def generate_key(self):
+        random_key = ''
+        
+        for i in range(100):
+            random_key += chr(randint(97, 122))
+        
+        return random_key
 
     def render_key(self, text_len):
         key_len = len(self.key)
-        
-        if (0 == key_len):
-            return ''
 
         if (key_len == text_len):
             return self.key
@@ -65,9 +75,6 @@ class Cipher():
         return rendered_key
     
     def translate_helper(self, text, mode):
-        if (0 == len(self.key)):
-            return text
-        
         sign = 1 if mode else -1
         
         translated_text = ''
