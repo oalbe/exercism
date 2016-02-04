@@ -9,14 +9,12 @@ class Caesar():
         regex = re.compile(r'[0-9!,\.\'\s+]')
         text = regex.sub('', clean_input)
         
-        translated_text = ''
-        
         offset = 3 if mode else -3
         
-        text_len = len(text)
-        for i in range(text_len):
-            character = ((ord(text[i]) - 97) + offset) % 26
-            translated_text += chr(character + 97)
+        translated_text = ''
+        for char in text:
+            new_character = ((ord(char) - 97) + offset) % 26
+            translated_text += chr(new_character + 97)
         
         return translated_text
 
@@ -38,9 +36,8 @@ class Cipher():
                 raise ValueError;
     
     def validate_key(self, key):
-        key_len = len(key)
-        for i in range(key_len):
-            if (97 > ord(key[i])) or (122 < ord(key[i])):
+        for char in key:
+            if (97 > ord(char)) or (122 < ord(char)):
                 return False
         
         return True
@@ -60,28 +57,22 @@ class Cipher():
         if (key_len == text_len):
             return self.key
         
-        rendered_key = ''
-        
-        if (key_len > text_len):
-            return self.key[0:text_len]
-        else:
+        rendered_key = self.key
+        if (key_len < text_len):
             repetitions = math.ceil(text_len / key_len)
             
-            for i in range(repetitions):
+            for i in range(1, repetitions):
                 rendered_key += self.key
-            
-            rendered_key = rendered_key[0:text_len]
         
-        return rendered_key
+        return rendered_key[0:text_len]
     
     def translate_helper(self, text, mode):
         sign = 1 if mode else -1
         
-        translated_text = ''
-        
         text_len = len(text)
         rendered_key = self.render_key(text_len)
         
+        translated_text = ''
         for i in range(text_len):
             text_chr = ord(text[i]) - 97
             key_chr = ord(rendered_key[i]) - 97
