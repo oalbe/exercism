@@ -45,7 +45,6 @@ class Cipher():
     # TODO: This can probably be rendered in a more pythonic way
     def generate_key(self):
         random_key = ''
-        
         for i in range(100):
             random_key += chr(randint(97, 122))
         
