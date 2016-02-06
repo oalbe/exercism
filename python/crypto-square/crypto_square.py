@@ -2,19 +2,13 @@ import re
 import math
 
 
-def index_noexcept(array, item):
-    if item in array:
-        return array.index(item)
-    
-    return -1
-
 def segment_text(clean_input, segment_size):
     segmented_text = []
     
     limit = math.ceil(len(clean_input) / segment_size)
-    print('limit = ', limit)
     for i in range(limit):
-        segmented_text.append(clean_input[i * segment_size : (i * segment_size) + segment_size])
+        start_pt = i * segment_size
+        segmented_text.append(clean_input[start_pt : start_pt + segment_size])
     
     return segmented_text
 
@@ -36,7 +30,6 @@ def encode(message):
     if (0 == len(message)):
         return ''
     
-    # TODO: clean up and normalize input
     clean_input = message.lower()
     regex = re.compile(r'[-!#$%^&*()_+|~=`{}\[\]:\";\'<>?,.\/\s]')
     clean_input = regex.sub('', clean_input)
@@ -44,15 +37,4 @@ def encode(message):
     size = math.ceil(math.sqrt(len(clean_input)))
     segmented_text = segment_text(clean_input, size)
 
-    # encoded_text = encode_helper(clean_input, segmented_text)
-    
-    print('clean_input = ', clean_input)
-    print('size = ', size)
-    print('segmented_text = ', segmented_text)
-    # print('encoded_text = ', encoded_text)
-    
-    # return encoded_text
     return encode_helper(clean_input, segmented_text)
-    # this
-    # isea
-    # sy

@@ -19,11 +19,11 @@ class CryptoSquareTest(unittest.TestCase):
         ciph = '1gga 2ook 3fde gos ors'
         self.assertEqual(ciph, encode(msg))
 
-    # def test_long_string(self):
-    #     msg = ("If man was meant to stay on the ground, god would have given "
-    #            "us roots.")
-    #     ciph = "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn sseoau"
-    #     self.assertEqual(ciph, encode(msg))
+    def test_long_string(self):
+        msg = ("If man was meant to stay on the ground, god would have given "
+               "us roots.")
+        ciph = "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn sseoau"
+        self.assertEqual(ciph, encode(msg))
 
 
 if __name__ == '__main__':
