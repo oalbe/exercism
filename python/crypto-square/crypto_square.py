@@ -25,7 +25,7 @@ def encode_helper(clean_input, segments):
     segment_len = len(segments[0])
     for j in range(segment_len):
         for i in range(segments_len):
-            if (i* j < segment_len):
+            if (j < len(segments[i])):
                 encoded_text += segments[i][j]
         
         encoded_text += " "
