@@ -11,8 +11,8 @@ class CryptoSquareTest(unittest.TestCase):
     def test_perfect_square(self):
         self.assertEqual('ac bd', encode('ABCD'))
 
-    # def test_small_imperfect_square(self):
-    #     self.assertEqual('tis hsy ie sa', encode('This is easy!'))
+    def test_small_imperfect_square(self):
+        self.assertEqual('tis hsy ie sa', encode('This is easy!'))
 
     # def test_punctuation_and_numbers(self):
     #     msg = "1, 2, 3, Go! Go, for God's sake!"
