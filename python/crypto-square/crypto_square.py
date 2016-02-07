@@ -30,11 +30,9 @@ def encode(message):
     if (0 == len(message)):
         return ''
     
-    clean_input = message.lower()
     regex = re.compile(r'[-!#$%^&*()_+|~=`{}\[\]:\";\'<>?,.\/\s]')
-    clean_input = regex.sub('', clean_input)
+    clean_input = regex.sub('', message.lower())
     
     size = math.ceil(math.sqrt(len(clean_input)))
-    segmented_text = segment_text(clean_input, size)
 
-    return encode_helper(clean_input, segmented_text)
+    return encode_helper(clean_input, segment_text(clean_input, size))
