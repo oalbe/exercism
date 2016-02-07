@@ -33,40 +33,40 @@ class SublistTest(unittest.TestCase):
         l2 = [0, 1, 1, 1, 2, 1, 2]
         self.assertEqual(SUBLIST, check_lists(l1, l2))
 
-    # def test_sublist_at_start(self):
-    #     l1 = [0, 1, 2]
-    #     l2 = [0, 1, 2, 3, 4, 5]
-    #     self.assertEqual(SUBLIST, check_lists(l1, l2))
+    def test_sublist_at_start(self):
+        l1 = [0, 1, 2]
+        l2 = [0, 1, 2, 3, 4, 5]
+        self.assertEqual(SUBLIST, check_lists(l1, l2))
 
-    # def test_sublist_in_middle(self):
-    #     l1 = [2, 3, 4]
-    #     l2 = [0, 1, 2, 3, 4, 5]
-    #     self.assertEqual(SUBLIST, check_lists(l1, l2))
+    def test_sublist_in_middle(self):
+        l1 = [2, 3, 4]
+        l2 = [0, 1, 2, 3, 4, 5]
+        self.assertEqual(SUBLIST, check_lists(l1, l2))
 
-    # def test_sublist_at_end(self):
-    #     l1 = [3, 4, 5]
-    #     l2 = [0, 1, 2, 3, 4, 5]
-    #     self.assertEqual(SUBLIST, check_lists(l1, l2))
+    def test_sublist_at_end(self):
+        l1 = [3, 4, 5]
+        l2 = [0, 1, 2, 3, 4, 5]
+        self.assertEqual(SUBLIST, check_lists(l1, l2))
 
-    # def test_at_start_of_superlist(self):
-    #     l1 = [0, 1, 2, 3, 4, 5]
-    #     l2 = [0, 1, 2]
-    #     self.assertEqual(SUPERLIST, check_lists(l1, l2))
+    def test_at_start_of_superlist(self):
+        l1 = [0, 1, 2, 3, 4, 5]
+        l2 = [0, 1, 2]
+        self.assertEqual(SUPERLIST, check_lists(l1, l2))
 
-    # def test_in_middle_of_superlist(self):
-    #     l1 = [0, 1, 2, 3, 4, 5]
-    #     l2 = [2, 3]
-    #     self.assertEqual(SUPERLIST, check_lists(l1, l2))
+    def test_in_middle_of_superlist(self):
+        l1 = [0, 1, 2, 3, 4, 5]
+        l2 = [2, 3]
+        self.assertEqual(SUPERLIST, check_lists(l1, l2))
 
-    # def test_at_end_of_superlist(self):
-    #     l1 = [0, 1, 2, 3, 4, 5]
-    #     l2 = [3, 4, 5]
-    #     self.assertEqual(SUPERLIST, check_lists(l1, l2))
+    def test_at_end_of_superlist(self):
+        l1 = [0, 1, 2, 3, 4, 5]
+        l2 = [3, 4, 5]
+        self.assertEqual(SUPERLIST, check_lists(l1, l2))
 
-    # def test_large_lists(self):
-    #     l1 = list(range(1000)) * 1000 + list(range(1000, 1100))
-    #     l2 = list(range(900, 1050))
-    #     self.assertEqual(SUPERLIST, check_lists(l1, l2))
+    def test_large_lists(self):
+        l1 = list(range(1000)) * 1000 + list(range(1000, 1100))
+        l2 = list(range(900, 1050))
+        self.assertEqual(SUPERLIST, check_lists(l1, l2))
 
     # def test_spread_sublist(self):
     #     multiples_of_3 = list(range(3, 200, 3))
