@@ -32,9 +32,8 @@ SUBLIST, SUPERLIST, EQUAL, UNEQUAL = range(4)
 # Check if list_a is a sublist of list_b
 def check_lists(list_a, list_b):
     # list_a EQUAL list_b case:
-    if len(list_a) == len(list_b):
-        if list_a == list_b:
-            return EQUAL
+    if list_a == list_b:
+        return EQUAL
 
     # list_a SUBLIST of list_b case:
     if len(list_a) < len(list_b):
