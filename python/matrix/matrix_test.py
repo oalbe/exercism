@@ -20,13 +20,13 @@ class MatrixTest(unittest.TestCase):
         matrix = Matrix("1 4 9\n16 25 36")
         self.assertEqual([16, 25, 36], matrix.rows[1])
 
-    # def test_extract_a_column(self):
-    #     matrix = Matrix("1 2 3\n4 5 6\n7 8 9\n8 7 6")
-    #     self.assertEqual([1, 4, 7, 8], matrix.columns[0])
+    def test_extract_a_column(self):
+        matrix = Matrix("1 2 3\n4 5 6\n7 8 9\n8 7 6")
+        self.assertEqual([1, 4, 7, 8], matrix.columns[0])
 
-    # def test_extract_another_column(self):
-    #     matrix = Matrix("89 1903 3\n18 3 1\n9 4 800")
-    #     self.assertEqual([1903, 3, 4], matrix.columns[1])
+    def test_extract_another_column(self):
+        matrix = Matrix("89 1903 3\n18 3 1\n9 4 800")
+        self.assertEqual([1903, 3, 4], matrix.columns[1])
 
 
 if __name__ == '__main__':
