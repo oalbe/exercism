@@ -41,14 +41,14 @@ from pythagorean_triplet import (primitive_triplets, triplets_in_range,
 
 class PythagoreanTripletTest(unittest.TestCase):
 
-    # def test_triplet1(self):
-    #     ans = set([(3, 4, 5)])
-    #     self.assertEqual(ans, primitive_triplets(4))
+    def test_triplet1(self):
+        ans = set([(3, 4, 5)])
+        self.assertEqual(ans, primitive_triplets(4))
 
-    # def test_triplet2(self):
-    #     ans = set([(13, 84, 85), (84, 187, 205), (84, 437, 445),
-    #                (84, 1763, 1765)])
-    #     self.assertEqual(ans, primitive_triplets(84))
+    def test_triplet2(self):
+        ans = set([(13, 84, 85), (84, 187, 205), (84, 437, 445),
+                   (84, 1763, 1765)])
+        self.assertEqual(ans, primitive_triplets(84))
 
     # def test_triplet3(self):
     #     ans = set([(29, 420, 421), (341, 420, 541), (420, 851, 949),

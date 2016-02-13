@@ -11,6 +11,7 @@ class Matrix:
         for row in str_rows:
             split_row = row.split(' ')
             new_row = []
+            
             for item in split_row:
                 new_row.append(int(item))
             
