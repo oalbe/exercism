@@ -25,13 +25,9 @@ def parse_columns(matrix):
     return columns
 
 def validate_matrix(matrix):
-    rows = len(matrix)
-    
     test_len = len(matrix[0])
-    for i in range(1, rows - 1):
-        current_len = len(matrix[i])
-
-        if test_len != current_len:
+    for row in matrix:
+        if test_len != len(row):
             return False
     
     return True
@@ -49,18 +45,18 @@ def saddle_points(matrix):
     
     rows_limit = len(matrix)
     for i in range(rows_limit):
-        maxRowElem = max(matrix[i])
+        max_row_elem = max(matrix[i])
                 
-        maxCoord = coordinatesRow(maxRowElem, matrix[i], i)
+        max_coordinates = coordinatesRow(max_row_elem, matrix[i], i)
         
-        coordLimit = len(maxCoord)
-        for c in range(coordLimit):
-            rowIndex = maxCoord[c][0]
-            colIndex = maxCoord[c][1]
+        coordinates_limit = len(max_coordinates)
+        for c in range(coordinates_limit):
+            row_index = max_coordinates[c][0]
+            col_index = max_coordinates[c][1]
 
-            minColElem = min(cols[colIndex])
+            min_col_elem = min(cols[col_index])
 
-            if (minColElem == maxRowElem):
-                saddles.add((rowIndex, colIndex))
+            if (min_col_elem == max_row_elem):
+                saddles.add((row_index, col_index))
     
     return saddles
