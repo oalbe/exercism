@@ -24,21 +24,33 @@ def parse_columns(matrix):
     
     return columns
 
+def validate_matrix(matrix):
+    rows = len(matrix)
+    
+    test_len = len(matrix[0])
+    for i in range(1, rows - 1):
+        current_len = len(matrix[i])
+
+        if test_len != current_len:
+            return False
+    
+    return True
+
 def saddle_points(matrix):
     if [] == matrix:
         return set()
+    
+    if not validate_matrix(matrix):
+        raise ValueError("The matrix is irregular.")
     
     saddles = set()
     
     cols = parse_columns(matrix)
     
-    # Loop all the lines.
     rows_limit = len(matrix)
     for i in range(rows_limit):
-        # For each line, find the max element in that line.
         maxRowElem = max(matrix[i])
                 
-        # Extract the coordinates of that element and its duplicates.
         maxCoord = coordinatesRow(maxRowElem, matrix[i], i)
         
         coordLimit = len(maxCoord)
@@ -46,7 +58,6 @@ def saddle_points(matrix):
             rowIndex = maxCoord[c][0]
             colIndex = maxCoord[c][1]
 
-            # For each column of the found max elements, find the min element in that column.
             minColElem = min(cols[colIndex])
 
             if (minColElem == maxRowElem):
