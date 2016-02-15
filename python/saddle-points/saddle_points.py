@@ -1,4 +1,4 @@
-def coordinatesRow(element, row, row_index):
+def coordinates_row(element, row, row_index):
     coordinates = []
     
     row_len = len(row)
@@ -47,7 +47,7 @@ def saddle_points(matrix):
     for i in range(rows_limit):
         max_row_elem = max(matrix[i])
                 
-        max_coordinates = coordinatesRow(max_row_elem, matrix[i], i)
+        max_coordinates = coordinates_row(max_row_elem, matrix[i], i)
         
         coordinates_limit = len(max_coordinates)
         for c in range(coordinates_limit):
