@@ -18,13 +18,7 @@ class Luhn:
         return addends_arr
     
     def checksum(self):
-        computed_checksum = 0
-        
-        addends_len = len(self._addends)
-        for i in range(addends_len):
-            computed_checksum += self._addends[i]
-        
-        return computed_checksum
+        return sum(self._addends)
     
     def is_valid(self):
         return True if (0 == (self.checksum() % 10)) else False
