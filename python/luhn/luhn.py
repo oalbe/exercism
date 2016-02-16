@@ -1,7 +1,6 @@
 class Luhn:
     def __init__(self, num):
         self._number = str(num)
-        self._addends = self.addends()
     
     def addends(self):
         digits = self._number
@@ -18,18 +17,19 @@ class Luhn:
         return addends_arr
     
     def checksum(self):
-        return sum(self._addends)
+        return sum(self.addends())
     
     def is_valid(self):
         return 0 == (self.checksum() % 10)
     
     # Theoretically, this is the way to create static methods. (without the `self`)
+    @staticmethod
     def create(num):
         num = str(num)
         padded_input = int(num + '0')
         number = Luhn(padded_input)
 
-        if (not number.is_valid()):
+        if not number.is_valid():
             num_checksum = str(number.checksum())
             generated_check_digit = 10 - int(num_checksum[len(num_checksum) - 1])
             return int(num + str(generated_check_digit))
