@@ -21,7 +21,7 @@ class Luhn:
         return sum(self._addends)
     
     def is_valid(self):
-        return True if (0 == (self.checksum() % 10)) else False
+        return 0 == (self.checksum() % 10)
     
     # Theoretically, this is the way to create static methods. (without the `self`)
     def create(num):
