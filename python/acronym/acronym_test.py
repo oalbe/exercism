@@ -17,8 +17,8 @@ class AcronymTest(unittest.TestCase):
     def test_punctuation(self):
         self.assertEqual('FIFO', abbreviate('First In, First Out'))
 
-    # def test_all_caps_words(self):
-    #     self.assertEqual('PHP', abbreviate('PHP: Hypertext Preprocessor'))
+    def test_all_caps_words(self):
+        self.assertEqual('PHP', abbreviate('PHP: Hypertext Preprocessor'))
 
     def test_hyphenated(self):
         self.assertEqual('CMOS', abbreviate('Complementary metal-oxide semiconductor'))
