@@ -57,6 +57,5 @@ def code(code_list):
             num = str(extracted_key)[0] + str(num)
         else:
             num += str(extracted_key)
-        
     
     return num
