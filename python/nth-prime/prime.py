@@ -1,14 +1,12 @@
 def prime(number):
-    for i in range(2, number):
+    limit = int(number ** (1/2)) + 1
+    for i in range(3, limit, 2):
         if 0 == (number % i):
             return False
     
     return True
 
 def nth_prime(index):
-    if (index < 1):
-        return
-    
     if (1 == index):
         return 2
     
