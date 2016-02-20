@@ -40,22 +40,41 @@ def extract_key(value):
     for key, element in commands.items():
         if element == value:
             return key
-    
+
     return False
 
-def code(code_list):
-    num = ''
+def check_sorting(code_list):
+    code_list_len = len(code_list)
+    for i in range(code_list_len - 1):
+        if extract_key(code_list[i]) > extract_key(code_list[i + 1]):
+            return True
 
-    # print(extract_key("wink"))
+    return False
+
+def validate_code_list(code_list):
     for element in code_list:
-        extracted_key = extract_key(element)
+        if not extract_key(element):
+            return False
 
-        if not extracted_key:
-            return '0'
-        
-        if num:
-            num = str(extracted_key)[0] + str(num)
-        else:
-            num += str(extracted_key)
-    
+    return True
+
+def code(code_list):
+    if not validate_code_list(code_list):
+        return '0'
+
+    reverted = False
+    if check_sorting(code_list):
+        reverted = True
+        code_list = code_list[::-1]
+
+    num = str(extract_key(code_list[0]))
+
+    # `code_list[1:]` start looping over the list skipping the fist element.
+    for element in code_list[1:]:
+        extracted_key = str(extract_key(element))
+        num = extracted_key[0:len(extracted_key) - len(num)] + str(num)
+
+    if reverted:
+        num = '1' + num
+
     return num

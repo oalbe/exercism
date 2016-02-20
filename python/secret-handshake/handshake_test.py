@@ -28,11 +28,11 @@ class HandshakeTest(unittest.TestCase):
     def test_code2(self):
         self.assertEqual('11', code(['wink', 'double blink']))
 
-    # def test_code3(self):
-    #     self.assertEqual('11010', code(['jump', 'double blink']))
+    def test_code3(self):
+        self.assertEqual('11010', code(['jump', 'double blink']))
 
-    # def test_composition1(self):
-    #     self.assertEqual('11011', code(handshake(27)))
+    def test_composition1(self):
+        self.assertEqual('11011', code(handshake(27)))
 
     def test_composition2(self):
         self.assertEqual('1', code(handshake(1)))
@@ -40,9 +40,9 @@ class HandshakeTest(unittest.TestCase):
     def test_composition3(self):
         self.assertEqual('111', code(handshake('111')))
 
-    # def test_composition4(self):
-    #     inp = ['wink', 'double blink', 'jump']
-    #     self.assertEqual(inp, handshake(code(inp)))
+    def test_composition4(self):
+        inp = ['wink', 'double blink', 'jump']
+        self.assertEqual(inp, handshake(code(inp)))
 
 
 if __name__ == '__main__':
