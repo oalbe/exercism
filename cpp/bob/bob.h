@@ -10,7 +10,7 @@ class bob {
 public:
 	static std::string hey(std::string message) {
 		boost::trim(message);
-		if (0 == message.length()) {
+		if (message.empty()) {
 			return "Fine. Be that way!";
 		}
 		
@@ -22,7 +22,7 @@ public:
 			return "Whoa, chill out!";
 		}
 		
-		if ('?' == message[message.length() - 1]) {
+		if ('?' == message.back()) {
 			return "Sure.";
 		}
 		
