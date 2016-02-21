@@ -23,15 +23,16 @@ def handshake(code_num):
 
     binary_code_len = len(binary_code)
     for i in range(binary_code_len - 1, -1, -1):
-        if int(binary_code[i]) > 1:
+        binary_code_digit = int(binary_code[i])
+        if binary_code_digit > 1:
             return []
 
-        command_index = int(binary_code[i]) * 10 ** (binary_code_len - i -1)
-        if 0 < command_index:
+        command_index = binary_code_digit * 10 ** (binary_code_len - i -1)
+        if command_index > 0:
             secret.append(commands[command_index])
 
     if revert:
-        # reverse the list
+        # reverse the list through slicing notation
         return secret[::-1]
 
     return secret
@@ -41,7 +42,7 @@ def extract_key(value):
         if element == value:
             return key
 
-    return False
+    return -1
 
 def check_sorting(code_list):
     code_list_len = len(code_list)
@@ -53,7 +54,7 @@ def check_sorting(code_list):
 
 def validate_code_list(code_list):
     for element in code_list:
-        if not extract_key(element):
+        if -1 == extract_key(element):
             return False
 
     return True
