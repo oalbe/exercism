@@ -1,5 +1,5 @@
 def prime(number):
-    limit = int(number ** (1/2)) + 1
+    limit = int(number ** 0.5) + 1
     for i in range(3, limit, 2):
         if 0 == (number % i):
             return False
