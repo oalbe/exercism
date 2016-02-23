@@ -22,17 +22,12 @@ def generate(max_factor, min_factor):
     
     return (p_factors, p_products)
 
-def largest_palindrome(max_factor, min_factor=1):
+def largest_palindrome(max_factor, min_factor = 1):
     generated_factors, generated_products = generate(max_factor, min_factor)
-    
-    # print("generated_products = ", generated_products)
-    # print("generated_factors = ", generated_factors)
-    # print("generated_factors.values() = ", generated_factors.values())
-    # print(max(generated_factors))
-    # gen_factors_values = []
-    # gen_factors_values = list(generated_factors.values())
-    # print("gen_factors_values = ", gen_factors_values)
-    return (max(generated_products), generated_factors[max(generated_factors)])
+    max_generated_product = max(generated_products)
+    return (max_generated_product, generated_factors[max_generated_product])
 
-def smallest_palindrome(max_factor, min_factor):
-    return 0
+def smallest_palindrome(max_factor, min_factor = 1):
+    generated_factors, generated_products = generate(max_factor, min_factor)
+    min_generated_product = min(generated_products)
+    return (min_generated_product, generated_factors[min_generated_product])
