@@ -21,8 +21,7 @@ def pop_noexcept(stack):
 
 def check_brackets(br_input):
     stack = []
-    
-    br_input_len = len(br_input)
+
     for bracket in br_input:
         if closing_bracket(bracket):
             if not bracket_match(pop_noexcept(stack), bracket):
