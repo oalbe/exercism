@@ -1,6 +1,6 @@
 def validate_binary_string(binary_string):
     for digit in binary_string:
-        if (digit != "1") and (digit != "0"):
+        if digit not in "01":
             return False
 
     return True
