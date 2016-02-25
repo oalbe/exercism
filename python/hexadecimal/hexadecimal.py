@@ -29,7 +29,16 @@ def to_hex(hex_string):
 
     return decimal
 
+def validate_hex_string(hex_string):
+    hex_string = hex_string.lower()
+    for digit in hex_string:
+        if digit not in "0123456789abcdef":
+            return False
+
+    return True
+
 def hexa(hex_string):
-    # TODO: Validate the hex_string here.
+    if not validate_hex_string(hex_string):
+        raise ValueError("The string is not a valid hexadecimal number.")
 
     return to_hex(hex_string)

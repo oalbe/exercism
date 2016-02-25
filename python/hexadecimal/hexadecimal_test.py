@@ -35,9 +35,9 @@ class HexadecimalTest(unittest.TestCase):
     def test_valid_hexa9(self):
         self.assertEqual(65520, hexa('00fff0'))
 
-    # def test_invalid_hexa(self):
-    #     with self.assertRaises(ValueError):
-    #         hexa('carrot')
+    def test_invalid_hexa(self):
+        with self.assertRaises(ValueError):
+            hexa('carrot')
 
 
 if __name__ == '__main__':
