@@ -1,3 +1,4 @@
+# TODO: This http://exercism.io/submissions/62d423aedd9f4b609224c1fe9806cdc6
 def validate_binary_string(binary_string):
     for digit in binary_string:
         if digit not in "01":
@@ -9,9 +10,8 @@ def to_dec(binary_string):
     binary_string = binary_string[::-1]
     decimal = 0
 
-    binary_string_len = len(binary_string)
-    for i in range(binary_string_len):
-        decimal += int(binary_string[i]) * (2 ** i)
+    for index, digit in enumerate(binary_string):
+        decimal += int(digit) * (2 ** index)
 
     return decimal
 
