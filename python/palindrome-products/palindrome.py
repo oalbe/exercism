@@ -1,3 +1,4 @@
+# TODO: This http://exercism.io/submissions/93a904db2a09461094481e74385891d6
 def palindrome(number):
     str_number = str(number)
     
@@ -14,7 +15,7 @@ def generate(max_factor, min_factor):
     
     product = 0
     for i in range(max_factor, min_factor - 1, -1):
-        for j in range(max_factor, min_factor - 1, -1):
+        for j in range(i, min_factor - 1, -1):
             product = i * j
             if palindrome(product):
                 p_factors[product] = (i, j)
