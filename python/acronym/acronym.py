@@ -15,15 +15,15 @@ def abbreviate(name):
 
     split_name = dash_regex.split(name)
 
-    output = ''
+    output = []
     for word in split_name:
         if word != word.upper():
             character = find_uppercases(word)
             if -1 != character:
-                output += word[0].upper() + word[word.index(character)]
+                output.append(word[0].upper() + word[word.index(character)])
             else:
-                output += word[0].upper()
+                output.append(word[0].upper())
         else:
-            output += word[0].upper()
+            output.append(word[0].upper())
 
-    return output
+    return ''.join(output)
