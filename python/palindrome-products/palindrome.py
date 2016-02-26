@@ -1,13 +1,8 @@
 # TODO: This http://exercism.io/submissions/93a904db2a09461094481e74385891d6
 def palindrome(number):
     str_number = str(number)
-    
-    digits = len(str_number)
-    for i in range(digits):
-        if (str_number[i] != (str_number[digits - i - 1])):
-            return False
 
-    return True
+    return str_number == str_number[::-1]
 
 def generate(max_factor, min_factor):
     p_factors = {}
