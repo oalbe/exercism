@@ -1,22 +1,19 @@
 import re
+from string import ascii_uppercase
 
 
 def find_uppercases(word):
     test_word = word[0].lower() + word[1:]
     for character in test_word:
-        if character == character.upper():
+        if character in ascii_uppercase:
             return character
 
     return -1
 
 def abbreviate(name):
-    dash_regex = re.compile(r'-')
-    nodash_name = dash_regex.sub(' ', name)
+    dash_regex = re.compile(r'[ -]')
 
-    punctuation_regex = re.compile(r'[\.,\:]')
-    clean_name = punctuation_regex.sub('', nodash_name)
-
-    split_name = clean_name.split(' ')
+    split_name = dash_regex.split(name)
 
     output = ''
     for word in split_name:
@@ -30,4 +27,3 @@ def abbreviate(name):
             output += word[0].upper()
 
     return output
-    
