@@ -19,12 +19,11 @@ def generate(max_factor, min_factor):
 def palindrome_helper(max_factor, min_factor, magnitude):
     generated_factors, generated_products = generate(max_factor, min_factor)
     
+    appropriated_product = min(generated_products)
     if magnitude:
-        max_generated_product = max(generated_products)
-        return (max_generated_product, generated_factors[max_generated_product])
+        appropriated_product = max(generated_products)
     
-    min_generated_product = min(generated_products)
-    return (min_generated_product, generated_factors[min_generated_product])
+    return (appropriated_product, generated_factors[appropriated_product])
 
 def largest_palindrome(max_factor, min_factor = 1):
     return palindrome_helper(max_factor, min_factor, True)
