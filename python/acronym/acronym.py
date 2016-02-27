@@ -11,9 +11,7 @@ def find_uppercases(word):
     return -1
 
 def abbreviate(name):
-    dash_regex = re.compile(r'[ -]')
-
-    split_name = dash_regex.split(name)
+    split_name = re.split(r'[ -]', name)
 
     output = []
     for word in split_name:
