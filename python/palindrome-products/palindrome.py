@@ -1,7 +1,5 @@
-# TODO: This http://exercism.io/submissions/93a904db2a09461094481e74385891d6
 def palindrome(number):
     str_number = str(number)
-
     return str_number == str_number[::-1]
 
 def generate(max_factor, min_factor):
@@ -18,12 +16,18 @@ def generate(max_factor, min_factor):
     
     return (p_factors, p_products)
 
-def largest_palindrome(max_factor, min_factor = 1):
+def palindrome_helper(max_factor, min_factor, magnitude):
     generated_factors, generated_products = generate(max_factor, min_factor)
-    max_generated_product = max(generated_products)
-    return (max_generated_product, generated_factors[max_generated_product])
-
-def smallest_palindrome(max_factor, min_factor = 1):
-    generated_factors, generated_products = generate(max_factor, min_factor)
+    
+    if magnitude:
+        max_generated_product = max(generated_products)
+        return (max_generated_product, generated_factors[max_generated_product])
+    
     min_generated_product = min(generated_products)
     return (min_generated_product, generated_factors[min_generated_product])
+
+def largest_palindrome(max_factor, min_factor = 1):
+    return palindrome_helper(max_factor, min_factor, True)
+
+def smallest_palindrome(max_factor, min_factor = 1):
+    return palindrome_helper(max_factor, min_factor, False)
