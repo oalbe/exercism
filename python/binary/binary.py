@@ -1,4 +1,3 @@
-# TODO: This http://exercism.io/submissions/62d423aedd9f4b609224c1fe9806cdc6
 def validate_binary_string(binary_string):
     for digit in binary_string:
         if digit not in "01":
