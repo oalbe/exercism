@@ -18,7 +18,7 @@ def abbreviate(name):
         if word != word.upper():
             character = find_uppercases(word)
             if -1 != character:
-                output.append(word[0].upper() + word[word.index(character)])
+                output.append(word[0].upper() + character)
             else:
                 output.append(word[0].upper())
         else:
