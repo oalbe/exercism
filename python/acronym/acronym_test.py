@@ -23,6 +23,5 @@ class AcronymTest(unittest.TestCase):
     def test_hyphenated(self):
         self.assertEqual('CMOS', abbreviate('Complementary metal-oxide semiconductor'))
 
-
 if __name__ == '__main__':
     unittest.main()
