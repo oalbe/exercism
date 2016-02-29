@@ -1,5 +1,4 @@
 import re
-from string import ascii_uppercase
 
 
 def find_uppercases(word):
@@ -14,7 +13,8 @@ def abbreviate(name):
     output = []
     for word in split_name:
         if word.isupper():
-            word = word[0] + word[1:].lower()
+            output.append(word[0])
+            continue
 
         for up_char in find_uppercases(word):
             output.append(up_char)
