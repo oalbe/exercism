@@ -5,7 +5,7 @@ def palindrome(number):
 def generate(max_factor, min_factor):
     p_factors = {}
     p_products = []
-    
+
     product = 0
     for i in range(max_factor, min_factor - 1, -1):
         for j in range(i, min_factor - 1, -1):
@@ -13,20 +13,17 @@ def generate(max_factor, min_factor):
             if palindrome(product):
                 p_factors[product] = (i, j)
                 p_products.append(product)
-    
+
     return (p_factors, p_products)
 
-def palindrome_helper(max_factor, min_factor, magnitude):
+def palindrome_helper(max_factor, min_factor, callback):
     generated_factors, generated_products = generate(max_factor, min_factor)
-    
-    appropriated_product = min(generated_products)
-    if magnitude:
-        appropriated_product = max(generated_products)
-    
+    appropriated_product = callback(generated_products)
+
     return (appropriated_product, generated_factors[appropriated_product])
 
 def largest_palindrome(max_factor, min_factor = 1):
-    return palindrome_helper(max_factor, min_factor, True)
+    return palindrome_helper(max_factor, min_factor, max)
 
 def smallest_palindrome(max_factor, min_factor = 1):
-    return palindrome_helper(max_factor, min_factor, False)
+    return palindrome_helper(max_factor, min_factor, min)
