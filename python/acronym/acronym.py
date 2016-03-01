@@ -2,8 +2,8 @@ import re
 
 
 def find_uppercases(word):
-    test_word = word[0].upper() + word[1:]
-    for character in test_word:
+    yield word[0].upper()
+    for character in word[1:]:
         if character.isupper():
             yield character
 
