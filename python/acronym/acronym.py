@@ -16,7 +16,6 @@ def abbreviate(name):
             output.append(word[0])
             continue
 
-        for up_char in find_uppercases(word):
-            output.append(up_char)
+        output.extend(find_uppercases(word))
 
     return ''.join(output)
