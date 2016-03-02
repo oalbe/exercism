@@ -19,11 +19,128 @@ def normalize_grid(cleaned_grid):
     
     return normalized_grid
 
+class Cell:
+    def __init__(self, row_index, col_index):
+        self.row_index = row_index
+        self.col_index = col_index
+
+def check_row_right_mine(cell, cleaned_grid):
+    if (cell.col_index + 1) < len(cleaned_grid[cell.row_index]):
+        if '*' == cleaned_grid[cell.row_index][cell.col_index + 1]:
+            return True
+
+    return False
+
+def check_row_left_mine(cell, cleaned_grid):
+    if (cell.col_index - 1) >= 0:
+        if '*' == cleaned_grid[cell.row_index][cell.col_index - 1]:
+            return True
+
+    return False
+
+def row_mines_value(cell, cleaned_grid):
+    row_value = 0
+    
+    if check_row_left_mine(cell, cleaned_grid):
+        row_value += 1
+    
+    if check_row_right_mine(cell, cleaned_grid):
+        row_value += 1
+    
+    return row_value
+
+def check_column_down_mine(cell, cleaned_grid):
+    if (cell.row_index + 1) < len(cleaned_grid):
+        if '*' == cleaned_grid[cell.row_index + 1][cell.col_index]:
+            return True
+    
+    return False
+
+def check_column_up_mine(cell, cleaned_grid):
+    if (cell.row_index - 1) >= 0:
+        if '*' == cleaned_grid[cell.row_index - 1][cell.col_index]:
+            return True
+    
+    return False
+
+def column_mines_value(cell, cleaned_grid):
+    col_value = 0
+
+    if check_column_up_mine(cell, cleaned_grid):
+        col_value += 1
+        
+    if check_column_down_mine(cell, cleaned_grid):
+        col_value += 1
+    
+    return col_value
+
+def check_diagonal_right_down_mine(cell, cleaned_grid):
+    if ((cell.row_index + 1) < len(cleaned_grid)) and ((cell.col_index + 1) < len(cleaned_grid[cell.row_index])):
+        if '*' == cleaned_grid[cell.row_index + 1][cell.col_index + 1]:
+            return True
+    
+    return False
+
+def check_diagonal_right_up_mine(cell, cleaned_grid):
+    if ((cell.row_index + 1) < len(cleaned_grid)) and ((cell.col_index - 1) >= 0):
+        if '*' == cleaned_grid[cell.row_index + 1][cell.col_index - 1]:
+            return True
+    
+    return False
+
+def check_diagonal_left_up_mine(cell, cleaned_grid):
+    if ((cell.row_index - 1) >= 0) and ((cell.col_index - 1) >= 0):
+        if '*' == cleaned_grid[cell.row_index - 1][cell.col_index - 1]:
+            return True
+    
+    return False
+
+def check_diagonal_left_down_mine(cell, cleaned_grid):
+    if ((cell.row_index - 1) >= 0) and ((cell.col_index + 1) < len(cleaned_grid[cell.row_index])):
+        if '*' == cleaned_grid[cell.row_index - 1][cell.col_index + 1]:
+            return True
+    
+    return False
+
+def diagonal_mines_value(cell, cleaned_grid):
+    diagonal_value = 0
+    
+    if check_diagonal_right_up_mine(cell, cleaned_grid):
+        diagonal_value += 1
+    
+    if check_diagonal_right_down_mine(cell, cleaned_grid):
+        diagonal_value += 1
+    
+    if check_diagonal_left_down_mine(cell, cleaned_grid):
+        diagonal_value += 1
+    
+    if check_diagonal_left_up_mine(cell, cleaned_grid):
+        diagonal_value += 1
+    
+    return diagonal_value
+
+def calculate_cell_value(cell, cleaned_grid):
+    return diagonal_mines_value(cell, cleaned_grid) + column_mines_value(cell, cleaned_grid) + row_mines_value(cell, cleaned_grid)
+
 def board(input_grid):
     output = ''
     
+    cleaned_grid = clean_grid(input_grid)
+    
     print(input_grid)
-    print(clean_grid(input_grid))
+    print(cleaned_grid)
     print(normalize_grid(clean_grid(input_grid)))
     
-    return output
+    for row_index in range(len(cleaned_grid)):
+        for cell_index in range(len(cleaned_grid[row_index])):
+            if ' ' == cleaned_grid[row_index][cell_index]:
+                cell = Cell(row_index, cell_index)
+                value = calculate_cell_value(cell, cleaned_grid)
+                
+                if value > 0:
+                    list_row = list(cleaned_grid[row_index])
+                    list_row[cell_index] = str(value)
+                    cleaned_grid[row_index] = ''.join(list_row)
+    
+    
+    return normalize_grid(cleaned_grid)
