@@ -123,14 +123,8 @@ def calculate_cell_value(cell, cleaned_grid):
     return diagonal_mines_value(cell, cleaned_grid) + column_mines_value(cell, cleaned_grid) + row_mines_value(cell, cleaned_grid)
 
 def board(input_grid):
-    output = ''
-    
     cleaned_grid = clean_grid(input_grid)
-    
-    print(input_grid)
-    print(cleaned_grid)
-    print(normalize_grid(clean_grid(input_grid)))
-    
+
     for row_index in range(len(cleaned_grid)):
         for cell_index in range(len(cleaned_grid[row_index])):
             if ' ' == cleaned_grid[row_index][cell_index]:
