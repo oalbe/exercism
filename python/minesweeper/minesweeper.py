@@ -9,9 +9,7 @@ def clean_grid(input_grid):
 
 def normalize_grid(cleaned_grid):
     normalized_grid = []
-    first_last_row = '+' + ''.join(['-' for i in cleaned_grid[0]]) + '+'
-    # TODO: Test this syntax:
-    # first_last_row = '+' + ''.join(['-' * len(cleaned_grid[0])]) + '+'
+    first_last_row = '+' + ('-' * len(cleaned_grid[0])) + '+'
 
     normalized_grid.append(first_last_row)
     for row in cleaned_grid:
@@ -122,24 +120,28 @@ def diagonal_mines_value(cell, cleaned_grid):
     return diagonal_value
 
 def calculate_cell_value(cell, cleaned_grid):
-    return diagonal_mines_value(cell, cleaned_grid) + column_mines_value(cell, cleaned_grid) + row_mines_value(cell, cleaned_grid)
+    return diagonal_mines_value(cell, cleaned_grid) \
+           + column_mines_value(cell, cleaned_grid) \
+           + row_mines_value(cell, cleaned_grid)
 
 def grid_validation(input_grid):
-    # TODO: Validate rows lengths
+    # Validate rows lengths, because a grid with rows of 
+    # different lengths is not a valid grid
     for row_index, row in enumerate(input_grid[1:]):
         if len(row) != len(input_grid[row_index - 1]):
             return False
     
-    # TODO: Validate rows well-formation
+    # Validate rows well-formation, because a border-less grid isn't valid
     borderless_grid = input_grid[1:-1]
     for row in borderless_grid:
         if '|' != row[0] or '|' != row[-1]:
             return False
     
-    # TODO: Validate wrong placeholders
+    # Validate wrong placeholders, because an input grid 
+    # should only have empty cells and asterisks placeholders
     for row in borderless_grid:
         for cell in row[1:-1]:
-            if (' ' != cell) and ('*' != cell):
+            if ' ' != cell and '*' != cell:
                 return False
 
     return True
