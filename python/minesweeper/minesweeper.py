@@ -10,6 +10,8 @@ def clean_grid(input_grid):
 def normalize_grid(cleaned_grid):
     normalized_grid = []
     first_last_row = '+' + ''.join(['-' for i in cleaned_grid[0]]) + '+'
+    # TODO: Test this syntax:
+    # first_last_row = '+' + ''.join(['-' * len(cleaned_grid[0])]) + '+'
 
     normalized_grid.append(first_last_row)
     for row in cleaned_grid:
@@ -122,19 +124,40 @@ def diagonal_mines_value(cell, cleaned_grid):
 def calculate_cell_value(cell, cleaned_grid):
     return diagonal_mines_value(cell, cleaned_grid) + column_mines_value(cell, cleaned_grid) + row_mines_value(cell, cleaned_grid)
 
+def grid_validation(input_grid):
+    # TODO: Validate rows lengths
+    for row_index, row in enumerate(input_grid[1:]):
+        if len(row) != len(input_grid[row_index - 1]):
+            return False
+    
+    # TODO: Validate rows well-formation
+    borderless_grid = input_grid[1:-1]
+    for row in borderless_grid:
+        if '|' != row[0] or '|' != row[-1]:
+            return False
+    
+    # TODO: Validate wrong placeholders
+    for row in borderless_grid:
+        for cell in row[1:-1]:
+            if (' ' != cell) and ('*' != cell):
+                return False
+
+    return True
+
 def board(input_grid):
+    if not grid_validation(input_grid):
+        raise ValueError("Invalid Grid.")
+
     cleaned_grid = clean_grid(input_grid)
 
-    for row_index in range(len(cleaned_grid)):
-        for cell_index in range(len(cleaned_grid[row_index])):
-            if ' ' == cleaned_grid[row_index][cell_index]:
-                cell = Cell(row_index, cell_index)
-                value = calculate_cell_value(cell, cleaned_grid)
+    for row_index, row in enumerate(cleaned_grid):
+        for cell_index, cell in enumerate(row):
+            if ' ' == cell:
+                value = calculate_cell_value(Cell(row_index, cell_index), cleaned_grid)
                 
                 if value > 0:
                     list_row = list(cleaned_grid[row_index])
                     list_row[cell_index] = str(value)
                     cleaned_grid[row_index] = ''.join(list_row)
-    
-    
+
     return normalize_grid(cleaned_grid)
