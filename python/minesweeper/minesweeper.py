@@ -1,18 +1,18 @@
-def clean_grid(input_grid):
-    cleaned_grid = []
+def extract_grid(input_board):
+    grid = []
     
-    cut_grid = input_grid[1:-1]
+    cut_grid = input_board[1:-1]
     for row in cut_grid:
-        cleaned_grid.append(row[1:-1])
+        grid.append(row[1:-1])
     
-    return cleaned_grid
+    return grid
 
-def normalize_grid(cleaned_grid):
+def normalize_grid(grid):
     normalized_grid = []
-    first_last_row = '+' + ('-' * len(cleaned_grid[0])) + '+'
+    first_last_row = '+' + ('-' * len(grid[0])) + '+'
 
     normalized_grid.append(first_last_row)
-    for row in cleaned_grid:
+    for row in grid:
         normalized_grid.append('|' + row + '|')
     
     normalized_grid.append(first_last_row)
@@ -24,115 +24,90 @@ class Cell:
         self.row_index = row_index
         self.col_index = col_index
 
-def check_row_right_mine(cell, cleaned_grid):
-    if (cell.col_index + 1) < len(cleaned_grid[cell.row_index]):
-        if '*' == cleaned_grid[cell.row_index][cell.col_index + 1]:
-            return True
+def row_values_helper(cell, grid):
+    
+    return 0
 
-    return False
+def row_right_value(cell, grid):
+    if (cell.col_index + 1) < len(grid[cell.row_index]):
+        if '*' == grid[cell.row_index][cell.col_index + 1]:
+            return 1
 
-def check_row_left_mine(cell, cleaned_grid):
+    return 0
+
+def row_left_value(cell, grid):
     if (cell.col_index - 1) >= 0:
-        if '*' == cleaned_grid[cell.row_index][cell.col_index - 1]:
-            return True
+        if '*' == grid[cell.row_index][cell.col_index - 1]:
+            return 1
 
-    return False
+    return 0
 
-def row_mines_value(cell, cleaned_grid):
-    row_value = 0
-    
-    if check_row_left_mine(cell, cleaned_grid):
-        row_value += 1
-    
-    if check_row_right_mine(cell, cleaned_grid):
-        row_value += 1
-    
-    return row_value
+def row_mines_value(cell, grid):
+    return row_left_value(cell, grid) + row_right_value(cell, grid)
 
-def check_column_down_mine(cell, cleaned_grid):
-    if (cell.row_index + 1) < len(cleaned_grid):
-        if '*' == cleaned_grid[cell.row_index + 1][cell.col_index]:
-            return True
+def column_down_value(cell, grid):
+    if (cell.row_index + 1) < len(grid):
+        if '*' == grid[cell.row_index + 1][cell.col_index]:
+            return 1
     
-    return False
+    return 0
 
-def check_column_up_mine(cell, cleaned_grid):
+def column_up_value(cell, grid):
     if (cell.row_index - 1) >= 0:
-        if '*' == cleaned_grid[cell.row_index - 1][cell.col_index]:
-            return True
+        if '*' == grid[cell.row_index - 1][cell.col_index]:
+            return 1
     
-    return False
+    return 0
 
-def column_mines_value(cell, cleaned_grid):
-    col_value = 0
+def column_mines_value(cell, grid):
+    return column_up_value(cell, grid) + column_down_value(cell, grid)
 
-    if check_column_up_mine(cell, cleaned_grid):
-        col_value += 1
-        
-    if check_column_down_mine(cell, cleaned_grid):
-        col_value += 1
+def diagonal_rd_value(cell, grid):
+    if ((cell.row_index + 1) < len(grid)) and ((cell.col_index + 1) < len(grid[cell.row_index])):
+        if '*' == grid[cell.row_index + 1][cell.col_index + 1]:
+            return 1
     
-    return col_value
+    return 0
 
-def check_diagonal_right_down_mine(cell, cleaned_grid):
-    if ((cell.row_index + 1) < len(cleaned_grid)) and ((cell.col_index + 1) < len(cleaned_grid[cell.row_index])):
-        if '*' == cleaned_grid[cell.row_index + 1][cell.col_index + 1]:
-            return True
+def diagonal_ru_value(cell, grid):
+    if ((cell.row_index + 1) < len(grid)) and ((cell.col_index - 1) >= 0):
+        if '*' == grid[cell.row_index + 1][cell.col_index - 1]:
+            return 1
     
-    return False
+    return 0
 
-def check_diagonal_right_up_mine(cell, cleaned_grid):
-    if ((cell.row_index + 1) < len(cleaned_grid)) and ((cell.col_index - 1) >= 0):
-        if '*' == cleaned_grid[cell.row_index + 1][cell.col_index - 1]:
-            return True
-    
-    return False
-
-def check_diagonal_left_up_mine(cell, cleaned_grid):
+def diagonal_lu_value(cell, grid):
     if ((cell.row_index - 1) >= 0) and ((cell.col_index - 1) >= 0):
-        if '*' == cleaned_grid[cell.row_index - 1][cell.col_index - 1]:
-            return True
+        if '*' == grid[cell.row_index - 1][cell.col_index - 1]:
+            return 1
     
-    return False
+    return 0
 
-def check_diagonal_left_down_mine(cell, cleaned_grid):
-    if ((cell.row_index - 1) >= 0) and ((cell.col_index + 1) < len(cleaned_grid[cell.row_index])):
-        if '*' == cleaned_grid[cell.row_index - 1][cell.col_index + 1]:
-            return True
+def diagonal_ld_value(cell, grid):
+    if ((cell.row_index - 1) >= 0) and ((cell.col_index + 1) < len(grid[cell.row_index])):
+        if '*' == grid[cell.row_index - 1][cell.col_index + 1]:
+            return 1
     
-    return False
+    return 0
 
-def diagonal_mines_value(cell, cleaned_grid):
-    diagonal_value = 0
-    
-    if check_diagonal_right_up_mine(cell, cleaned_grid):
-        diagonal_value += 1
-    
-    if check_diagonal_right_down_mine(cell, cleaned_grid):
-        diagonal_value += 1
-    
-    if check_diagonal_left_down_mine(cell, cleaned_grid):
-        diagonal_value += 1
-    
-    if check_diagonal_left_up_mine(cell, cleaned_grid):
-        diagonal_value += 1
-    
-    return diagonal_value
+def diagonal_mines_value(cell, grid):
+    return diagonal_ru_value(cell, grid) + diagonal_rd_value(cell, grid) + \
+           diagonal_ld_value(cell, grid) + diagonal_lu_value(cell, grid)
 
-def calculate_cell_value(cell, cleaned_grid):
-    return diagonal_mines_value(cell, cleaned_grid) \
-           + column_mines_value(cell, cleaned_grid) \
-           + row_mines_value(cell, cleaned_grid)
+def calculate_cell_value(cell, grid):
+    return diagonal_mines_value(cell, grid) + \
+           column_mines_value(cell, grid) + \
+           row_mines_value(cell, grid)
 
-def grid_validation(input_grid):
+def grid_validation(input_board):
     # Validate rows lengths, because a grid with rows of 
     # different lengths is not a valid grid
-    for row_index, row in enumerate(input_grid[1:]):
-        if len(row) != len(input_grid[row_index - 1]):
+    for row_index, row in enumerate(input_board[1:]):
+        if len(row) != len(input_board[row_index - 1]):
             return False
     
     # Validate rows well-formation, because a border-less grid isn't valid
-    borderless_grid = input_grid[1:-1]
+    borderless_grid = input_board[1:-1]
     for row in borderless_grid:
         if '|' != row[0] or '|' != row[-1]:
             return False
@@ -146,20 +121,20 @@ def grid_validation(input_grid):
 
     return True
 
-def board(input_grid):
-    if not grid_validation(input_grid):
+def board(input_board):
+    if not grid_validation(input_board):
         raise ValueError("Invalid Grid.")
 
-    cleaned_grid = clean_grid(input_grid)
+    grid = extract_grid(input_board)
 
-    for row_index, row in enumerate(cleaned_grid):
+    for row_index, row in enumerate(grid):
         for cell_index, cell in enumerate(row):
             if ' ' == cell:
-                value = calculate_cell_value(Cell(row_index, cell_index), cleaned_grid)
+                value = calculate_cell_value(Cell(row_index, cell_index), grid)
                 
                 if value > 0:
-                    list_row = list(cleaned_grid[row_index])
+                    list_row = list(grid[row_index])
                     list_row[cell_index] = str(value)
-                    cleaned_grid[row_index] = ''.join(list_row)
+                    grid[row_index] = ''.join(list_row)
 
-    return normalize_grid(cleaned_grid)
+    return normalize_grid(grid)
