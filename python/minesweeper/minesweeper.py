@@ -50,14 +50,17 @@ class Grid:
         return True
     
     def normalize(self):
-        normalized_grid = []
         first_last_row = '+' + ('-' * self.row_len()) + '+'
 
-        normalized_grid.append(first_last_row)
-        for row in self.rows:
-            normalized_grid.append('|' + row + '|')
+        # normalized_grid = []
+        # normalized_grid.append(first_last_row)
+        # normalized_grid.extend(('|' + row + '|') for row in self.rows)
+        # normalized_grid.append(first_last_row)
         
+        normalized_grid = [('|' + row + '|') for row in self.rows]
+        normalized_grid.insert(0, first_last_row)
         normalized_grid.append(first_last_row)
+        # normalized_grid.insert(self.len() + 1, first_last_row)
         
         return normalized_grid
 
