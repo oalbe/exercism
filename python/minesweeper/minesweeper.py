@@ -26,13 +26,7 @@ class Grid:
         self.rows[cell.row] = ''.join(list_row)
     
     def extract(self):
-        grid = []
-    
-        cut_grid = self.__board[1:-1]
-        for row in cut_grid:
-            grid.append(row[1:-1])
-        
-        return grid
+        return [row[1:-1] for row in self.__board[1:-1]]
     
     def valid(self):
         # Validate rows lengths, because a grid with rows of 
@@ -42,8 +36,7 @@ class Grid:
                 return False
         
         # Validate rows well-formation, because a border-less grid isn't valid
-        borderless_grid = self.__board[1:-1]
-        for row in borderless_grid:
+        for row in self.__board[1:-1]:
             if row[0] != row[-1] and row[0] != '|':
                 return False
         
@@ -68,71 +61,60 @@ class Grid:
         
         return normalized_grid
 
-def row_right_value(cell, grid):
-    if (cell.col + 1) < grid.row_len():
-        if '*' == grid.cell(cell.row, cell.col + 1):
-            return 1
-
-    return 0
-
-def row_left_value(cell, grid):
+def row_mines_value(cell, grid):
+    row_mines = 0
+    
+    # Checks on the left of the cell
     if (cell.col - 1) >= 0:
         if '*' == grid.cell(cell.row, cell.col - 1):
-            return 1
-
-    return 0
-
-def row_mines_value(cell, grid):
-    return row_left_value(cell, grid) + row_right_value(cell, grid)
-
-def column_down_value(cell, grid):
-    if (cell.row + 1) < grid.len():
-        if '*' == grid.cell(cell.row + 1, cell.col):
-            return 1
+            row_mines += 1
     
-    return 0
-
-def column_up_value(cell, grid):
-    if (cell.row - 1) >= 0:
-        if '*' == grid.cell(cell.row - 1, cell.col):
-            return 1
+    # Checks on the right of the cell
+    if (cell.col + 1) < grid.row_len():
+        if '*' == grid.cell(cell.row, cell.col + 1):
+            row_mines += 1
     
-    return 0
+    return row_mines
 
 def column_mines_value(cell, grid):
-    return column_up_value(cell, grid) + column_down_value(cell, grid)
-
-def diagonal_rd_value(cell, grid):
-    if ((cell.row + 1) < grid.len()) and ((cell.col + 1) < grid.row_len()):
-        if '*' == grid.cell(cell.row + 1, cell.col + 1):
-            return 1
+    col_mines = 0
     
-    return 0
-
-def diagonal_ru_value(cell, grid):
-    if ((cell.row + 1) < grid.len()) and ((cell.col - 1) >= 0):
-        if '*' == grid.cell(cell.row + 1, cell.col - 1):
-            return 1
+    # Checks the cell above
+    if (cell.row - 1) >= 0:
+        if '*' == grid.cell(cell.row - 1, cell.col):
+            col_mines += 1
     
-    return 0
-
-def diagonal_lu_value(cell, grid):
-    if ((cell.row - 1) >= 0) and ((cell.col - 1) >= 0):
-        if '*' == grid.cell(cell.row - 1, cell.col - 1):
-            return 1
+    # Checks the cell below
+    if (cell.row + 1) < grid.len():
+        if '*' == grid.cell(cell.row + 1, cell.col):
+            col_mines += 1
     
-    return 0
-
-def diagonal_ld_value(cell, grid):
-    if ((cell.row - 1) >= 0) and ((cell.col + 1) < grid.row_len()):
-        if '*' == grid.cell(cell.row - 1, cell.col + 1):
-            return 1
-    
-    return 0
+    return col_mines
 
 def diagonal_mines_value(cell, grid):
-    return diagonal_ru_value(cell, grid) + diagonal_rd_value(cell, grid) + \
-           diagonal_ld_value(cell, grid) + diagonal_lu_value(cell, grid)
+    diagonal_mines = 0
+    
+    # Checks the right-down cell
+    if ((cell.row + 1) < grid.len()) and ((cell.col + 1) < grid.row_len()):
+        if '*' == grid.cell(cell.row + 1, cell.col + 1):
+            diagonal_mines += 1
+    
+    # Checks the right-up cell
+    if ((cell.row + 1) < grid.len()) and ((cell.col - 1) >= 0):
+        if '*' == grid.cell(cell.row + 1, cell.col - 1):
+            diagonal_mines += 1
+            
+    # Checks the left-up cell
+    if ((cell.row - 1) >= 0) and ((cell.col - 1) >= 0):
+        if '*' == grid.cell(cell.row - 1, cell.col - 1):
+            diagonal_mines += 1
+    
+    # Checks the left-down cell
+    if ((cell.row - 1) >= 0) and ((cell.col + 1) < grid.row_len()):
+        if '*' == grid.cell(cell.row - 1, cell.col + 1):
+            diagonal_mines += 1
+    
+    return diagonal_mines
 
 def calculate_cell_value(cell, grid):
     return diagonal_mines_value(cell, grid) + \
@@ -145,8 +127,8 @@ def board(input_board):
         raise ValueError("Invalid Grid.")
 
     for row_index, row in enumerate(grid.rows):
-        for cell_index, cell in enumerate(row):
-            if ' ' == cell:
+        for cell_index, cell_content in enumerate(row):
+            if ' ' == cell_content:
                 current_cell = Cell(row_index, cell_index)
                 value = calculate_cell_value(current_cell, grid)
                 
