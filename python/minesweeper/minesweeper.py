@@ -52,27 +52,21 @@ class Grid:
     def normalize(self):
         first_last_row = '+' + ('-' * self.row_len()) + '+'
 
-        # normalized_grid = []
-        # normalized_grid.append(first_last_row)
-        # normalized_grid.extend(('|' + row + '|') for row in self.rows)
-        # normalized_grid.append(first_last_row)
-        
         normalized_grid = [('|' + row + '|') for row in self.rows]
         normalized_grid.insert(0, first_last_row)
         normalized_grid.append(first_last_row)
-        # normalized_grid.insert(self.len() + 1, first_last_row)
         
         return normalized_grid
 
 def row_mines_value(cell, grid):
     row_mines = 0
     
-    # Checks on the left of the cell
+    # Checks the cell on the left
     if (cell.col - 1) >= 0:
         if '*' == grid.cell(cell.row, cell.col - 1):
             row_mines += 1
     
-    # Checks on the right of the cell
+    # Checks the cell on the right
     if (cell.col + 1) < grid.row_len():
         if '*' == grid.cell(cell.row, cell.col + 1):
             row_mines += 1
@@ -96,27 +90,25 @@ def column_mines_value(cell, grid):
 
 def diagonal_mines_value(cell, grid):
     diagonal_mines = 0
-    
-    # Checks the right-down cell
-    if ((cell.row + 1) < grid.len()) and ((cell.col + 1) < grid.row_len()):
-        if '*' == grid.cell(cell.row + 1, cell.col + 1):
-            diagonal_mines += 1
-    
-    # Checks the right-up cell
-    if ((cell.row + 1) < grid.len()) and ((cell.col - 1) >= 0):
-        if '*' == grid.cell(cell.row + 1, cell.col - 1):
-            diagonal_mines += 1
             
-    # Checks the left-up cell
-    if ((cell.row - 1) >= 0) and ((cell.col - 1) >= 0):
-        if '*' == grid.cell(cell.row - 1, cell.col - 1):
+    if (cell.row + 1) < grid.len():
+        # Checks the right-down cell
+        if ((cell.col + 1) < grid.row_len()) and '*' == grid.cell(cell.row + 1, cell.col + 1):
             diagonal_mines += 1
-    
-    # Checks the left-down cell
-    if ((cell.row - 1) >= 0) and ((cell.col + 1) < grid.row_len()):
-        if '*' == grid.cell(cell.row - 1, cell.col + 1):
+
+        # Checks the right-up cell        
+        if ((cell.col - 1) >= 0) and '*' == grid.cell(cell.row + 1, cell.col - 1):
             diagonal_mines += 1
-    
+
+    if (cell.row - 1) >= 0:
+        # Checks the left-up cell
+        if (cell.col - 1) >= 0 and '*' == grid.cell(cell.row - 1, cell.col - 1):
+            diagonal_mines += 1
+        
+        # Checks the left-down cell
+        if ((cell.col + 1) < grid.row_len()) and '*' == grid.cell(cell.row - 1, cell.col + 1):
+            diagonal_mines += 1
+
     return diagonal_mines
 
 def calculate_cell_value(cell, grid):
