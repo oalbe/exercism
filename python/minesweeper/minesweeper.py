@@ -70,7 +70,7 @@ def row_mines_value(cell, grid):
     if (cell.col + 1) < grid.row_len():
         if '*' == grid.cell(cell.row, cell.col + 1):
             row_mines += 1
-    
+
     return row_mines
 
 def column_mines_value(cell, grid):
@@ -125,8 +125,8 @@ def board(input_board):
         for cell_index, cell_content in enumerate(row):
             if ' ' == cell_content:
                 current_cell = Cell(row_index, cell_index)
-                value = calculate_cell_value(current_cell, grid)
                 
+                value = calculate_cell_value(current_cell, grid)
                 if value > 0:
                     grid.set_cell(current_cell, value)
 
