@@ -42,13 +42,13 @@ def can_attack(white, black):
         return True
 
     # Check if they are in the same diagonal
-    deltax = white[0] - black[0]
-    deltay = white[1] - black[1]
+    delta_x = white[0] - black[0]
+    delta_y = white[1] - black[1]
 
-    if deltay == -deltax:
+    if delta_y == -delta_x:
         return True
 
-    if deltay == deltax:
+    if delta_y == delta_x:
         return True
 
     return False
