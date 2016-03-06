@@ -21,10 +21,7 @@ def valid_queens(white, black):
     if queen_overlap(white, black):
         return False
 
-    if valid_queen_position(white) != valid_queen_position(black):
-        return False
-
-    return True
+    return valid_queen_position(white) and valid_queen_position(black)
 
 def board(white_queen, black_queen):
     if not valid_queens(white_queen, black_queen):
