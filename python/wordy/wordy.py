@@ -8,19 +8,18 @@ operations = {
     'divided': (lambda lval, rval: lval / rval)
 }
 
-def valid_question(split_question):
-    for key in operations:
-        if key in split_question:
-            return True
-    
-    return False
+def valid_question(question):
+    well_formed_rx = r"What\ is(\ -?[0-9]*\ (plus|minus|divided\ by|multiplied\ by))*\ -?[0-9]*\?"
+
+    if not re.match(well_formed_rx, question):
+        return False
+
+    return True
 
 def calculate(question):
-    clean_input = re.sub(r"\?", '', question)
-    clean_input = re.sub(r"\ by", '', clean_input)
-    clean_input = clean_input.split(' ')
+    clean_input = re.sub(r"\ by", '', re.sub(r"\?", '', question)).split(' ')
     
-    if not valid_question(clean_input):
+    if not valid_question(question):
         raise ValueError("Invalid question.")
 
     result = 0

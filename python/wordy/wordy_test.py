@@ -52,8 +52,8 @@ class WordyTest(unittest.TestCase):
     def test_invalid_operation(self):
         self.assertRaises(ValueError, calculate, "What is 4 xor 7?")
 
-    # def test_missing_operation(self):
-    #     self.assertRaises(ValueError, calculate, "What is 2 2 minus 3?")
+    def test_missing_operation(self):
+        self.assertRaises(ValueError, calculate, "What is 2 2 minus 3?")
 
     def test_missing_number(self):
         self.assertRaises(ValueError, calculate, "What is 7 plus "
