@@ -8,13 +8,20 @@ operations = {
     'divided': (lambda lval, rval: lval / rval)
 }
 
+def valid_question(split_question):
+    for key in operations:
+        if key in split_question:
+            return True
+    
+    return False
+
 def calculate(question):
     clean_input = re.sub(r"\?", '', question)
     clean_input = re.sub(r"\ by", '', clean_input)
     clean_input = clean_input.split(' ')
     
-    # if (!this.isValidQuestion(clean_input)):
-    #     raise ValueError("Invalid question.")
+    if not valid_question(clean_input):
+        raise ValueError("Invalid question.")
 
     result = 0
     limit = len(clean_input)
