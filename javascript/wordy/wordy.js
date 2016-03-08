@@ -27,24 +27,18 @@ function WordProblem(problem) {
 	this.question = problem;
 }
 
-// TODO: Optimize the method so it does not need to use `indexOf()`, which probably hides a loop.
-WordProblem.prototype.isValidQuestion = function(explodedQuestion) {
-	for (var property in operations) {
-		if (-1 !== explodedQuestion.indexOf(property)) {
-			return true;
-		}
-	}
-	
-	return false;
+WordProblem.prototype.isValidQuestion = function() {
+	wellFormedrx = /What\ is(\ -?[0-9]*\ (plus|minus|divided\ by|multiplied\ by))*\ -?[0-9]*\?/;
+	return wellFormedrx.test(this.question);
 };
 
 WordProblem.prototype.answer = function() {
-	// TODO: There must be a better way than using replace.
-	var cInput = this.question.replace(/\?/, '').replace(/\ by/g, '').split(' ');
-	
-	if (!this.isValidQuestion(cInput)) {
+	if (!this.isValidQuestion(this.question)) {
 		throw new ArgumentError();
 	}
+	
+	// TODO: There must be a better way than using replace.
+	var cInput = this.question.replace(/\?/, '').replace(/\ by/g, '').split(' ');
 
 	var result = 0;
 	var limit = cInput.length;
