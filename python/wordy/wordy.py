@@ -10,17 +10,17 @@ operations = {
 
 def valid_question(question):
     well_formed_rx = r"What\ is(\ -?[0-9]*\ (plus|minus|divided\ by|multiplied\ by))*\ -?[0-9]*\?"
-
+    
     if not re.match(well_formed_rx, question):
         return False
 
     return True
 
 def calculate(question):
-    clean_input = re.sub(r"\ by", '', re.sub(r"\?", '', question)).split(' ')
-    
     if not valid_question(question):
         raise ValueError("Invalid question.")
+
+    clean_input = re.sub(r"\ by", '', re.sub(r"\?", '', question)).split(' ')
 
     result = 0
     limit = len(clean_input)
