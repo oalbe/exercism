@@ -25,3 +25,6 @@ class Phone:
             self.raw_number = "0000000000"
 
         return self.raw_number
+        
+    def area_code(self):
+        return self.number[0:3]
