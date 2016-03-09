@@ -28,13 +28,13 @@ class PhoneTest(unittest.TestCase):
         number = Phone("1234567890")
         self.assertEqual("123", number.area_code())
 
-    # def test_pretty_print(self):
-    #     number = Phone("1234567890")
-    #     self.assertEqual("(123) 456-7890", number.pretty())
+    def test_pretty_print(self):
+        number = Phone("1234567890")
+        self.assertEqual("(123) 456-7890", number.pretty())
 
-    # def test_pretty_print_with_full_us_phone_number(self):
-    #     number = Phone("11234567890")
-    #     self.assertEqual("(123) 456-7890", number.pretty())
+    def test_pretty_print_with_full_us_phone_number(self):
+        number = Phone("11234567890")
+        self.assertEqual("(123) 456-7890", number.pretty())
 
 if __name__ == '__main__':
     unittest.main()

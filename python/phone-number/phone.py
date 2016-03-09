@@ -28,3 +28,8 @@ class Phone:
         
     def area_code(self):
         return self.number[0:3]
+    
+    def pretty(self):
+        localNumber = self.number
+        
+        return '(' + localNumber[0:3] + ') ' + localNumber[3:6] + '-' +  localNumber[6:len(localNumber)]
