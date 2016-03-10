@@ -7,29 +7,22 @@ class Phone:
     
     @property
     def number(self):
-        cleanedNumber = ''
-    
         regex = r"[\(\)\-\.\s]"
 
+        clean_number = self.raw_number
         if (re.search(regex, self.raw_number)):
-            cleanedNumber = re.sub(regex, '', self.raw_number)
-        else:
-            cleanedNumber = self.raw_number
+            clean_number = re.sub(regex, '', self.raw_number)
 
-        cleanNumLength = len(cleanedNumber)
-        if (10 == cleanNumLength):
-            self.raw_number = cleanedNumber
-        elif ((11 == cleanNumLength) and ("1" == cleanedNumber[0])):
-            self.raw_number = cleanedNumber[1:cleanNumLength]
-        else: # number < 10, number > 11, number == 11 but not starting with '1'
-            self.raw_number = "0000000000"
+        clean_number_len = len(clean_number)
+        if (10 == clean_number_len):
+            return clean_number
+        elif ((11 == clean_number_len) and ("1" == clean_number[0])):
+            return clean_number[1:]
 
-        return self.raw_number
+        return "0000000000"
         
     def area_code(self):
         return self.number[0:3]
     
     def pretty(self):
-        localNumber = self.number
-        
-        return '(' + localNumber[0:3] + ') ' + localNumber[3:6] + '-' +  localNumber[6:len(localNumber)]
+        return '(' + self.number[0:3] + ') ' + self.number[3:6] + '-' +  self.number[6:]
