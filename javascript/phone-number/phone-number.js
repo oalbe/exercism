@@ -3,22 +3,19 @@ var PhoneNumber = function(rawNumber) {
 };
 
 PhoneNumber.prototype.number = function() {
-    var cleanedNumber = '';
-    
     // match all opening and closing brackets, dashes, dots and whitespace
     var regex = /[\(\)\-\.\s]/g;
 
+    var cleanNumber = this._number;
     if (regex.test(this._number)) {
-        cleanedNumber = this._number.replace(regex, '');
-    } else {
-        cleanedNumber = this._number;
+        cleanNumber = this._number.replace(regex, '');
     }
 
-    var cleanNumLength = cleanedNumber.length;
+    var cleanNumLength = cleanNumber.length;
     if (10 === cleanNumLength) {
-        this._number = cleanedNumber;
-    } else if ((11 === cleanNumLength) && ('1' === cleanedNumber.charAt(0))) {
-        this._number = cleanedNumber.substring(1, cleanNumLength);
+        this._number = cleanNumber;
+    } else if ((11 === cleanNumLength) && ('1' === cleanNumber.charAt(0))) {
+        this._number = cleanNumber.substring(1, cleanNumLength);
     } else { // number < 10, number > 11, number === 11 but not starting with '1'
         this._number = '0000000000';
     }
