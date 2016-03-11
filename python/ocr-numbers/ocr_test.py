@@ -19,17 +19,17 @@ class OcrTest(unittest.TestCase):
                                       "|_|",
                                       "   "]))
 
-    # def test_1(self):
-    #     self.assertEqual('1', number(["   ",
-    #                                   "  |",
-    #                                   "  |",
-    #                                   "   "]))
+    def test_1(self):
+        self.assertEqual('1', number(["   ",
+                                      "  |",
+                                      "  |",
+                                      "   "]))
 
-    # def test_garbage(self):
-    #     self.assertEqual('?', number([" _ ",
-    #                                   " _|",
-    #                                   "  |",
-    #                                   "   "]))
+    def test_garbage(self):
+        self.assertEqual('?', number([" _ ",
+                                      " _|",
+                                      "  |",
+                                      "   "]))
 
     # def test_last_line_nonblank(self):
     #     self.assertEqual('?', number(["   ",
