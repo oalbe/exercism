@@ -54,8 +54,7 @@ def number(list_number):
     digits_limit = len(digits)
     # print(digits_limit)
     for i in range(digits_limit):
-        # TODO: Remove str(''.join()) since serialize() already returns a string.
-        bcd_key = str(''.join(serialize(digits[i])))
+        bcd_key = serialize(digits[i])
         
         next_digit = '?'
         if bcd_key in bcd:
