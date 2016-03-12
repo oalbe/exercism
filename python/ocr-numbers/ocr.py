@@ -6,7 +6,7 @@ def to_arr(list_number):
 
     # Loop through the array, three characters per row at time.
     matrixes_number = len(list_number[0]) // 3
-    rows_number = 3
+    rows_number = 4
     for j in range(matrixes_number):
         binaries_array.append([])
         for i in range(rows_number):
@@ -21,29 +21,29 @@ def serialize(list_number):
     serialized = ''
 
     arr = []
-    for m in range(3):
+    for m in range(4):
         for a in range(3):
             arr.append(list_number[m][a])
 
-    for i in range(1, 9):
+    for i in range(1, 12):
         if (2 == i):
             continue
         
-        serialized += '0' if (' ' == arr[i]) else '1'
+        serialized += '1' if ('|' == arr[i] or '_' == arr[i]) else '0'
 
     return serialized
 
 bcd = {
-    '1101111': '0',
-    '0001001': '1',
-    '1011110': '2',
-    '1011011': '3',
-    '0111001': '4',
-    '1110011': '5',
-    '1110111': '6',
-    '1001001': '7',
-    '1111111': '8',
-    '1111011': '9'
+    '1101111000': '0',
+    '0001001000': '1',
+    '1011110000': '2',
+    '1011011000': '3',
+    '0111001000': '4',
+    '1110011000': '5',
+    '1110111000': '6',
+    '1001001000': '7',
+    '1111111000': '8',
+    '1111011000': '9'
 }
 
 def number(list_number):

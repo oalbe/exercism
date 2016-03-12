@@ -31,17 +31,17 @@ class OcrTest(unittest.TestCase):
                                       "  |",
                                       "   "]))
 
-    # def test_last_line_nonblank(self):
-    #     self.assertEqual('?', number(["   ",
-    #                                   "  |",
-    #                                   "  |",
-    #                                   "| |"]))
+    def test_last_line_nonblank(self):
+        self.assertEqual('?', number(["   ",
+                                      "  |",
+                                      "  |",
+                                      "| |"]))
 
-    # def test_unknown_char(self):
-    #     self.assertEqual('?', number([" - ",
-    #                                   " _|",
-    #                                   " X|",
-    #                                   "   "]))
+    def test_unknown_char(self):
+        self.assertEqual('?', number([" - ",
+                                      " _|",
+                                      " X|",
+                                      "   "]))
 
     # def test_too_short_row(self):
     #     self.assertRaises(ValueError, number, ["   ",
