@@ -1,19 +1,21 @@
 def grid():
     return 0
 
-# TODO: Simplify this, since there is no use case with multiline digits.
 def to_arr(list_number):
-    arrOfBinaries = []
+    binaries_array = []
 
     # Loop through the array, three characters per row at time.
-    numOfMatrixes = len(list_number[0]) // 3
-    numRows = len(list_number) - 1
+    matrixes_number = len(list_number[0]) // 3
+    rows_number = 3
+    for j in range(matrixes_number):
+        binaries_array.append([])
+        for i in range(rows_number):
+            current = j * 3
+            # print("# =", list_number[i][current:(current + 3)])
+            binaries_array[j].append(list_number[i][current:(current + 3)])
 
-    for i in range(numRows):
-        for j in range(numOfMatrixes):
-            arrOfBinaries.append(list_number[i][j * 3:(j * 3) + 3])
-
-    return arrOfBinaries
+    # print("binaries_array = ", binaries_array)
+    return binaries_array
 
 def serialize(list_number):
     serialized = ''
@@ -47,14 +49,18 @@ bcd = {
 def number(list_number):
     digits = to_arr(list_number)
     
-    composedBCD = ''
+    composed_bcd = ''
     
-    digitsLimit = len(digits)
-    for i in range(1):
-        nextDigit = bcd[str(''.join(serialize(digits)))]
-        # Recognize garbled digits and deal with them.
-        # Then appends the result to the string of translated digits.
-        composedBCD += nextDigit
+    digits_limit = len(digits)
+    # print(digits_limit)
+    for i in range(digits_limit):
+        # TODO: Remove str(''.join()) since serialize() already returns a string.
+        bcd_key = str(''.join(serialize(digits[i])))
+        
+        next_digit = '?'
+        if bcd_key in bcd:
+            next_digit = bcd[bcd_key]
 
-    # substr removes the last comma appended to the BCD.
-    return composedBCD
+        composed_bcd += next_digit
+
+    return composed_bcd

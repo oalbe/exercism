@@ -66,31 +66,31 @@ class OcrTest(unittest.TestCase):
     #                       "  |",
     #                       "   "], grid('1'))
 
-    # def test_0010110(self):
-    #     self.assertEqual('0010110', number([" _  _     _        _ ",
-    #                                         "| || |  || |  |  || |",
-    #                                         "|_||_|  ||_|  |  ||_|",
-    #                                         "                     "]))
+    def test_0010110(self):
+        self.assertEqual('0010110', number([" _  _     _        _ ",
+                                            "| || |  || |  |  || |",
+                                            "|_||_|  ||_|  |  ||_|",
+                                            "                     "]))
 
-    # def test_3186547290(self):
-    #     digits = '3186547290'
-    #     self.assertEqual(digits, number([" _     _  _  _     _  _  _  _ ",
-    #                                      " _|  ||_||_ |_ |_|  | _||_|| |",
-    #                                      " _|  ||_||_| _|  |  ||_  _||_|",
-    #                                      "                              "]))
+    def test_3186547290(self):
+        digits = '3186547290'
+        self.assertEqual(digits, number([" _     _  _  _     _  _  _  _ ",
+                                         " _|  ||_||_ |_ |_|  | _||_|| |",
+                                         " _|  ||_||_| _|  |  ||_  _||_|",
+                                         "                              "]))
 
-    # def test_Lost(self):
-    #     digits = '4815162342'
-    #     self.assertEqual(digits, number(["    _     _     _  _  _     _ ",
-    #                                      "|_||_|  ||_   ||_  _| _||_| _|",
-    #                                      "  ||_|  | _|  ||_||_  _|  ||_ ",
-    #                                      "                              "]))
+    def test_Lost(self):
+        digits = '4815162342'
+        self.assertEqual(digits, number(["    _     _     _  _  _     _ ",
+                                         "|_||_|  ||_   ||_  _| _||_| _|",
+                                         "  ||_|  | _|  ||_||_  _|  ||_ ",
+                                         "                              "]))
 
-    # def test_garble_middle(self):
-    #     self.assertEqual('12?45', number(["    _  _     _ ",
-    #                                       "  | _|  ||_||_ ",
-    #                                       "  ||_  _|  | _|",
-    #                                       "               "]))
+    def test_garble_middle(self):
+        self.assertEqual('12?45', number(["    _  _     _ ",
+                                          "  | _|  ||_||_ ",
+                                          "  ||_  _|  | _|",
+                                          "               "]))
 
     # def test_grid3186547290(self):
     #     digits = '3186547290'
