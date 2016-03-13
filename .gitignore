@@ -4,3 +4,13 @@ __pycache__/
 .cache/
 build/
 *.pytest.restart
+
+# Related to the cpp track
+*.cmake
+*.exe
+Makefile
+CMakeFiles/
+CMakeCache.txt
+
+# Temporary
+cpp/
