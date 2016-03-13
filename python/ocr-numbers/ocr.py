@@ -46,7 +46,20 @@ bcd = {
     '1111011000': '9'
 }
 
+def valid_grid(list_number):
+    if len(list_number) != 4:
+        return False
+
+    for row in list_number:
+        if (len(row) % 3) != 0:
+            return False
+
+    return True
+
 def number(list_number):
+    if not valid_grid(list_number):
+        raise ValueError('Your grid got problems.')
+
     digits = to_arr(list_number)
     
     composed_bcd = ''

@@ -49,10 +49,10 @@ class OcrTest(unittest.TestCase):
     #                                            " |",
     #                                            "   "])
 
-    # def test_insufficient_rows(self):
-    #     self.assertRaises(ValueError, number, ["   ",
-    #                                            " _|",
-    #                                            " X|"])
+    def test_insufficient_rows(self):
+        self.assertRaises(ValueError, number, ["   ",
+                                               " _|",
+                                               " X|"])
 
     # def test_grid0(self):
     #     self.assertEqual([" _ ",
