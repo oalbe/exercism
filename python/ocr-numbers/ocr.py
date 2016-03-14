@@ -1,37 +1,6 @@
-def to_arr(list_number):
-    binaries_array = []
+from reverse_lookup_dict import reverse_lookup_dict
 
-    # Loop through the array, three characters per row at time.
-    matrixes_number = len(list_number[0]) // 3
-    rows_number = 4
-    for j in range(matrixes_number):
-        binaries_array.append([])
-        for i in range(rows_number):
-            current = j * 3
-            # print("# =", list_number[i][current:(current + 3)])
-            binaries_array[j].append(list_number[i][current:(current + 3)])
-
-    return binaries_array
-
-def serialize(list_number):
-    serialized = ''
-
-    arr = []
-    for m in range(4):
-        for a in range(3):
-            arr.append(list_number[m][a])
-
-    for i in range(0, 12):
-        if ('|' == arr[i]):
-            serialized += '1'
-        elif ('_' == arr[i]):
-            serialized += '2'
-        else: 
-            serialized += '0'
-
-    return serialized
-
-bcd = {
+bcd = reverse_lookup_dict({
     '020101121000': '0',
     '000001001000': '1',
     '020021120000': '2',
@@ -42,7 +11,37 @@ bcd = {
     '020001001000': '7',
     '020121121000': '8',
     '020121021000': '9'
-}
+})
+
+def to_arr(list_number):
+    binaries_array = []
+
+    matrixes_number = len(list_number[0]) // 3
+    rows_number = 4
+    for j in range(matrixes_number):
+        binaries_array.append([])
+        for i in range(rows_number):
+            current = j * 3
+            binaries_array[j].append(list_number[i][current:(current + 3)])
+
+    return binaries_array
+
+def serialize(list_number):
+    arr = []
+    for m in range(4):
+        for a in range(3):
+            arr.append(list_number[m][a])
+
+    serialized = ''
+    for i in range(0, 12):
+        if ('|' == arr[i]):
+            serialized += '1'
+        elif ('_' == arr[i]):
+            serialized += '2'
+        else: 
+            serialized += '0'
+
+    return serialized
 
 def valid_grid(list_number):
     if len(list_number) != 4:
@@ -67,8 +66,8 @@ def number(list_number):
         bcd_key = serialize(digits[i])
         
         next_digit = '?'
-        if bcd_key in bcd:
-            next_digit = bcd[bcd_key]
+        if bcd.has(bcd_key):
+            next_digit = bcd.get(bcd_key)
 
         composed_bcd += next_digit
 
@@ -114,7 +113,7 @@ def grid(str_number):
 
     final_grid = ['', '', '', '']
     for digit in str_number:
-        current_digit = deserialize(dict_find(bcd, digit))
+        current_digit = deserialize(bcd.get(digit))
 
         final_grid[0] += current_digit[0]
         final_grid[1] += current_digit[1]
