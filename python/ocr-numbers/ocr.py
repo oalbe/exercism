@@ -11,7 +11,6 @@ def to_arr(list_number):
             # print("# =", list_number[i][current:(current + 3)])
             binaries_array[j].append(list_number[i][current:(current + 3)])
 
-    # print("binaries_array = ", binaries_array)
     return binaries_array
 
 def serialize(list_number):
@@ -23,8 +22,6 @@ def serialize(list_number):
             arr.append(list_number[m][a])
 
     for i in range(0, 12):
-        # if (2 == i):
-        #     continue
         if ('|' == arr[i]):
             serialized += '1'
         elif ('_' == arr[i]):
@@ -46,19 +43,6 @@ bcd = {
     '020121121000': '8',
     '020121021000': '9'
 }
-
-# bcd = {
-#     '1101111000': '0',
-#     '0001001000': '1',
-#     '1011110000': '2',
-#     '1011011000': '3',
-#     '0111001000': '4',
-#     '1110011000': '5',
-#     '1110111000': '6',
-#     '1001001000': '7',
-#     '1111111000': '8',
-#     '1111011000': '9'
-# }
 
 def valid_grid(list_number):
     if len(list_number) != 4:
@@ -117,7 +101,17 @@ def dict_find(dictionary, value):
     
     return False
 
+def valid_digits_sequence(str_number):
+    for digit in str_number:
+        if digit not in "0123456789":
+            return False
+    
+    return True
+
 def grid(str_number):
+    if not valid_digits_sequence(str_number):
+        raise ValueError("Invalid digit sequence.")
+
     final_grid = ['', '', '', '']
     for digit in str_number:
         current_digit = deserialize(dict_find(bcd, digit))
