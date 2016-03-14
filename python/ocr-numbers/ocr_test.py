@@ -43,28 +43,28 @@ class OcrTest(unittest.TestCase):
                                       " X|",
                                       "   "]))
 
-    # def test_too_short_row(self):
-    #     self.assertRaises(ValueError, number, ["   ",
-    #                                            " _|",
-    #                                            " |",
-    #                                            "   "])
+    def test_too_short_row(self):
+        self.assertRaises(ValueError, number, ["   ",
+                                               " _|",
+                                               " |",
+                                               "   "])
 
     def test_insufficient_rows(self):
         self.assertRaises(ValueError, number, ["   ",
                                                " _|",
                                                " X|"])
 
-    # def test_grid0(self):
-    #     self.assertEqual([" _ ",
-    #                       "| |",
-    #                       "|_|",
-    #                       "   "], grid('0'))
+    def test_grid0(self):
+        self.assertEqual([" _ ",
+                          "| |",
+                          "|_|",
+                          "   "], grid('0'))
 
-    # def test_grid1(self):
-    #     self.assertEqual(["   ",
-    #                       "  |",
-    #                       "  |",
-    #                       "   "], grid('1'))
+    def test_grid1(self):
+        self.assertEqual(["   ",
+                          "  |",
+                          "  |",
+                          "   "], grid('1'))
 
     def test_0010110(self):
         self.assertEqual('0010110', number([" _  _     _        _ ",
@@ -92,15 +92,15 @@ class OcrTest(unittest.TestCase):
                                           "  ||_  _|  | _|",
                                           "               "]))
 
-    # def test_grid3186547290(self):
-    #     digits = '3186547290'
-    #     self.assertEqual([" _     _  _  _     _  _  _  _ ",
-    #                       " _|  ||_||_ |_ |_|  | _||_|| |",
-    #                       " _|  ||_||_| _|  |  ||_  _||_|",
-    #                       "                              "], grid(digits))
+    def test_grid3186547290(self):
+        digits = '3186547290'
+        self.assertEqual([" _     _  _  _     _  _  _  _ ",
+                          " _|  ||_||_ |_ |_|  | _||_|| |",
+                          " _|  ||_||_| _|  |  ||_  _||_|",
+                          "                              "], grid(digits))
 
-    # def test_invalid_grid(self):
-    #     self.assertRaises(ValueError, grid, '123a')
+    def test_invalid_grid(self):
+        self.assertRaises(ValueError, grid, '123a')
 
 if __name__ == '__main__':
     unittest.main()
