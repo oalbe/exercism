@@ -1,5 +1,6 @@
 from reverse_lookup_dict import reverse_lookup_dict
 
+
 bcd = reverse_lookup_dict({
     '020101121000': '0',
     '000001001000': '1',
@@ -13,58 +14,58 @@ bcd = reverse_lookup_dict({
     '020121021000': '9'
 })
 
-def to_arr(list_number):
+def to_arr(input_grid):
     binaries_array = []
 
-    matrixes_number = len(list_number[0]) // 3
-    rows_number = 4
+    matrixes_number = len(input_grid[0]) // 3
+
     for j in range(matrixes_number):
         binaries_array.append([])
-        for i in range(rows_number):
+        for i in range(4):
             current = j * 3
-            binaries_array[j].append(list_number[i][current:(current + 3)])
+            binaries_array[j].append(input_grid[i][current:(current + 3)])
 
     return binaries_array
 
-def serialize(list_number):
+def serialize(input_grid):
     arr = []
     for m in range(4):
         for a in range(3):
-            arr.append(list_number[m][a])
+            arr.append(input_grid[m][a])
 
     serialized = ''
     for i in range(0, 12):
-        if ('|' == arr[i]):
+        if '|' == arr[i]:
             serialized += '1'
-        elif ('_' == arr[i]):
+        elif '_' == arr[i]:
             serialized += '2'
         else: 
             serialized += '0'
 
     return serialized
 
-def valid_grid(list_number):
-    if len(list_number) != 4:
+def valid_grid(input_grid):
+    if len(input_grid) != 4:
         return False
 
-    for row in list_number:
+    for row in input_grid:
         if (len(row) % 3) != 0:
             return False
 
     return True
 
-def number(list_number):
-    if not valid_grid(list_number):
+def number(input_grid):
+    if not valid_grid(input_grid):
         raise ValueError('Your grid got problems.')
 
-    digits = to_arr(list_number)
-    
+    digits = to_arr(input_grid)
+
     composed_bcd = ''
-    
+
     digits_limit = len(digits)
     for i in range(digits_limit):
         bcd_key = serialize(digits[i])
-        
+
         next_digit = '?'
         if bcd.has(bcd_key):
             next_digit = bcd.get(bcd_key)
@@ -75,36 +76,31 @@ def number(list_number):
 
 def deserialize(bcd_string):
     digit_grid = []
-    
+
     bcd_string_index = 0
     while (bcd_string_index < len(bcd_string)):
         row = ''
         for i in range(3):
-            if '0' == bcd_string[bcd_string_index]:
-                row += ' '
-            elif '1' == bcd_string[bcd_string_index]:
-                row += '|'
-            elif '2' == bcd_string[bcd_string_index]:
-                row += '_'
+            current_digit = bcd_string[bcd_string_index]
             
+            if '0' == current_digit:
+                row += ' '
+            elif '1' == current_digit:
+                row += '|'
+            else:
+                row += '_'
+
             bcd_string_index += 1
-        
+
         digit_grid.append(row)
 
     return digit_grid
-
-def dict_find(dictionary, value):
-    for key in dictionary:
-        if dictionary[key] == value:
-            return key
-    
-    return False
 
 def valid_digits_sequence(str_number):
     for digit in str_number:
         if digit not in "0123456789":
             return False
-    
+
     return True
 
 def grid(str_number):
