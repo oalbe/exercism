@@ -35,6 +35,7 @@ function toArr(binaryString) {
 		}
 	}
 	
+	// console.log(arrOfBinaries)
 	return arrOfBinaries;
 }
 
