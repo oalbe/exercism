@@ -9,10 +9,10 @@ function Queens(posObj) {
 	} else {
 		if (posObj.white === posObj.black) {
 			throw 'Queens cannot share the same space';
-		} else {
-			this.white = posObj.white;
-			this.black = posObj.black;
 		}
+		
+		this.white = posObj.white;
+		this.black = posObj.black;
 	}
 }
 
