@@ -1,15 +1,6 @@
-function initMatrix() {
-	var matrix = [];
-	
-	for (var i = 0; i < 8; ++i) {
-		matrix.push([]);
-		for (var j = 0; j < 8; ++j) {
-			matrix[i].push('_');
-		}
-	}
-	
-	return matrix;
-}
+String.prototype.replace = function(index, new_chr) {
+    return this.substr(0, index) + new_chr + this.substr(index+new_chr.length);
+};
 
 function Queens(posObj) {
 	if ('undefined' === typeof posObj) {
@@ -26,17 +17,15 @@ function Queens(posObj) {
 }
 
 Queens.prototype.toString = function() {
-	var strBoard = '';
-	var matrixBoard = initMatrix();
-	
-	matrixBoard[this.white[0]][this.white[1]] = 'W';
-	matrixBoard[this.black[0]][this.black[1]] = 'B';
-	
-	for (var i = 0; i < 8; ++i) {
-		strBoard += matrixBoard[i].join(' ') + '\n';
-	}
-	
-	return strBoard;
+	var stringified_board = "";
+    for (var i = 0; i < 8; ++i) {
+        stringified_board += "_ _ _ _ _ _ _ _\n";
+    }
+    
+    var white_position = 2 * ((this.white[0] * 8) + this.white[1]);
+    var black_position = 2 * ((this.black[0] * 8) + this.black[1]);
+
+    return stringified_board.replace(white_position, 'W').replace(black_position, 'B');
 };
 
 Queens.prototype.canAttack = function() {
@@ -57,12 +46,8 @@ Queens.prototype.canAttack = function() {
 	if (deltay === -deltax) {
 		return true;
 	}
-
-	if (deltay === deltax) {
-		return true;
-	}
 	
-	return false;
+	return deltay === deltax;
 };
 
 module.exports = Queens;
