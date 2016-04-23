@@ -1,5 +1,5 @@
 String.prototype.replace = function(index, new_chr) {
-    return this.substr(0, index) + new_chr + this.substr(index+new_chr.length);
+    return this.substr(0, index) + new_chr + this.substr(index + new_chr.length);
 };
 
 function Queens(posObj) {
