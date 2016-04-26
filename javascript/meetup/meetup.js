@@ -23,14 +23,17 @@ function generateCandidates(year, month, weekDay) {
   return candidates;
 }
 
-function parseCandidates(candidatesArr, callback) {
+function parseCandidates(candidatesArr) {
     var limit = candidatesArr.length;
     for (var i = 0; i < limit; ++i) {
-        if (callback(candidatesArr[i], i, candidatesArr)) {
+        var day = candidatesArr[i].getDate();
+        
+        if ((13 <= day) && (day <= 19)) {
             return candidatesArr[i];
         }
     }
     
+    // FIXME: Bad design, figure out a solution.
     return false;
 }
 
@@ -38,19 +41,17 @@ function MeetupDayException() {}
 
 function meetupDay(year, month, weekDay, cardinalNum) {
     cardinalNum = cardinalNum.toLowerCase();
-    
     var candidates = generateCandidates(year, month, weekDay);
 
     var computedDay = null;
     if ('last' === cardinalNum) {
         computedDay = candidates.pop();
     } else if ('teenth' === cardinalNum) {
-        computedDay = parseCandidates(candidates, function(d) {
-            return ((13 <= d.getDate()) && (19 >= d.getDate()));
-        });
+        computedDay = parseCandidates(candidates);
     } else {
         // TODO: This can be optimized. Figure out how.
-        computedDay = candidates.slice(parseInt(cardinalNum) - 1, parseInt(cardinalNum)).pop();
+        var iCardinalNum = parseInt(cardinalNum.replace(/[a-z]/, ""));
+        computedDay = candidates.slice(iCardinalNum - 1, iCardinalNum).pop();
     }
 
     if (!computedDay) {
